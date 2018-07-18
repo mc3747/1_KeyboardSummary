@@ -1,0 +1,1718 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		421A3A0E20EF043000BCDAF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A0D20EF043000BCDAF1 /* AppDelegate.m */; };
+		421A3A1120EF043000BCDAF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A1020EF043000BCDAF1 /* ViewController.m */; };
+		421A3A1420EF043000BCDAF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421A3A1220EF043000BCDAF1 /* Main.storyboard */; };
+		421A3A1620EF043200BCDAF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421A3A1520EF043200BCDAF1 /* Assets.xcassets */; };
+		421A3A1920EF043200BCDAF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421A3A1720EF043200BCDAF1 /* LaunchScreen.storyboard */; };
+		421A3A1C20EF043200BCDAF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A1B20EF043200BCDAF1 /* main.m */; };
+		421A3A2620EF043300BCDAF1 /* KeyboardSummaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A2520EF043300BCDAF1 /* KeyboardSummaryTests.m */; };
+		421A3A3120EF043300BCDAF1 /* KeyboardSummaryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A3020EF043300BCDAF1 /* KeyboardSummaryUITests.m */; };
+		421A3A6320EF050500BCDAF1 /* ChineseKeyboardTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A4020EF050400BCDAF1 /* ChineseKeyboardTextField.m */; };
+		421A3A6620EF050500BCDAF1 /* MCNumberKeyboardMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A4A20EF050500BCDAF1 /* MCNumberKeyboardMethod.m */; };
+		421A3A6720EF050500BCDAF1 /* MCCharacterLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A4D20EF050500BCDAF1 /* MCCharacterLabel.m */; };
+		421A3A6820EF050500BCDAF1 /* SafeKeyBoardField.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A5120EF050500BCDAF1 /* SafeKeyBoardField.m */; };
+		421A3A6920EF050500BCDAF1 /* MCNumberKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A5320EF050500BCDAF1 /* MCNumberKeyboardLayout.m */; };
+		421A3A6A20EF050500BCDAF1 /* Sound1_Tock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 421A3A5720EF050500BCDAF1 /* Sound1_Tock.mp3 */; };
+		421A3A6B20EF050500BCDAF1 /* SoundAndShakeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A5820EF050500BCDAF1 /* SoundAndShakeTool.m */; };
+		421A3A6C20EF050500BCDAF1 /* Sound2_Tock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 421A3A5920EF050500BCDAF1 /* Sound2_Tock.mp3 */; };
+		421A3A6D20EF050500BCDAF1 /* MCSpecialKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A5C20EF050500BCDAF1 /* MCSpecialKeyboardLayout.m */; };
+		421A3A6E20EF050500BCDAF1 /* MCAccessoryLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A5E20EF050500BCDAF1 /* MCAccessoryLayout.m */; };
+		421A3A6F20EF050500BCDAF1 /* MCCharacterKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A6120EF050500BCDAF1 /* MCCharacterKeyboardLayout.m */; };
+		421A3A9C20EF058500BCDAF1 /* MyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A7520EF058500BCDAF1 /* MyFlowLayout.m */; };
+		421A3A9D20EF058500BCDAF1 /* MyGridNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A7920EF058500BCDAF1 /* MyGridNode.m */; };
+		421A3A9E20EF058500BCDAF1 /* MyRelativeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A7A20EF058500BCDAF1 /* MyRelativeLayout.m */; };
+		421A3A9F20EF058500BCDAF1 /* MyLayoutSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A7B20EF058500BCDAF1 /* MyLayoutSize.m */; };
+		421A3AA020EF058500BCDAF1 /* MyGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A8420EF058500BCDAF1 /* MyGridLayout.m */; };
+		421A3AA120EF058500BCDAF1 /* MyMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A8520EF058500BCDAF1 /* MyMaker.m */; };
+		421A3AA220EF058500BCDAF1 /* MyLayoutMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A8B20EF058500BCDAF1 /* MyLayoutMath.m */; };
+		421A3AA320EF058500BCDAF1 /* MyBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A8C20EF058500BCDAF1 /* MyBaseLayout.m */; };
+		421A3AA420EF058500BCDAF1 /* MyPathLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A8D20EF058500BCDAF1 /* MyPathLayout.m */; };
+		421A3AA520EF058500BCDAF1 /* MyTableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A8F20EF058500BCDAF1 /* MyTableLayout.m */; };
+		421A3AA620EF058500BCDAF1 /* MyFloatLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A9020EF058500BCDAF1 /* MyFloatLayout.m */; };
+		421A3AA720EF058500BCDAF1 /* MyLayoutDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A9420EF058500BCDAF1 /* MyLayoutDelegate.m */; };
+		421A3AA820EF058500BCDAF1 /* MyDimeScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A9520EF058500BCDAF1 /* MyDimeScale.m */; };
+		421A3AA920EF058500BCDAF1 /* MyFrameLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A9620EF058500BCDAF1 /* MyFrameLayout.m */; };
+		421A3AAA20EF058500BCDAF1 /* MyLinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A9720EF058500BCDAF1 /* MyLinearLayout.m */; };
+		421A3AAB20EF058500BCDAF1 /* MyLayoutPos.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A9820EF058500BCDAF1 /* MyLayoutPos.m */; };
+		421A3AAC20EF058500BCDAF1 /* MyBorderline.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A9920EF058500BCDAF1 /* MyBorderline.m */; };
+		421A3AAD20EF058500BCDAF1 /* MyLayoutSizeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A9A20EF058500BCDAF1 /* MyLayoutSizeClass.m */; };
+		421A3AB620EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3AB520EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.m */; };
+		421A3AB920EF1AF600BCDAF1 /* SystemKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3AB820EF1AF600BCDAF1 /* SystemKeyboardVC.m */; };
+		421A3B2120EF3DF000BCDAF1 /* AccessoryView_Finish_TouchDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ABC20EF3DEF00BCDAF1 /* AccessoryView_Finish_TouchDown.png */; };
+		421A3B2220EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ABD20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B2320EF3DF000BCDAF1 /* Custom_KeyBoard_BigCharacter_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ABF20EF3DEF00BCDAF1 /* Custom_KeyBoard_BigCharacter_Icon@2x.png */; };
+		421A3B2420EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AC020EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B2520EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AC220EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B2620EF3DF000BCDAF1 /* NumberKeyBoard_Number_WhiteBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AC320EF3DEF00BCDAF1 /* NumberKeyBoard_Number_WhiteBackground.png */; };
+		421A3B2720EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AC520EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B2820EF3DF000BCDAF1 /* Custom_CharacterKeyBoard_WhiteBackground_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AC620EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_WhiteBackground_Icon@2x.png */; };
+		421A3B2920EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AC820EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B2A20EF3DF000BCDAF1 /* NumberKeyBoard_Back_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AC920EF3DEF00BCDAF1 /* NumberKeyBoard_Back_Normal.png */; };
+		421A3B2B20EF3DF000BCDAF1 /* Custom_NumberKeyBoard_WhiteBackground_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ACB20EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_WhiteBackground_Icon@2x.png */; };
+		421A3B2C20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ACC20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B2D20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ACE20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B2E20EF3DF000BCDAF1 /* Custom_KeyBoard_Logo_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ACF20EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.png */; };
+		421A3B2F20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AD120EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B3020EF3DF000BCDAF1 /* CharacterKeyBoard_Shift_Small_HightLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AD220EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small_HightLight.png */; };
+		421A3B3120EF3DF000BCDAF1 /* Custom_NumberKeyBoard_GrayBackground_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AD420EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_GrayBackground_Icon@2x.png */; };
+		421A3B3220EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AD520EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B3320EF3DF000BCDAF1 /* CharacterKeyBoard_Shift_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AD720EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Big.png */; };
+		421A3B3420EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AD820EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B3520EF3DF000BCDAF1 /* CharacterKeyBoard_PopOut.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ADA20EF3DEF00BCDAF1 /* CharacterKeyBoard_PopOut.png */; };
+		421A3B3620EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ADB20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B3720EF3DF000BCDAF1 /* NumberKeyBoard_Number_TouchDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ADD20EF3DEF00BCDAF1 /* NumberKeyBoard_Number_TouchDown.png */; };
+		421A3B3820EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3ADE20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B3920EF3DF000BCDAF1 /* Custom_CharacterKeyBoard_TouchDown_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AE020EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_TouchDown_Icon@2x.png */; };
+		421A3B3A20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AE120EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B3B20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AE320EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B3C20EF3DF000BCDAF1 /* CharacterKeyBoard_Space_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AE420EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_Normal.png */; };
+		421A3B3D20EF3DF000BCDAF1 /* CharacterKeyBoard_Shift_BigFixed.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AE620EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_BigFixed.png */; };
+		421A3B3E20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AE720EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B3F20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AE920EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B4020EF3DF000BCDAF1 /* Custom_KeyBoard_SmallCharacter_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AEA20EF3DEF00BCDAF1 /* Custom_KeyBoard_SmallCharacter_Icon@2x.png */; };
+		421A3B4120EF3DF000BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AEC20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png */; };
+		421A3B4220EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AED20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B4320EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AEF20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B4420EF3DF000BCDAF1 /* NumberKeyBoard_Back_TouchDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AF020EF3DEF00BCDAF1 /* NumberKeyBoard_Back_TouchDown.png */; };
+		421A3B4520EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AF220EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B4620EF3DF000BCDAF1 /* CharacterKeyBoard_Shift_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AF320EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small.png */; };
+		421A3B4720EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AF520EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B4820EF3DF000BCDAF1 /* CharacterKeyBoard_Space_TouchDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AF620EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_TouchDown.png */; };
+		421A3B4920EF3DF000BCDAF1 /* CharacterKeyBoard_TouchDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AF820EF3DEF00BCDAF1 /* CharacterKeyBoard_TouchDown.png */; };
+		421A3B4A20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AF920EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B4B20EF3DF000BCDAF1 /* AccessoryView_Finish_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AFB20EF3DEF00BCDAF1 /* AccessoryView_Finish_Normal.png */; };
+		421A3B4C20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AFC20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B4D20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AFE20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B4E20EF3DF000BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3AFF20EF3DEF00BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png */; };
+		421A3B4F20EF3DF000BCDAF1 /* CharacterKeyBoard_WhiteBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0120EF3DEF00BCDAF1 /* CharacterKeyBoard_WhiteBackground.png */; };
+		421A3B5020EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0220EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5120EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0320EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5220EF3DF000BCDAF1 /* CharacterKeyBoard_Back_TouchDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0520EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_TouchDown.png */; };
+		421A3B5320EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0620EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5420EF3DF000BCDAF1 /* NumberKeyBoard_Number_GrayBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0820EF3DEF00BCDAF1 /* NumberKeyBoard_Number_GrayBackground.png */; };
+		421A3B5520EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0920EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5620EF3DF000BCDAF1 /* Custom_KeyBoard_Clear2_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0B20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear2_Icon@2x.png */; };
+		421A3B5720EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0C20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5820EF3DF000BCDAF1 /* Custom_CharacterKeyBoard_Space_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0E20EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_Space_Icon@2x.png */; };
+		421A3B5920EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B0F20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5A20EF3DF000BCDAF1 /* Custom_CharacterKeyBoard_PopOut_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1120EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_PopOut_Icon@2x.png */; };
+		421A3B5B20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1220EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5C20EF3DF000BCDAF1 /* CharacterKeyBoard_Back_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1420EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_Normal.png */; };
+		421A3B5D20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1520EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5E20EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1820EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B5F20EF3DF000BCDAF1 /* Custom_KeyBoard_Logo_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1920EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.png */; };
+		421A3B6020EF3DF000BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1B20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png */; };
+		421A3B6120EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1C20EF3DEF00BCDAF1 /* Contents.json */; };
+		421A3B6220EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1E20EF3DF000BCDAF1 /* Contents.json */; };
+		421A3B6320EF3DF000BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B1F20EF3DF000BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png */; };
+		421A3B6420EF3DF000BCDAF1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 421A3B2020EF3DF000BCDAF1 /* Contents.json */; };
+		421A3B6720EF3DFE00BCDAF1 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3B6520EF3DFE00BCDAF1 /* UIView+Extension.m */; };
+		422ED2C120FF45F000C77C64 /* MCPasswordKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422ED2BA20FF45F000C77C64 /* MCPasswordKeyboardView.m */; };
+		422ED2C220FF45F000C77C64 /* MCPasswordKeyboardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422ED2BB20FF45F000C77C64 /* MCPasswordKeyboardTextView.m */; };
+		422ED2C320FF45F000C77C64 /* PasswordKeyboardTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 422ED2BF20FF45F000C77C64 /* PasswordKeyboardTextField.m */; };
+		422ED2C420FF45F000C77C64 /* PasswordKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422ED2C020FF45F000C77C64 /* PasswordKeyboardView.m */; };
+		42778B4B20F6F6E400B7582F /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B2A20F6F6E300B7582F /* IQTextView.m */; };
+		42778B4C20F6F6E400B7582F /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B2E20F6F6E300B7582F /* IQToolbar.m */; };
+		42778B4D20F6F6E400B7582F /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B3020F6F6E300B7582F /* IQTitleBarButtonItem.m */; };
+		42778B4E20F6F6E400B7582F /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B3120F6F6E300B7582F /* IQBarButtonItem.m */; };
+		42778B4F20F6F6E400B7582F /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B3220F6F6E300B7582F /* IQUIView+IQKeyboardToolbar.m */; };
+		42778B5020F6F6E400B7582F /* IQPreviousNextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B3320F6F6E300B7582F /* IQPreviousNextView.m */; };
+		42778B5120F6F6E400B7582F /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 42778B3B20F6F6E300B7582F /* IQKeyboardManager.bundle */; };
+		42778B5220F6F6E400B7582F /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B3E20F6F6E300B7582F /* IQKeyboardManager.m */; };
+		42778B5320F6F6E400B7582F /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B4020F6F6E300B7582F /* IQNSArray+Sort.m */; };
+		42778B5420F6F6E400B7582F /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B4220F6F6E300B7582F /* IQUITextFieldView+Additions.m */; };
+		42778B5520F6F6E400B7582F /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B4320F6F6E300B7582F /* IQUIScrollView+Additions.m */; };
+		42778B5620F6F6E400B7582F /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B4420F6F6E300B7582F /* IQUIView+Hierarchy.m */; };
+		42778B5720F6F6E400B7582F /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B4820F6F6E300B7582F /* IQUIViewController+Additions.m */; };
+		42778B5820F6F6E400B7582F /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B4A20F6F6E300B7582F /* IQKeyboardReturnKeyHandler.m */; };
+		42778B5C20F7339900B7582F /* HybrideKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B5B20F7339900B7582F /* HybrideKeyboardVC.m */; };
+		42778B6720F7357700B7582F /* HybrideCharacterKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B6120F7357700B7582F /* HybrideCharacterKeyboardLayout.m */; };
+		42778B6820F7357700B7582F /* HybrideSpecialKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B6520F7357700B7582F /* HybrideSpecialKeyboardLayout.m */; };
+		42778B6920F7357700B7582F /* HybrideKeyBoardField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B6620F7357700B7582F /* HybrideKeyBoardField.m */; };
+		429649D720FC341C0036F166 /* PasswordKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 429649D620FC341C0036F166 /* PasswordKeyboardVC.m */; };
+		42C6582F20FD729400CCB957 /* MCNumberKeyboardTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6582320FD729300CCB957 /* MCNumberKeyboardTextFieldView.m */; };
+		42C6583220FD729400CCB957 /* MCNumberKeyboardTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6582B20FD729300CCB957 /* MCNumberKeyboardTextField.m */; };
+		42C6583320FD729400CCB957 /* MCNumberKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6582C20FD729300CCB957 /* MCNumberKeyboardView.m */; };
+		42C6583D20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6583C20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		421A3A2220EF043300BCDAF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 421A3A0120EF043000BCDAF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 421A3A0820EF043000BCDAF1;
+			remoteInfo = KeyboardSummary;
+		};
+		421A3A2D20EF043300BCDAF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 421A3A0120EF043000BCDAF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 421A3A0820EF043000BCDAF1;
+			remoteInfo = KeyboardSummary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		421A3A0920EF043000BCDAF1 /* KeyboardSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		421A3A0C20EF043000BCDAF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		421A3A0D20EF043000BCDAF1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		421A3A0F20EF043000BCDAF1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		421A3A1020EF043000BCDAF1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		421A3A1320EF043000BCDAF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		421A3A1520EF043200BCDAF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		421A3A1820EF043200BCDAF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		421A3A1A20EF043200BCDAF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		421A3A1B20EF043200BCDAF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		421A3A2120EF043300BCDAF1 /* KeyboardSummaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardSummaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		421A3A2520EF043300BCDAF1 /* KeyboardSummaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardSummaryTests.m; sourceTree = "<group>"; };
+		421A3A2720EF043300BCDAF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		421A3A2C20EF043300BCDAF1 /* KeyboardSummaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardSummaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		421A3A3020EF043300BCDAF1 /* KeyboardSummaryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardSummaryUITests.m; sourceTree = "<group>"; };
+		421A3A3220EF043300BCDAF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		421A3A3F20EF050400BCDAF1 /* ChineseKeyboardTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseKeyboardTextField.h; sourceTree = "<group>"; };
+		421A3A4020EF050400BCDAF1 /* ChineseKeyboardTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseKeyboardTextField.m; sourceTree = "<group>"; };
+		421A3A4920EF050500BCDAF1 /* MCNumberKeyboardMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNumberKeyboardMethod.h; sourceTree = "<group>"; };
+		421A3A4A20EF050500BCDAF1 /* MCNumberKeyboardMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNumberKeyboardMethod.m; sourceTree = "<group>"; };
+		421A3A4D20EF050500BCDAF1 /* MCCharacterLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCharacterLabel.m; sourceTree = "<group>"; };
+		421A3A4E20EF050500BCDAF1 /* MCCharacterLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCharacterLabel.h; sourceTree = "<group>"; };
+		421A3A5020EF050500BCDAF1 /* SafeKeyBoardField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeKeyBoardField.h; sourceTree = "<group>"; };
+		421A3A5120EF050500BCDAF1 /* SafeKeyBoardField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeKeyBoardField.m; sourceTree = "<group>"; };
+		421A3A5320EF050500BCDAF1 /* MCNumberKeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNumberKeyboardLayout.m; sourceTree = "<group>"; };
+		421A3A5420EF050500BCDAF1 /* MCNumberKeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNumberKeyboardLayout.h; sourceTree = "<group>"; };
+		421A3A5620EF050500BCDAF1 /* SoundAndShakeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundAndShakeTool.h; sourceTree = "<group>"; };
+		421A3A5720EF050500BCDAF1 /* Sound1_Tock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound1_Tock.mp3; sourceTree = "<group>"; };
+		421A3A5820EF050500BCDAF1 /* SoundAndShakeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundAndShakeTool.m; sourceTree = "<group>"; };
+		421A3A5920EF050500BCDAF1 /* Sound2_Tock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound2_Tock.mp3; sourceTree = "<group>"; };
+		421A3A5B20EF050500BCDAF1 /* MCSpecialKeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSpecialKeyboardLayout.h; sourceTree = "<group>"; };
+		421A3A5C20EF050500BCDAF1 /* MCSpecialKeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSpecialKeyboardLayout.m; sourceTree = "<group>"; };
+		421A3A5E20EF050500BCDAF1 /* MCAccessoryLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAccessoryLayout.m; sourceTree = "<group>"; };
+		421A3A5F20EF050500BCDAF1 /* MCAccessoryLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAccessoryLayout.h; sourceTree = "<group>"; };
+		421A3A6120EF050500BCDAF1 /* MCCharacterKeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCharacterKeyboardLayout.m; sourceTree = "<group>"; };
+		421A3A6220EF050500BCDAF1 /* MCCharacterKeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCharacterKeyboardLayout.h; sourceTree = "<group>"; };
+		421A3A7220EF058500BCDAF1 /* MyLayoutSizeInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutSizeInner.h; sourceTree = "<group>"; };
+		421A3A7320EF058500BCDAF1 /* MyLayoutPosInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutPosInner.h; sourceTree = "<group>"; };
+		421A3A7420EF058500BCDAF1 /* MyTableLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableLayout.h; sourceTree = "<group>"; };
+		421A3A7520EF058500BCDAF1 /* MyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlowLayout.m; sourceTree = "<group>"; };
+		421A3A7620EF058500BCDAF1 /* MyPathLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPathLayout.h; sourceTree = "<group>"; };
+		421A3A7720EF058500BCDAF1 /* MyBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBaseLayout.h; sourceTree = "<group>"; };
+		421A3A7820EF058500BCDAF1 /* MyLayoutMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutMath.h; sourceTree = "<group>"; };
+		421A3A7920EF058500BCDAF1 /* MyGridNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGridNode.m; sourceTree = "<group>"; };
+		421A3A7A20EF058500BCDAF1 /* MyRelativeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRelativeLayout.m; sourceTree = "<group>"; };
+		421A3A7B20EF058500BCDAF1 /* MyLayoutSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLayoutSize.m; sourceTree = "<group>"; };
+		421A3A7C20EF058500BCDAF1 /* MyFloatLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFloatLayout.h; sourceTree = "<group>"; };
+		421A3A7D20EF058500BCDAF1 /* MyLinearLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLinearLayout.h; sourceTree = "<group>"; };
+		421A3A7E20EF058500BCDAF1 /* MyFrameLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFrameLayout.h; sourceTree = "<group>"; };
+		421A3A7F20EF058500BCDAF1 /* MyGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGrid.h; sourceTree = "<group>"; };
+		421A3A8020EF058500BCDAF1 /* MyLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayout.h; sourceTree = "<group>"; };
+		421A3A8120EF058500BCDAF1 /* MyLayoutDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutDef.h; sourceTree = "<group>"; };
+		421A3A8220EF058500BCDAF1 /* MyLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutDelegate.h; sourceTree = "<group>"; };
+		421A3A8320EF058500BCDAF1 /* MyDimeScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDimeScale.h; sourceTree = "<group>"; };
+		421A3A8420EF058500BCDAF1 /* MyGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGridLayout.m; sourceTree = "<group>"; };
+		421A3A8520EF058500BCDAF1 /* MyMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMaker.m; sourceTree = "<group>"; };
+		421A3A8620EF058500BCDAF1 /* MyLayoutSizeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutSizeClass.h; sourceTree = "<group>"; };
+		421A3A8720EF058500BCDAF1 /* MyLayoutInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutInner.h; sourceTree = "<group>"; };
+		421A3A8820EF058500BCDAF1 /* MyBorderline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBorderline.h; sourceTree = "<group>"; };
+		421A3A8920EF058500BCDAF1 /* MyLayoutPos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutPos.h; sourceTree = "<group>"; };
+		421A3A8A20EF058500BCDAF1 /* MyGridNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGridNode.h; sourceTree = "<group>"; };
+		421A3A8B20EF058500BCDAF1 /* MyLayoutMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLayoutMath.m; sourceTree = "<group>"; };
+		421A3A8C20EF058500BCDAF1 /* MyBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBaseLayout.m; sourceTree = "<group>"; };
+		421A3A8D20EF058500BCDAF1 /* MyPathLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPathLayout.m; sourceTree = "<group>"; };
+		421A3A8E20EF058500BCDAF1 /* MyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlowLayout.h; sourceTree = "<group>"; };
+		421A3A8F20EF058500BCDAF1 /* MyTableLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableLayout.m; sourceTree = "<group>"; };
+		421A3A9020EF058500BCDAF1 /* MyFloatLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFloatLayout.m; sourceTree = "<group>"; };
+		421A3A9120EF058500BCDAF1 /* MyLayoutSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLayoutSize.h; sourceTree = "<group>"; };
+		421A3A9220EF058500BCDAF1 /* MyRelativeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRelativeLayout.h; sourceTree = "<group>"; };
+		421A3A9320EF058500BCDAF1 /* MyGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGridLayout.h; sourceTree = "<group>"; };
+		421A3A9420EF058500BCDAF1 /* MyLayoutDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLayoutDelegate.m; sourceTree = "<group>"; };
+		421A3A9520EF058500BCDAF1 /* MyDimeScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDimeScale.m; sourceTree = "<group>"; };
+		421A3A9620EF058500BCDAF1 /* MyFrameLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFrameLayout.m; sourceTree = "<group>"; };
+		421A3A9720EF058500BCDAF1 /* MyLinearLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLinearLayout.m; sourceTree = "<group>"; };
+		421A3A9820EF058500BCDAF1 /* MyLayoutPos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLayoutPos.m; sourceTree = "<group>"; };
+		421A3A9920EF058500BCDAF1 /* MyBorderline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBorderline.m; sourceTree = "<group>"; };
+		421A3A9A20EF058500BCDAF1 /* MyLayoutSizeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLayoutSizeClass.m; sourceTree = "<group>"; };
+		421A3A9B20EF058500BCDAF1 /* MyMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMaker.h; sourceTree = "<group>"; };
+		421A3AAE20EF05DA00BCDAF1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		421A3AAF20EF065400BCDAF1 /* CommonDefined.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefined.h; sourceTree = "<group>"; };
+		421A3AB420EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfDefinedKeyboardVC.h; sourceTree = "<group>"; };
+		421A3AB520EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfDefinedKeyboardVC.m; sourceTree = "<group>"; };
+		421A3AB720EF1AF600BCDAF1 /* SystemKeyboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemKeyboardVC.h; sourceTree = "<group>"; };
+		421A3AB820EF1AF600BCDAF1 /* SystemKeyboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemKeyboardVC.m; sourceTree = "<group>"; };
+		421A3ABC20EF3DEF00BCDAF1 /* AccessoryView_Finish_TouchDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccessoryView_Finish_TouchDown.png; sourceTree = "<group>"; };
+		421A3ABD20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3ABF20EF3DEF00BCDAF1 /* Custom_KeyBoard_BigCharacter_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_KeyBoard_BigCharacter_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3AC020EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AC220EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AC320EF3DEF00BCDAF1 /* NumberKeyBoard_Number_WhiteBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberKeyBoard_Number_WhiteBackground.png; sourceTree = "<group>"; };
+		421A3AC520EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AC620EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_WhiteBackground_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_CharacterKeyBoard_WhiteBackground_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3AC820EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AC920EF3DEF00BCDAF1 /* NumberKeyBoard_Back_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberKeyBoard_Back_Normal.png; sourceTree = "<group>"; };
+		421A3ACB20EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_WhiteBackground_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_NumberKeyBoard_WhiteBackground_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3ACC20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3ACE20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3ACF20EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Custom_KeyBoard_Logo_Icon.png; sourceTree = "<group>"; };
+		421A3AD120EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AD220EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small_HightLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_Shift_Small_HightLight.png; sourceTree = "<group>"; };
+		421A3AD420EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_GrayBackground_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_NumberKeyBoard_GrayBackground_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3AD520EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AD720EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_Shift_Big.png; sourceTree = "<group>"; };
+		421A3AD820EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3ADA20EF3DEF00BCDAF1 /* CharacterKeyBoard_PopOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_PopOut.png; sourceTree = "<group>"; };
+		421A3ADB20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3ADD20EF3DEF00BCDAF1 /* NumberKeyBoard_Number_TouchDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberKeyBoard_Number_TouchDown.png; sourceTree = "<group>"; };
+		421A3ADE20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AE020EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_TouchDown_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_CharacterKeyBoard_TouchDown_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3AE120EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AE320EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AE420EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_Space_Normal.png; sourceTree = "<group>"; };
+		421A3AE620EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_BigFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_Shift_BigFixed.png; sourceTree = "<group>"; };
+		421A3AE720EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AE920EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AEA20EF3DEF00BCDAF1 /* Custom_KeyBoard_SmallCharacter_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_KeyBoard_SmallCharacter_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3AEC20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_KeyBoard_Clear_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3AED20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AEF20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AF020EF3DEF00BCDAF1 /* NumberKeyBoard_Back_TouchDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberKeyBoard_Back_TouchDown.png; sourceTree = "<group>"; };
+		421A3AF220EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AF320EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_Shift_Small.png; sourceTree = "<group>"; };
+		421A3AF520EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AF620EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_TouchDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_Space_TouchDown.png; sourceTree = "<group>"; };
+		421A3AF820EF3DEF00BCDAF1 /* CharacterKeyBoard_TouchDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_TouchDown.png; sourceTree = "<group>"; };
+		421A3AF920EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AFB20EF3DEF00BCDAF1 /* AccessoryView_Finish_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccessoryView_Finish_Normal.png; sourceTree = "<group>"; };
+		421A3AFC20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AFE20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3AFF20EF3DEF00BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_KeyBoard_Down_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3B0120EF3DEF00BCDAF1 /* CharacterKeyBoard_WhiteBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_WhiteBackground.png; sourceTree = "<group>"; };
+		421A3B0220EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B0320EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B0520EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_TouchDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_Back_TouchDown.png; sourceTree = "<group>"; };
+		421A3B0620EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B0820EF3DEF00BCDAF1 /* NumberKeyBoard_Number_GrayBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberKeyBoard_Number_GrayBackground.png; sourceTree = "<group>"; };
+		421A3B0920EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B0B20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear2_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_KeyBoard_Clear2_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3B0C20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B0E20EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_Space_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_CharacterKeyBoard_Space_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3B0F20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B1120EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_PopOut_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_CharacterKeyBoard_PopOut_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3B1220EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B1420EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CharacterKeyBoard_Back_Normal.png; sourceTree = "<group>"; };
+		421A3B1520EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B1820EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B1920EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Custom_KeyBoard_Logo_Icon.png; sourceTree = "<group>"; };
+		421A3B1B20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_KeyBoard_Clear_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3B1C20EF3DEF00BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B1E20EF3DF000BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B1F20EF3DF000BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Custom_KeyBoard_Down_Icon@2x.png"; sourceTree = "<group>"; };
+		421A3B2020EF3DF000BCDAF1 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		421A3B6520EF3DFE00BCDAF1 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		421A3B6620EF3DFE00BCDAF1 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		422ED2B820FF45F000C77C64 /* MCPasswordKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPasswordKeyboardView.h; sourceTree = "<group>"; };
+		422ED2B920FF45F000C77C64 /* MCPasswordKeyboardTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPasswordKeyboardTextView.h; sourceTree = "<group>"; };
+		422ED2BA20FF45F000C77C64 /* MCPasswordKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPasswordKeyboardView.m; sourceTree = "<group>"; };
+		422ED2BB20FF45F000C77C64 /* MCPasswordKeyboardTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPasswordKeyboardTextView.m; sourceTree = "<group>"; };
+		422ED2BD20FF45F000C77C64 /* PasswordKeyboardTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordKeyboardTextField.h; sourceTree = "<group>"; };
+		422ED2BE20FF45F000C77C64 /* PasswordKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordKeyboardView.h; sourceTree = "<group>"; };
+		422ED2BF20FF45F000C77C64 /* PasswordKeyboardTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordKeyboardTextField.m; sourceTree = "<group>"; };
+		422ED2C020FF45F000C77C64 /* PasswordKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordKeyboardView.m; sourceTree = "<group>"; };
+		42778B2A20F6F6E300B7582F /* IQTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTextView.m; sourceTree = "<group>"; };
+		42778B2B20F6F6E300B7582F /* IQTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTextView.h; sourceTree = "<group>"; };
+		42778B2D20F6F6E300B7582F /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		42778B2E20F6F6E300B7582F /* IQToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQToolbar.m; sourceTree = "<group>"; };
+		42778B2F20F6F6E300B7582F /* IQPreviousNextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQPreviousNextView.h; sourceTree = "<group>"; };
+		42778B3020F6F6E300B7582F /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		42778B3120F6F6E300B7582F /* IQBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQBarButtonItem.m; sourceTree = "<group>"; };
+		42778B3220F6F6E300B7582F /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		42778B3320F6F6E300B7582F /* IQPreviousNextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQPreviousNextView.m; sourceTree = "<group>"; };
+		42778B3420F6F6E300B7582F /* IQToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQToolbar.h; sourceTree = "<group>"; };
+		42778B3520F6F6E300B7582F /* IQBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQBarButtonItem.h; sourceTree = "<group>"; };
+		42778B3620F6F6E300B7582F /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		42778B3820F6F6E300B7582F /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		42778B3920F6F6E300B7582F /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		42778B3B20F6F6E300B7582F /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		42778B3C20F6F6E300B7582F /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		42778B3D20F6F6E300B7582F /* IQKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManager.h; sourceTree = "<group>"; };
+		42778B3E20F6F6E300B7582F /* IQKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardManager.m; sourceTree = "<group>"; };
+		42778B4020F6F6E300B7582F /* IQNSArray+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		42778B4120F6F6E300B7582F /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIViewController+Additions.h"; sourceTree = "<group>"; };
+		42778B4220F6F6E300B7582F /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
+		42778B4320F6F6E300B7582F /* IQUIScrollView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIScrollView+Additions.m"; sourceTree = "<group>"; };
+		42778B4420F6F6E300B7582F /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
+		42778B4520F6F6E300B7582F /* IQNSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		42778B4620F6F6E300B7582F /* IQUIScrollView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIScrollView+Additions.h"; sourceTree = "<group>"; };
+		42778B4720F6F6E300B7582F /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
+		42778B4820F6F6E300B7582F /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		42778B4920F6F6E300B7582F /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		42778B4A20F6F6E300B7582F /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		42778B5A20F7339900B7582F /* HybrideKeyboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HybrideKeyboardVC.h; sourceTree = "<group>"; };
+		42778B5B20F7339900B7582F /* HybrideKeyboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybrideKeyboardVC.m; sourceTree = "<group>"; };
+		42778B6020F7357700B7582F /* HybrideCharacterKeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HybrideCharacterKeyboardLayout.h; sourceTree = "<group>"; };
+		42778B6120F7357700B7582F /* HybrideCharacterKeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybrideCharacterKeyboardLayout.m; sourceTree = "<group>"; };
+		42778B6220F7357700B7582F /* HybrideKeyBoardField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HybrideKeyBoardField.h; sourceTree = "<group>"; };
+		42778B6420F7357700B7582F /* HybrideSpecialKeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HybrideSpecialKeyboardLayout.h; sourceTree = "<group>"; };
+		42778B6520F7357700B7582F /* HybrideSpecialKeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybrideSpecialKeyboardLayout.m; sourceTree = "<group>"; };
+		42778B6620F7357700B7582F /* HybrideKeyBoardField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybrideKeyBoardField.m; sourceTree = "<group>"; };
+		429649D520FC341C0036F166 /* PasswordKeyboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordKeyboardVC.h; sourceTree = "<group>"; };
+		429649D620FC341C0036F166 /* PasswordKeyboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordKeyboardVC.m; sourceTree = "<group>"; };
+		42C6582320FD729300CCB957 /* MCNumberKeyboardTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNumberKeyboardTextFieldView.m; sourceTree = "<group>"; };
+		42C6582A20FD729300CCB957 /* MCNumberKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNumberKeyboardView.h; sourceTree = "<group>"; };
+		42C6582B20FD729300CCB957 /* MCNumberKeyboardTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNumberKeyboardTextField.m; sourceTree = "<group>"; };
+		42C6582C20FD729300CCB957 /* MCNumberKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNumberKeyboardView.m; sourceTree = "<group>"; };
+		42C6582D20FD729300CCB957 /* MCNumberKeyboardTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNumberKeyboardTextField.h; sourceTree = "<group>"; };
+		42C6582E20FD729300CCB957 /* MCNumberKeyboardTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNumberKeyboardTextFieldView.h; sourceTree = "<group>"; };
+		42C6583B20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfDefinedSystemKeyboardVC.h; sourceTree = "<group>"; };
+		42C6583C20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfDefinedSystemKeyboardVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		421A3A0620EF043000BCDAF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		421A3A1E20EF043300BCDAF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		421A3A2920EF043300BCDAF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		421A3A0020EF043000BCDAF1 = {
+			isa = PBXGroup;
+			children = (
+				421A3A0B20EF043000BCDAF1 /* KeyboardSummary */,
+				421A3A2420EF043300BCDAF1 /* KeyboardSummaryTests */,
+				421A3A2F20EF043300BCDAF1 /* KeyboardSummaryUITests */,
+				421A3A0A20EF043000BCDAF1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		421A3A0A20EF043000BCDAF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A0920EF043000BCDAF1 /* KeyboardSummary.app */,
+				421A3A2120EF043300BCDAF1 /* KeyboardSummaryTests.xctest */,
+				421A3A2C20EF043300BCDAF1 /* KeyboardSummaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		421A3A0B20EF043000BCDAF1 /* KeyboardSummary */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AB020EF139600BCDAF1 /* Resources */,
+				421A3A3E20EF050400BCDAF1 /* MCChineseKeyboard */,
+				421A3A4120EF050500BCDAF1 /* MCNumberKeyboard */,
+				421A3A4B20EF050500BCDAF1 /* MCSecureKeyboard */,
+				42778B5920F706E700B7582F /* MCHybridKeyboard */,
+				429649CE20FC23210036F166 /* MCPasswordKeyboard */,
+				421A3A0C20EF043000BCDAF1 /* AppDelegate.h */,
+				421A3A0D20EF043000BCDAF1 /* AppDelegate.m */,
+				421A3A0F20EF043000BCDAF1 /* ViewController.h */,
+				421A3A1020EF043000BCDAF1 /* ViewController.m */,
+				421A3AB720EF1AF600BCDAF1 /* SystemKeyboardVC.h */,
+				421A3AB820EF1AF600BCDAF1 /* SystemKeyboardVC.m */,
+				421A3AB420EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.h */,
+				421A3AB520EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.m */,
+				42778B5A20F7339900B7582F /* HybrideKeyboardVC.h */,
+				42778B5B20F7339900B7582F /* HybrideKeyboardVC.m */,
+				429649D520FC341C0036F166 /* PasswordKeyboardVC.h */,
+				429649D620FC341C0036F166 /* PasswordKeyboardVC.m */,
+				42C6583B20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.h */,
+				42C6583C20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m */,
+				421A3A1220EF043000BCDAF1 /* Main.storyboard */,
+				421A3A1520EF043200BCDAF1 /* Assets.xcassets */,
+				421A3A1720EF043200BCDAF1 /* LaunchScreen.storyboard */,
+				421A3A1A20EF043200BCDAF1 /* Info.plist */,
+				421A3A1B20EF043200BCDAF1 /* main.m */,
+			);
+			path = KeyboardSummary;
+			sourceTree = "<group>";
+		};
+		421A3A2420EF043300BCDAF1 /* KeyboardSummaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A2520EF043300BCDAF1 /* KeyboardSummaryTests.m */,
+				421A3A2720EF043300BCDAF1 /* Info.plist */,
+			);
+			path = KeyboardSummaryTests;
+			sourceTree = "<group>";
+		};
+		421A3A2F20EF043300BCDAF1 /* KeyboardSummaryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A3020EF043300BCDAF1 /* KeyboardSummaryUITests.m */,
+				421A3A3220EF043300BCDAF1 /* Info.plist */,
+			);
+			path = KeyboardSummaryUITests;
+			sourceTree = "<group>";
+		};
+		421A3A3E20EF050400BCDAF1 /* MCChineseKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A3F20EF050400BCDAF1 /* ChineseKeyboardTextField.h */,
+				421A3A4020EF050400BCDAF1 /* ChineseKeyboardTextField.m */,
+			);
+			path = MCChineseKeyboard;
+			sourceTree = "<group>";
+		};
+		421A3A4120EF050500BCDAF1 /* MCNumberKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				42C6582E20FD729300CCB957 /* MCNumberKeyboardTextFieldView.h */,
+				42C6582320FD729300CCB957 /* MCNumberKeyboardTextFieldView.m */,
+				42C6582920FD729300CCB957 /* NumberKeyboard */,
+				421A3A4820EF050500BCDAF1 /* NumberKeyboardMethod */,
+			);
+			path = MCNumberKeyboard;
+			sourceTree = "<group>";
+		};
+		421A3A4820EF050500BCDAF1 /* NumberKeyboardMethod */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A4920EF050500BCDAF1 /* MCNumberKeyboardMethod.h */,
+				421A3A4A20EF050500BCDAF1 /* MCNumberKeyboardMethod.m */,
+			);
+			path = NumberKeyboardMethod;
+			sourceTree = "<group>";
+		};
+		421A3A4B20EF050500BCDAF1 /* MCSecureKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A4C20EF050500BCDAF1 /* SelfDefinedLabel */,
+				421A3A4F20EF050500BCDAF1 /* SafeKeyboardTextField */,
+				421A3A5220EF050500BCDAF1 /* NumberKeyboardLayout */,
+				421A3A5520EF050500BCDAF1 /* SafeKeyboardResources */,
+				421A3A5A20EF050500BCDAF1 /* SpecialKeyboardLayout */,
+				421A3A5D20EF050500BCDAF1 /* AccessoryLayout */,
+				421A3A6020EF050500BCDAF1 /* CharacterKeyboardLayout */,
+			);
+			path = MCSecureKeyboard;
+			sourceTree = "<group>";
+		};
+		421A3A4C20EF050500BCDAF1 /* SelfDefinedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A4E20EF050500BCDAF1 /* MCCharacterLabel.h */,
+				421A3A4D20EF050500BCDAF1 /* MCCharacterLabel.m */,
+			);
+			path = SelfDefinedLabel;
+			sourceTree = "<group>";
+		};
+		421A3A4F20EF050500BCDAF1 /* SafeKeyboardTextField */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A5020EF050500BCDAF1 /* SafeKeyBoardField.h */,
+				421A3A5120EF050500BCDAF1 /* SafeKeyBoardField.m */,
+			);
+			path = SafeKeyboardTextField;
+			sourceTree = "<group>";
+		};
+		421A3A5220EF050500BCDAF1 /* NumberKeyboardLayout */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A5420EF050500BCDAF1 /* MCNumberKeyboardLayout.h */,
+				421A3A5320EF050500BCDAF1 /* MCNumberKeyboardLayout.m */,
+			);
+			path = NumberKeyboardLayout;
+			sourceTree = "<group>";
+		};
+		421A3A5520EF050500BCDAF1 /* SafeKeyboardResources */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A5620EF050500BCDAF1 /* SoundAndShakeTool.h */,
+				421A3A5720EF050500BCDAF1 /* Sound1_Tock.mp3 */,
+				421A3A5820EF050500BCDAF1 /* SoundAndShakeTool.m */,
+				421A3A5920EF050500BCDAF1 /* Sound2_Tock.mp3 */,
+			);
+			path = SafeKeyboardResources;
+			sourceTree = "<group>";
+		};
+		421A3A5A20EF050500BCDAF1 /* SpecialKeyboardLayout */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A5B20EF050500BCDAF1 /* MCSpecialKeyboardLayout.h */,
+				421A3A5C20EF050500BCDAF1 /* MCSpecialKeyboardLayout.m */,
+			);
+			path = SpecialKeyboardLayout;
+			sourceTree = "<group>";
+		};
+		421A3A5D20EF050500BCDAF1 /* AccessoryLayout */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A5E20EF050500BCDAF1 /* MCAccessoryLayout.m */,
+				421A3A5F20EF050500BCDAF1 /* MCAccessoryLayout.h */,
+			);
+			path = AccessoryLayout;
+			sourceTree = "<group>";
+		};
+		421A3A6020EF050500BCDAF1 /* CharacterKeyboardLayout */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A6220EF050500BCDAF1 /* MCCharacterKeyboardLayout.h */,
+				421A3A6120EF050500BCDAF1 /* MCCharacterKeyboardLayout.m */,
+			);
+			path = CharacterKeyboardLayout;
+			sourceTree = "<group>";
+		};
+		421A3A7020EF058500BCDAF1 /* MyLayout */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A7120EF058500BCDAF1 /* Lib */,
+			);
+			path = MyLayout;
+			sourceTree = "<group>";
+		};
+		421A3A7120EF058500BCDAF1 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				421A3A7220EF058500BCDAF1 /* MyLayoutSizeInner.h */,
+				421A3A7320EF058500BCDAF1 /* MyLayoutPosInner.h */,
+				421A3A7420EF058500BCDAF1 /* MyTableLayout.h */,
+				421A3A7520EF058500BCDAF1 /* MyFlowLayout.m */,
+				421A3A7620EF058500BCDAF1 /* MyPathLayout.h */,
+				421A3A7720EF058500BCDAF1 /* MyBaseLayout.h */,
+				421A3A7820EF058500BCDAF1 /* MyLayoutMath.h */,
+				421A3A7920EF058500BCDAF1 /* MyGridNode.m */,
+				421A3A7A20EF058500BCDAF1 /* MyRelativeLayout.m */,
+				421A3A7B20EF058500BCDAF1 /* MyLayoutSize.m */,
+				421A3A7C20EF058500BCDAF1 /* MyFloatLayout.h */,
+				421A3A7D20EF058500BCDAF1 /* MyLinearLayout.h */,
+				421A3A7E20EF058500BCDAF1 /* MyFrameLayout.h */,
+				421A3A7F20EF058500BCDAF1 /* MyGrid.h */,
+				421A3A8020EF058500BCDAF1 /* MyLayout.h */,
+				421A3A8120EF058500BCDAF1 /* MyLayoutDef.h */,
+				421A3A8220EF058500BCDAF1 /* MyLayoutDelegate.h */,
+				421A3A8320EF058500BCDAF1 /* MyDimeScale.h */,
+				421A3A8420EF058500BCDAF1 /* MyGridLayout.m */,
+				421A3A8520EF058500BCDAF1 /* MyMaker.m */,
+				421A3A8620EF058500BCDAF1 /* MyLayoutSizeClass.h */,
+				421A3A8720EF058500BCDAF1 /* MyLayoutInner.h */,
+				421A3A8820EF058500BCDAF1 /* MyBorderline.h */,
+				421A3A8920EF058500BCDAF1 /* MyLayoutPos.h */,
+				421A3A8A20EF058500BCDAF1 /* MyGridNode.h */,
+				421A3A8B20EF058500BCDAF1 /* MyLayoutMath.m */,
+				421A3A8C20EF058500BCDAF1 /* MyBaseLayout.m */,
+				421A3A8D20EF058500BCDAF1 /* MyPathLayout.m */,
+				421A3A8E20EF058500BCDAF1 /* MyFlowLayout.h */,
+				421A3A8F20EF058500BCDAF1 /* MyTableLayout.m */,
+				421A3A9020EF058500BCDAF1 /* MyFloatLayout.m */,
+				421A3A9120EF058500BCDAF1 /* MyLayoutSize.h */,
+				421A3A9220EF058500BCDAF1 /* MyRelativeLayout.h */,
+				421A3A9320EF058500BCDAF1 /* MyGridLayout.h */,
+				421A3A9420EF058500BCDAF1 /* MyLayoutDelegate.m */,
+				421A3A9520EF058500BCDAF1 /* MyDimeScale.m */,
+				421A3A9620EF058500BCDAF1 /* MyFrameLayout.m */,
+				421A3A9720EF058500BCDAF1 /* MyLinearLayout.m */,
+				421A3A9820EF058500BCDAF1 /* MyLayoutPos.m */,
+				421A3A9920EF058500BCDAF1 /* MyBorderline.m */,
+				421A3A9A20EF058500BCDAF1 /* MyLayoutSizeClass.m */,
+				421A3A9B20EF058500BCDAF1 /* MyMaker.h */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		421A3AB020EF139600BCDAF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42778B2820F6F6E300B7582F /* IQKeyboardManager */,
+				421A3AAE20EF05DA00BCDAF1 /* PrefixHeader.pch */,
+				421A3AAF20EF065400BCDAF1 /* CommonDefined.h */,
+				421A3B6620EF3DFE00BCDAF1 /* UIView+Extension.h */,
+				421A3B6520EF3DFE00BCDAF1 /* UIView+Extension.m */,
+				421A3B1620EF3DEF00BCDAF1 /* CustomKeyBoardIcons */,
+				421A3ABA20EF3DEF00BCDAF1 /* MCSafeKeyBoardIcons */,
+				421A3A7020EF058500BCDAF1 /* MyLayout */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		421A3ABA20EF3DEF00BCDAF1 /* MCSafeKeyBoardIcons */ = {
+			isa = PBXGroup;
+			children = (
+				421A3ABB20EF3DEF00BCDAF1 /* AccessoryView_Finish_TouchDown.imageset */,
+				421A3ABE20EF3DEF00BCDAF1 /* Custom_KeyBoard_BigCharacter_Icon.imageset */,
+				421A3AC120EF3DEF00BCDAF1 /* NumberKeyBoard_Number_WhiteBackground.imageset */,
+				421A3AC420EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_WhiteBackground_Icon.imageset */,
+				421A3AC720EF3DEF00BCDAF1 /* NumberKeyBoard_Back_Normal.imageset */,
+				421A3ACA20EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_WhiteBackground_Icon.imageset */,
+				421A3ACD20EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.imageset */,
+				421A3AD020EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small_HightLight.imageset */,
+				421A3AD320EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_GrayBackground_Icon.imageset */,
+				421A3AD620EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Big.imageset */,
+				421A3AD920EF3DEF00BCDAF1 /* CharacterKeyBoard_PopOut.imageset */,
+				421A3ADC20EF3DEF00BCDAF1 /* NumberKeyBoard_Number_TouchDown.imageset */,
+				421A3ADF20EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_TouchDown_Icon.imageset */,
+				421A3AE220EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_Normal.imageset */,
+				421A3AE520EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_BigFixed.imageset */,
+				421A3AE820EF3DEF00BCDAF1 /* Custom_KeyBoard_SmallCharacter_Icon.imageset */,
+				421A3AEB20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon.imageset */,
+				421A3AEE20EF3DEF00BCDAF1 /* NumberKeyBoard_Back_TouchDown.imageset */,
+				421A3AF120EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small.imageset */,
+				421A3AF420EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_TouchDown.imageset */,
+				421A3AF720EF3DEF00BCDAF1 /* CharacterKeyBoard_TouchDown.imageset */,
+				421A3AFA20EF3DEF00BCDAF1 /* AccessoryView_Finish_Normal.imageset */,
+				421A3AFD20EF3DEF00BCDAF1 /* Custom_KeyBoard_Down_Icon.imageset */,
+				421A3B0020EF3DEF00BCDAF1 /* CharacterKeyBoard_WhiteBackground.imageset */,
+				421A3B0320EF3DEF00BCDAF1 /* Contents.json */,
+				421A3B0420EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_TouchDown.imageset */,
+				421A3B0720EF3DEF00BCDAF1 /* NumberKeyBoard_Number_GrayBackground.imageset */,
+				421A3B0A20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear2_Icon.imageset */,
+				421A3B0D20EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_Space_Icon.imageset */,
+				421A3B1020EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_PopOut_Icon.imageset */,
+				421A3B1320EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_Normal.imageset */,
+			);
+			path = MCSafeKeyBoardIcons;
+			sourceTree = "<group>";
+		};
+		421A3ABB20EF3DEF00BCDAF1 /* AccessoryView_Finish_TouchDown.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3ABC20EF3DEF00BCDAF1 /* AccessoryView_Finish_TouchDown.png */,
+				421A3ABD20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = AccessoryView_Finish_TouchDown.imageset;
+			sourceTree = "<group>";
+		};
+		421A3ABE20EF3DEF00BCDAF1 /* Custom_KeyBoard_BigCharacter_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3ABF20EF3DEF00BCDAF1 /* Custom_KeyBoard_BigCharacter_Icon@2x.png */,
+				421A3AC020EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_KeyBoard_BigCharacter_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AC120EF3DEF00BCDAF1 /* NumberKeyBoard_Number_WhiteBackground.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AC220EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AC320EF3DEF00BCDAF1 /* NumberKeyBoard_Number_WhiteBackground.png */,
+			);
+			path = NumberKeyBoard_Number_WhiteBackground.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AC420EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_WhiteBackground_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AC520EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AC620EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_WhiteBackground_Icon@2x.png */,
+			);
+			path = Custom_CharacterKeyBoard_WhiteBackground_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AC720EF3DEF00BCDAF1 /* NumberKeyBoard_Back_Normal.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AC820EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AC920EF3DEF00BCDAF1 /* NumberKeyBoard_Back_Normal.png */,
+			);
+			path = NumberKeyBoard_Back_Normal.imageset;
+			sourceTree = "<group>";
+		};
+		421A3ACA20EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_WhiteBackground_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3ACB20EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_WhiteBackground_Icon@2x.png */,
+				421A3ACC20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_NumberKeyBoard_WhiteBackground_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3ACD20EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3ACE20EF3DEF00BCDAF1 /* Contents.json */,
+				421A3ACF20EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.png */,
+			);
+			path = Custom_KeyBoard_Logo_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AD020EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small_HightLight.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AD120EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AD220EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small_HightLight.png */,
+			);
+			path = CharacterKeyBoard_Shift_Small_HightLight.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AD320EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_GrayBackground_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AD420EF3DEF00BCDAF1 /* Custom_NumberKeyBoard_GrayBackground_Icon@2x.png */,
+				421A3AD520EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_NumberKeyBoard_GrayBackground_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AD620EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Big.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AD720EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Big.png */,
+				421A3AD820EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = CharacterKeyBoard_Shift_Big.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AD920EF3DEF00BCDAF1 /* CharacterKeyBoard_PopOut.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3ADA20EF3DEF00BCDAF1 /* CharacterKeyBoard_PopOut.png */,
+				421A3ADB20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = CharacterKeyBoard_PopOut.imageset;
+			sourceTree = "<group>";
+		};
+		421A3ADC20EF3DEF00BCDAF1 /* NumberKeyBoard_Number_TouchDown.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3ADD20EF3DEF00BCDAF1 /* NumberKeyBoard_Number_TouchDown.png */,
+				421A3ADE20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = NumberKeyBoard_Number_TouchDown.imageset;
+			sourceTree = "<group>";
+		};
+		421A3ADF20EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_TouchDown_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AE020EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_TouchDown_Icon@2x.png */,
+				421A3AE120EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_CharacterKeyBoard_TouchDown_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AE220EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_Normal.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AE320EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AE420EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_Normal.png */,
+			);
+			path = CharacterKeyBoard_Space_Normal.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AE520EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_BigFixed.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AE620EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_BigFixed.png */,
+				421A3AE720EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = CharacterKeyBoard_Shift_BigFixed.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AE820EF3DEF00BCDAF1 /* Custom_KeyBoard_SmallCharacter_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AE920EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AEA20EF3DEF00BCDAF1 /* Custom_KeyBoard_SmallCharacter_Icon@2x.png */,
+			);
+			path = Custom_KeyBoard_SmallCharacter_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AEB20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AEC20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png */,
+				421A3AED20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_KeyBoard_Clear_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AEE20EF3DEF00BCDAF1 /* NumberKeyBoard_Back_TouchDown.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AEF20EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AF020EF3DEF00BCDAF1 /* NumberKeyBoard_Back_TouchDown.png */,
+			);
+			path = NumberKeyBoard_Back_TouchDown.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AF120EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AF220EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AF320EF3DEF00BCDAF1 /* CharacterKeyBoard_Shift_Small.png */,
+			);
+			path = CharacterKeyBoard_Shift_Small.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AF420EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_TouchDown.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AF520EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AF620EF3DEF00BCDAF1 /* CharacterKeyBoard_Space_TouchDown.png */,
+			);
+			path = CharacterKeyBoard_Space_TouchDown.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AF720EF3DEF00BCDAF1 /* CharacterKeyBoard_TouchDown.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AF820EF3DEF00BCDAF1 /* CharacterKeyBoard_TouchDown.png */,
+				421A3AF920EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = CharacterKeyBoard_TouchDown.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AFA20EF3DEF00BCDAF1 /* AccessoryView_Finish_Normal.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AFB20EF3DEF00BCDAF1 /* AccessoryView_Finish_Normal.png */,
+				421A3AFC20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = AccessoryView_Finish_Normal.imageset;
+			sourceTree = "<group>";
+		};
+		421A3AFD20EF3DEF00BCDAF1 /* Custom_KeyBoard_Down_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AFE20EF3DEF00BCDAF1 /* Contents.json */,
+				421A3AFF20EF3DEF00BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png */,
+			);
+			path = Custom_KeyBoard_Down_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B0020EF3DEF00BCDAF1 /* CharacterKeyBoard_WhiteBackground.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B0120EF3DEF00BCDAF1 /* CharacterKeyBoard_WhiteBackground.png */,
+				421A3B0220EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = CharacterKeyBoard_WhiteBackground.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B0420EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_TouchDown.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B0520EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_TouchDown.png */,
+				421A3B0620EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = CharacterKeyBoard_Back_TouchDown.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B0720EF3DEF00BCDAF1 /* NumberKeyBoard_Number_GrayBackground.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B0820EF3DEF00BCDAF1 /* NumberKeyBoard_Number_GrayBackground.png */,
+				421A3B0920EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = NumberKeyBoard_Number_GrayBackground.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B0A20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear2_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B0B20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear2_Icon@2x.png */,
+				421A3B0C20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_KeyBoard_Clear2_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B0D20EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_Space_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B0E20EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_Space_Icon@2x.png */,
+				421A3B0F20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_CharacterKeyBoard_Space_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B1020EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_PopOut_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B1120EF3DEF00BCDAF1 /* Custom_CharacterKeyBoard_PopOut_Icon@2x.png */,
+				421A3B1220EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_CharacterKeyBoard_PopOut_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B1320EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_Normal.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B1420EF3DEF00BCDAF1 /* CharacterKeyBoard_Back_Normal.png */,
+				421A3B1520EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = CharacterKeyBoard_Back_Normal.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B1620EF3DEF00BCDAF1 /* CustomKeyBoardIcons */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B1720EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.imageset */,
+				421A3B1A20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon.imageset */,
+				421A3B1D20EF3DEF00BCDAF1 /* Custom_KeyBoard_Down_Icon.imageset */,
+				421A3B2020EF3DF000BCDAF1 /* Contents.json */,
+			);
+			path = CustomKeyBoardIcons;
+			sourceTree = "<group>";
+		};
+		421A3B1720EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B1820EF3DEF00BCDAF1 /* Contents.json */,
+				421A3B1920EF3DEF00BCDAF1 /* Custom_KeyBoard_Logo_Icon.png */,
+			);
+			path = Custom_KeyBoard_Logo_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B1A20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B1B20EF3DEF00BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png */,
+				421A3B1C20EF3DEF00BCDAF1 /* Contents.json */,
+			);
+			path = Custom_KeyBoard_Clear_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		421A3B1D20EF3DEF00BCDAF1 /* Custom_KeyBoard_Down_Icon.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				421A3B1E20EF3DF000BCDAF1 /* Contents.json */,
+				421A3B1F20EF3DF000BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png */,
+			);
+			path = Custom_KeyBoard_Down_Icon.imageset;
+			sourceTree = "<group>";
+		};
+		422ED2B720FF45F000C77C64 /* PasswordKeyboard2 */ = {
+			isa = PBXGroup;
+			children = (
+				422ED2B820FF45F000C77C64 /* MCPasswordKeyboardView.h */,
+				422ED2B920FF45F000C77C64 /* MCPasswordKeyboardTextView.h */,
+				422ED2BA20FF45F000C77C64 /* MCPasswordKeyboardView.m */,
+				422ED2BB20FF45F000C77C64 /* MCPasswordKeyboardTextView.m */,
+			);
+			path = PasswordKeyboard2;
+			sourceTree = "<group>";
+		};
+		422ED2BC20FF45F000C77C64 /* PasswordKeyboard1 */ = {
+			isa = PBXGroup;
+			children = (
+				422ED2BD20FF45F000C77C64 /* PasswordKeyboardTextField.h */,
+				422ED2BE20FF45F000C77C64 /* PasswordKeyboardView.h */,
+				422ED2BF20FF45F000C77C64 /* PasswordKeyboardTextField.m */,
+				422ED2C020FF45F000C77C64 /* PasswordKeyboardView.m */,
+			);
+			path = PasswordKeyboard1;
+			sourceTree = "<group>";
+		};
+		42778B2820F6F6E300B7582F /* IQKeyboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				42778B2920F6F6E300B7582F /* IQTextView */,
+				42778B2C20F6F6E300B7582F /* IQToolbar */,
+				42778B3720F6F6E300B7582F /* Constants */,
+				42778B3A20F6F6E300B7582F /* Resources */,
+				42778B3C20F6F6E300B7582F /* IQKeyboardReturnKeyHandler.h */,
+				42778B3D20F6F6E300B7582F /* IQKeyboardManager.h */,
+				42778B3E20F6F6E300B7582F /* IQKeyboardManager.m */,
+				42778B3F20F6F6E300B7582F /* Categories */,
+				42778B4A20F6F6E300B7582F /* IQKeyboardReturnKeyHandler.m */,
+			);
+			path = IQKeyboardManager;
+			sourceTree = "<group>";
+		};
+		42778B2920F6F6E300B7582F /* IQTextView */ = {
+			isa = PBXGroup;
+			children = (
+				42778B2A20F6F6E300B7582F /* IQTextView.m */,
+				42778B2B20F6F6E300B7582F /* IQTextView.h */,
+			);
+			path = IQTextView;
+			sourceTree = "<group>";
+		};
+		42778B2C20F6F6E300B7582F /* IQToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				42778B2D20F6F6E300B7582F /* IQUIView+IQKeyboardToolbar.h */,
+				42778B2E20F6F6E300B7582F /* IQToolbar.m */,
+				42778B2F20F6F6E300B7582F /* IQPreviousNextView.h */,
+				42778B3020F6F6E300B7582F /* IQTitleBarButtonItem.m */,
+				42778B3120F6F6E300B7582F /* IQBarButtonItem.m */,
+				42778B3220F6F6E300B7582F /* IQUIView+IQKeyboardToolbar.m */,
+				42778B3320F6F6E300B7582F /* IQPreviousNextView.m */,
+				42778B3420F6F6E300B7582F /* IQToolbar.h */,
+				42778B3520F6F6E300B7582F /* IQBarButtonItem.h */,
+				42778B3620F6F6E300B7582F /* IQTitleBarButtonItem.h */,
+			);
+			path = IQToolbar;
+			sourceTree = "<group>";
+		};
+		42778B3720F6F6E300B7582F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				42778B3820F6F6E300B7582F /* IQKeyboardManagerConstantsInternal.h */,
+				42778B3920F6F6E300B7582F /* IQKeyboardManagerConstants.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		42778B3A20F6F6E300B7582F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42778B3B20F6F6E300B7582F /* IQKeyboardManager.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		42778B3F20F6F6E300B7582F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				42778B4020F6F6E300B7582F /* IQNSArray+Sort.m */,
+				42778B4120F6F6E300B7582F /* IQUIViewController+Additions.h */,
+				42778B4220F6F6E300B7582F /* IQUITextFieldView+Additions.m */,
+				42778B4320F6F6E300B7582F /* IQUIScrollView+Additions.m */,
+				42778B4420F6F6E300B7582F /* IQUIView+Hierarchy.m */,
+				42778B4520F6F6E300B7582F /* IQNSArray+Sort.h */,
+				42778B4620F6F6E300B7582F /* IQUIScrollView+Additions.h */,
+				42778B4720F6F6E300B7582F /* IQUITextFieldView+Additions.h */,
+				42778B4820F6F6E300B7582F /* IQUIViewController+Additions.m */,
+				42778B4920F6F6E300B7582F /* IQUIView+Hierarchy.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		42778B5920F706E700B7582F /* MCHybridKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				42778B6220F7357700B7582F /* HybrideKeyBoardField.h */,
+				42778B6620F7357700B7582F /* HybrideKeyBoardField.m */,
+				42778B5F20F7357700B7582F /* HybrideCharacterLayout */,
+				42778B6320F7357700B7582F /* HybrideSpecialLayout */,
+			);
+			path = MCHybridKeyboard;
+			sourceTree = "<group>";
+		};
+		42778B5F20F7357700B7582F /* HybrideCharacterLayout */ = {
+			isa = PBXGroup;
+			children = (
+				42778B6020F7357700B7582F /* HybrideCharacterKeyboardLayout.h */,
+				42778B6120F7357700B7582F /* HybrideCharacterKeyboardLayout.m */,
+			);
+			path = HybrideCharacterLayout;
+			sourceTree = "<group>";
+		};
+		42778B6320F7357700B7582F /* HybrideSpecialLayout */ = {
+			isa = PBXGroup;
+			children = (
+				42778B6420F7357700B7582F /* HybrideSpecialKeyboardLayout.h */,
+				42778B6520F7357700B7582F /* HybrideSpecialKeyboardLayout.m */,
+			);
+			path = HybrideSpecialLayout;
+			sourceTree = "<group>";
+		};
+		429649CE20FC23210036F166 /* MCPasswordKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				422ED2BC20FF45F000C77C64 /* PasswordKeyboard1 */,
+				422ED2B720FF45F000C77C64 /* PasswordKeyboard2 */,
+			);
+			path = MCPasswordKeyboard;
+			sourceTree = "<group>";
+		};
+		42C6582920FD729300CCB957 /* NumberKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				42C6582A20FD729300CCB957 /* MCNumberKeyboardView.h */,
+				42C6582C20FD729300CCB957 /* MCNumberKeyboardView.m */,
+				42C6582D20FD729300CCB957 /* MCNumberKeyboardTextField.h */,
+				42C6582B20FD729300CCB957 /* MCNumberKeyboardTextField.m */,
+			);
+			path = NumberKeyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		421A3A0820EF043000BCDAF1 /* KeyboardSummary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 421A3A3520EF043300BCDAF1 /* Build configuration list for PBXNativeTarget "KeyboardSummary" */;
+			buildPhases = (
+				421A3A0520EF043000BCDAF1 /* Sources */,
+				421A3A0620EF043000BCDAF1 /* Frameworks */,
+				421A3A0720EF043000BCDAF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardSummary;
+			productName = KeyboardSummary;
+			productReference = 421A3A0920EF043000BCDAF1 /* KeyboardSummary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		421A3A2020EF043300BCDAF1 /* KeyboardSummaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 421A3A3820EF043300BCDAF1 /* Build configuration list for PBXNativeTarget "KeyboardSummaryTests" */;
+			buildPhases = (
+				421A3A1D20EF043300BCDAF1 /* Sources */,
+				421A3A1E20EF043300BCDAF1 /* Frameworks */,
+				421A3A1F20EF043300BCDAF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				421A3A2320EF043300BCDAF1 /* PBXTargetDependency */,
+			);
+			name = KeyboardSummaryTests;
+			productName = KeyboardSummaryTests;
+			productReference = 421A3A2120EF043300BCDAF1 /* KeyboardSummaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		421A3A2B20EF043300BCDAF1 /* KeyboardSummaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 421A3A3B20EF043300BCDAF1 /* Build configuration list for PBXNativeTarget "KeyboardSummaryUITests" */;
+			buildPhases = (
+				421A3A2820EF043300BCDAF1 /* Sources */,
+				421A3A2920EF043300BCDAF1 /* Frameworks */,
+				421A3A2A20EF043300BCDAF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				421A3A2E20EF043300BCDAF1 /* PBXTargetDependency */,
+			);
+			name = KeyboardSummaryUITests;
+			productName = KeyboardSummaryUITests;
+			productReference = 421A3A2C20EF043300BCDAF1 /* KeyboardSummaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		421A3A0120EF043000BCDAF1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = macheng;
+				TargetAttributes = {
+					421A3A0820EF043000BCDAF1 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					421A3A2020EF043300BCDAF1 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 421A3A0820EF043000BCDAF1;
+					};
+					421A3A2B20EF043300BCDAF1 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 421A3A0820EF043000BCDAF1;
+					};
+				};
+			};
+			buildConfigurationList = 421A3A0420EF043000BCDAF1 /* Build configuration list for PBXProject "KeyboardSummary" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 421A3A0020EF043000BCDAF1;
+			productRefGroup = 421A3A0A20EF043000BCDAF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				421A3A0820EF043000BCDAF1 /* KeyboardSummary */,
+				421A3A2020EF043300BCDAF1 /* KeyboardSummaryTests */,
+				421A3A2B20EF043300BCDAF1 /* KeyboardSummaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		421A3A0720EF043000BCDAF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				421A3B4A20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B4B20EF3DF000BCDAF1 /* AccessoryView_Finish_Normal.png in Resources */,
+				421A3B3020EF3DF000BCDAF1 /* CharacterKeyBoard_Shift_Small_HightLight.png in Resources */,
+				421A3B6020EF3DF000BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png in Resources */,
+				421A3B5B20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5920EF3DF000BCDAF1 /* Contents.json in Resources */,
+				42778B5120F6F6E400B7582F /* IQKeyboardManager.bundle in Resources */,
+				421A3B4120EF3DF000BCDAF1 /* Custom_KeyBoard_Clear_Icon@2x.png in Resources */,
+				421A3B3120EF3DF000BCDAF1 /* Custom_NumberKeyBoard_GrayBackground_Icon@2x.png in Resources */,
+				421A3B4D20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5820EF3DF000BCDAF1 /* Custom_CharacterKeyBoard_Space_Icon@2x.png in Resources */,
+				421A3B4020EF3DF000BCDAF1 /* Custom_KeyBoard_SmallCharacter_Icon@2x.png in Resources */,
+				421A3B2620EF3DF000BCDAF1 /* NumberKeyBoard_Number_WhiteBackground.png in Resources */,
+				421A3B4820EF3DF000BCDAF1 /* CharacterKeyBoard_Space_TouchDown.png in Resources */,
+				421A3B3B20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B3A20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5520EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B2A20EF3DF000BCDAF1 /* NumberKeyBoard_Back_Normal.png in Resources */,
+				421A3B2C20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B3C20EF3DF000BCDAF1 /* CharacterKeyBoard_Space_Normal.png in Resources */,
+				421A3B3420EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3A6C20EF050500BCDAF1 /* Sound2_Tock.mp3 in Resources */,
+				421A3A1920EF043200BCDAF1 /* LaunchScreen.storyboard in Resources */,
+				421A3B6320EF3DF000BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png in Resources */,
+				421A3B3F20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B2420EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5020EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B2E20EF3DF000BCDAF1 /* Custom_KeyBoard_Logo_Icon.png in Resources */,
+				421A3B6220EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3A1620EF043200BCDAF1 /* Assets.xcassets in Resources */,
+				421A3B3820EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5A20EF3DF000BCDAF1 /* Custom_CharacterKeyBoard_PopOut_Icon@2x.png in Resources */,
+				421A3A1420EF043000BCDAF1 /* Main.storyboard in Resources */,
+				421A3B2520EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B4220EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B2120EF3DF000BCDAF1 /* AccessoryView_Finish_TouchDown.png in Resources */,
+				421A3B5320EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5420EF3DF000BCDAF1 /* NumberKeyBoard_Number_GrayBackground.png in Resources */,
+				421A3B4F20EF3DF000BCDAF1 /* CharacterKeyBoard_WhiteBackground.png in Resources */,
+				421A3B3920EF3DF000BCDAF1 /* Custom_CharacterKeyBoard_TouchDown_Icon@2x.png in Resources */,
+				421A3B3720EF3DF000BCDAF1 /* NumberKeyBoard_Number_TouchDown.png in Resources */,
+				421A3B4C20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B3E20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5720EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3A6A20EF050500BCDAF1 /* Sound1_Tock.mp3 in Resources */,
+				421A3B3320EF3DF000BCDAF1 /* CharacterKeyBoard_Shift_Big.png in Resources */,
+				421A3B5C20EF3DF000BCDAF1 /* CharacterKeyBoard_Back_Normal.png in Resources */,
+				421A3B2D20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B4420EF3DF000BCDAF1 /* NumberKeyBoard_Back_TouchDown.png in Resources */,
+				421A3B5E20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B3520EF3DF000BCDAF1 /* CharacterKeyBoard_PopOut.png in Resources */,
+				421A3B5F20EF3DF000BCDAF1 /* Custom_KeyBoard_Logo_Icon.png in Resources */,
+				421A3B5620EF3DF000BCDAF1 /* Custom_KeyBoard_Clear2_Icon@2x.png in Resources */,
+				421A3B2B20EF3DF000BCDAF1 /* Custom_NumberKeyBoard_WhiteBackground_Icon@2x.png in Resources */,
+				421A3B4720EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B2320EF3DF000BCDAF1 /* Custom_KeyBoard_BigCharacter_Icon@2x.png in Resources */,
+				421A3B3620EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B3220EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B6120EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B2F20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5D20EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B2220EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B4920EF3DF000BCDAF1 /* CharacterKeyBoard_TouchDown.png in Resources */,
+				421A3B4320EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B4620EF3DF000BCDAF1 /* CharacterKeyBoard_Shift_Small.png in Resources */,
+				421A3B5120EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B6420EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B2720EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B4E20EF3DF000BCDAF1 /* Custom_KeyBoard_Down_Icon@2x.png in Resources */,
+				421A3B2820EF3DF000BCDAF1 /* Custom_CharacterKeyBoard_WhiteBackground_Icon@2x.png in Resources */,
+				421A3B2920EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B3D20EF3DF000BCDAF1 /* CharacterKeyBoard_Shift_BigFixed.png in Resources */,
+				421A3B4520EF3DF000BCDAF1 /* Contents.json in Resources */,
+				421A3B5220EF3DF000BCDAF1 /* CharacterKeyBoard_Back_TouchDown.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		421A3A1F20EF043300BCDAF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		421A3A2A20EF043300BCDAF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		421A3A0520EF043000BCDAF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42778B4E20F6F6E400B7582F /* IQBarButtonItem.m in Sources */,
+				421A3A1120EF043000BCDAF1 /* ViewController.m in Sources */,
+				421A3A6920EF050500BCDAF1 /* MCNumberKeyboardLayout.m in Sources */,
+				42778B5520F6F6E400B7582F /* IQUIScrollView+Additions.m in Sources */,
+				42778B6720F7357700B7582F /* HybrideCharacterKeyboardLayout.m in Sources */,
+				421A3A6E20EF050500BCDAF1 /* MCAccessoryLayout.m in Sources */,
+				42778B5820F6F6E400B7582F /* IQKeyboardReturnKeyHandler.m in Sources */,
+				42778B5220F6F6E400B7582F /* IQKeyboardManager.m in Sources */,
+				421A3AAD20EF058500BCDAF1 /* MyLayoutSizeClass.m in Sources */,
+				42778B5C20F7339900B7582F /* HybrideKeyboardVC.m in Sources */,
+				422ED2C120FF45F000C77C64 /* MCPasswordKeyboardView.m in Sources */,
+				429649D720FC341C0036F166 /* PasswordKeyboardVC.m in Sources */,
+				42778B4D20F6F6E400B7582F /* IQTitleBarButtonItem.m in Sources */,
+				42778B6820F7357700B7582F /* HybrideSpecialKeyboardLayout.m in Sources */,
+				421A3AAB20EF058500BCDAF1 /* MyLayoutPos.m in Sources */,
+				421A3AA720EF058500BCDAF1 /* MyLayoutDelegate.m in Sources */,
+				421A3AA220EF058500BCDAF1 /* MyLayoutMath.m in Sources */,
+				422ED2C420FF45F000C77C64 /* PasswordKeyboardView.m in Sources */,
+				421A3A6B20EF050500BCDAF1 /* SoundAndShakeTool.m in Sources */,
+				421A3A6D20EF050500BCDAF1 /* MCSpecialKeyboardLayout.m in Sources */,
+				42C6583D20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m in Sources */,
+				421A3B6720EF3DFE00BCDAF1 /* UIView+Extension.m in Sources */,
+				421A3AB920EF1AF600BCDAF1 /* SystemKeyboardVC.m in Sources */,
+				421A3A9C20EF058500BCDAF1 /* MyFlowLayout.m in Sources */,
+				421A3AA620EF058500BCDAF1 /* MyFloatLayout.m in Sources */,
+				42C6582F20FD729400CCB957 /* MCNumberKeyboardTextFieldView.m in Sources */,
+				421A3AA320EF058500BCDAF1 /* MyBaseLayout.m in Sources */,
+				421A3A6F20EF050500BCDAF1 /* MCCharacterKeyboardLayout.m in Sources */,
+				422ED2C320FF45F000C77C64 /* PasswordKeyboardTextField.m in Sources */,
+				421A3A6820EF050500BCDAF1 /* SafeKeyBoardField.m in Sources */,
+				421A3A9D20EF058500BCDAF1 /* MyGridNode.m in Sources */,
+				421A3A9F20EF058500BCDAF1 /* MyLayoutSize.m in Sources */,
+				42778B5320F6F6E400B7582F /* IQNSArray+Sort.m in Sources */,
+				421A3A6720EF050500BCDAF1 /* MCCharacterLabel.m in Sources */,
+				421A3A6620EF050500BCDAF1 /* MCNumberKeyboardMethod.m in Sources */,
+				42778B5620F6F6E400B7582F /* IQUIView+Hierarchy.m in Sources */,
+				422ED2C220FF45F000C77C64 /* MCPasswordKeyboardTextView.m in Sources */,
+				421A3A1C20EF043200BCDAF1 /* main.m in Sources */,
+				42778B5720F6F6E400B7582F /* IQUIViewController+Additions.m in Sources */,
+				421A3AA820EF058500BCDAF1 /* MyDimeScale.m in Sources */,
+				42778B5020F6F6E400B7582F /* IQPreviousNextView.m in Sources */,
+				421A3AA120EF058500BCDAF1 /* MyMaker.m in Sources */,
+				421A3A6320EF050500BCDAF1 /* ChineseKeyboardTextField.m in Sources */,
+				421A3AA020EF058500BCDAF1 /* MyGridLayout.m in Sources */,
+				42778B6920F7357700B7582F /* HybrideKeyBoardField.m in Sources */,
+				42778B4F20F6F6E400B7582F /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				421A3AAC20EF058500BCDAF1 /* MyBorderline.m in Sources */,
+				421A3AAA20EF058500BCDAF1 /* MyLinearLayout.m in Sources */,
+				421A3A0E20EF043000BCDAF1 /* AppDelegate.m in Sources */,
+				42778B5420F6F6E400B7582F /* IQUITextFieldView+Additions.m in Sources */,
+				421A3AA420EF058500BCDAF1 /* MyPathLayout.m in Sources */,
+				421A3AA920EF058500BCDAF1 /* MyFrameLayout.m in Sources */,
+				421A3AA520EF058500BCDAF1 /* MyTableLayout.m in Sources */,
+				42C6583320FD729400CCB957 /* MCNumberKeyboardView.m in Sources */,
+				42C6583220FD729400CCB957 /* MCNumberKeyboardTextField.m in Sources */,
+				42778B4C20F6F6E400B7582F /* IQToolbar.m in Sources */,
+				42778B4B20F6F6E400B7582F /* IQTextView.m in Sources */,
+				421A3A9E20EF058500BCDAF1 /* MyRelativeLayout.m in Sources */,
+				421A3AB620EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		421A3A1D20EF043300BCDAF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				421A3A2620EF043300BCDAF1 /* KeyboardSummaryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		421A3A2820EF043300BCDAF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				421A3A3120EF043300BCDAF1 /* KeyboardSummaryUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		421A3A2320EF043300BCDAF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 421A3A0820EF043000BCDAF1 /* KeyboardSummary */;
+			targetProxy = 421A3A2220EF043300BCDAF1 /* PBXContainerItemProxy */;
+		};
+		421A3A2E20EF043300BCDAF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 421A3A0820EF043000BCDAF1 /* KeyboardSummary */;
+			targetProxy = 421A3A2D20EF043300BCDAF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		421A3A1220EF043000BCDAF1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				421A3A1320EF043000BCDAF1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		421A3A1720EF043200BCDAF1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				421A3A1820EF043200BCDAF1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		421A3A3320EF043300BCDAF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		421A3A3420EF043300BCDAF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		421A3A3620EF043300BCDAF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQBF47L68X;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = KeyboardSummary/Resources/PrefixHeader.pch;
+				INFOPLIST_FILE = KeyboardSummary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = www.gjfax.com.KeyboardSummary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		421A3A3720EF043300BCDAF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQBF47L68X;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = KeyboardSummary/Resources/PrefixHeader.pch;
+				INFOPLIST_FILE = KeyboardSummary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = www.gjfax.com.KeyboardSummary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		421A3A3920EF043300BCDAF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KeyboardSummaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = www.gjfax.com.KeyboardSummaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeyboardSummary.app/KeyboardSummary";
+			};
+			name = Debug;
+		};
+		421A3A3A20EF043300BCDAF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KeyboardSummaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = www.gjfax.com.KeyboardSummaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeyboardSummary.app/KeyboardSummary";
+			};
+			name = Release;
+		};
+		421A3A3C20EF043300BCDAF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KeyboardSummaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = www.gjfax.com.KeyboardSummaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KeyboardSummary;
+			};
+			name = Debug;
+		};
+		421A3A3D20EF043300BCDAF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KeyboardSummaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = www.gjfax.com.KeyboardSummaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KeyboardSummary;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		421A3A0420EF043000BCDAF1 /* Build configuration list for PBXProject "KeyboardSummary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				421A3A3320EF043300BCDAF1 /* Debug */,
+				421A3A3420EF043300BCDAF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		421A3A3520EF043300BCDAF1 /* Build configuration list for PBXNativeTarget "KeyboardSummary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				421A3A3620EF043300BCDAF1 /* Debug */,
+				421A3A3720EF043300BCDAF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		421A3A3820EF043300BCDAF1 /* Build configuration list for PBXNativeTarget "KeyboardSummaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				421A3A3920EF043300BCDAF1 /* Debug */,
+				421A3A3A20EF043300BCDAF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		421A3A3B20EF043300BCDAF1 /* Build configuration list for PBXNativeTarget "KeyboardSummaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				421A3A3C20EF043300BCDAF1 /* Debug */,
+				421A3A3D20EF043300BCDAF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 421A3A0120EF043000BCDAF1 /* Project object */;
+}

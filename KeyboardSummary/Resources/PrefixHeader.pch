@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  KeyboardSummary
+//
+//  Created by gjfax on 2018/7/6.
+//  Copyright © 2018年 macheng. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "CommonDefined.h"
+
+#endif /* PrefixHeader_pch */
