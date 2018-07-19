@@ -61,11 +61,6 @@ typedef void(^keyBoardWillHideBlock)(void);
  */
 @property (nonatomic, assign) BOOL                      isHiddenAccessoryView;
 
-/*
- *  数字键盘是否乱序 默认 NO，即是乱序
- */
-@property (nonatomic, assign) BOOL                      isNumberKeyboardOrder;
-
 @property (nonatomic, copy) keyBoardWillHideBlock   keyBordWillHideBlock;
 
 @property (nonatomic, copy) keyBoardWillShowBlock   keyBordWillShowBlock;

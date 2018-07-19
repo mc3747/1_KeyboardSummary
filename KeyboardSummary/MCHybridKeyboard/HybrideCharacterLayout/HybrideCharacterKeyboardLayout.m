@@ -27,7 +27,8 @@ static CGFloat const kColumnGap = 4.f;
 static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
 
 /** 背景通用颜色 */
-#define CommonBackgroundColor [UIColor colorWithRed:208/256.f green:216/256.f blue:226/256.f alpha:1.f]
+#define CommonBackgroundColor [UIColor colorWithRed:34/256.f green:34/256.f blue:34/256.f alpha:1.f]
+
 /** 字母宽度 */
 #define CharacterWidth ([UIScreen mainScreen].bounds.size.width - 11 * kColumnGap) / 10.f
 /** 字母高度 */
@@ -58,8 +59,8 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         
         self.backgroundColor = CommonBackgroundColor;
         self.orientation = MyOrientation_Vert;
-        self.lowerCharacterTitle = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",@"q",@"w",@"e",@"r",@"t",@"y",@"u",@"i",@"o",@"p",@"a",@"s",@"d",@"f",@"g",@"h",@"j",@"k",@"l",@"shift",@"z",@"x",@"c",@"v",@"b",@"n",@"m",@"delete",@"*#.",@"空格",@"确定",nil];
-        self.capitalCharacterTitle = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",@"Q",@"W",@"E",@"R",@"T",@"Y",@"U",@"I",@"O",@"P",@"A",@"S",@"D",@"F",@"G",@"H",@"J",@"K",@"L",@"SHIFT",@"Z",@"X",@"C",@"V",@"B",@"N",@"M",@"DELETE",@"*#.",@"空格",@"确定",nil];
+        self.lowerCharacterTitle = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",@"q",@"w",@"e",@"r",@"t",@"y",@"u",@"i",@"o",@"p",@"a",@"s",@"d",@"f",@"g",@"h",@"j",@"k",@"l",@"shift",@"z",@"x",@"c",@"v",@"b",@"n",@"m",@"delete",@"*#.",@"空格",@"完成",nil];
+        self.capitalCharacterTitle = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",@"Q",@"W",@"E",@"R",@"T",@"Y",@"U",@"I",@"O",@"P",@"A",@"S",@"D",@"F",@"G",@"H",@"J",@"K",@"L",@"SHIFT",@"Z",@"X",@"C",@"V",@"B",@"N",@"M",@"DELETE",@"*#.",@"空格",@"完成",nil];
         _shiftClickState = ShiftClickStateDefault;
         [self addSubLayouts];
     }
@@ -82,7 +83,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     firstRowLayout.myHeight = kSubLayoutHeighth;
     firstRowLayout.myWidth =  self.bounds.size.width;
     
-    // 第一排按钮
+    // 第0排按钮
     for (int i = 0; i <= 9; i ++) {
         NSString *charcterStr = self.lowerCharacterTitle[i];
         
@@ -223,8 +224,8 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         UIButton *characterButton = [[UIButton alloc] init]; 
         characterButton.layer.cornerRadius = 5.f;
         [characterButton setClipsToBounds:YES];
-        [characterButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [characterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [characterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [characterButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         characterButton.titleLabel.textAlignment = NSTextAlignmentCenter;
         characterButton.myLeading = kColumnGap;
         characterButton.myTop = kRowGap;
@@ -245,7 +246,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
             [characterButton addTarget:self action:@selector(clickBlankSpaceBlock) forControlEvents:UIControlEventTouchUpInside];
             characterButton.myWidth = (fourthRowLayout.myWidth - 4 * kColumnGap) / 2.f;
         }
-        // 切换到数字键盘按钮
+        // 完成按钮
         if (i == 40) {
             [characterButton setBackgroundImage:[self imageWithColor:CommonBackgroundColor] forState:UIControlStateNormal];
             [characterButton setTitle:self.lowerCharacterTitle[i] forState:UIControlStateNormal];
@@ -354,12 +355,12 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
 #pragma mark - 切换到数字键盘
 - (void)changeToNumberBlock {
     [SoundAndShakeTool play];
-    if (self.characterKeyboardToNumberBlock) {
-        self.characterKeyboardToNumberBlock();
+    if (self.characterKeyboardFinishBlock) {
+        self.characterKeyboardFinishBlock();
     }
 }
-- (void)getChangerToNumberBlock:(CharacterKeyboardClikBlock)characterKeyboardToNumberBlock {
-    _characterKeyboardToNumberBlock = characterKeyboardToNumberBlock;
+- (void)getFinishBlock:(CharacterKeyboardClikBlock)characterKeyboardFinishBlock {
+    _characterKeyboardFinishBlock = characterKeyboardFinishBlock;
 }
 
 #pragma mark - 切换到特殊字符键盘

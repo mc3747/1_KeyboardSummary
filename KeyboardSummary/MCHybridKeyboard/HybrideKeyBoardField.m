@@ -236,6 +236,11 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
             [weakSelf inputBlankSpace];
         }];
    
+        // 完成
+        [_characterKeyboardLayout getFinishBlock:^{
+            [weakSelf retractKeyboard];
+        }];
+        
         // 切换到特殊字符键盘
         [_characterKeyboardLayout getChangerToSpecialBlock:^{
             if (!weakSelf.forbidSpecialCharacter) {
@@ -260,6 +265,10 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
         // 删除
         [_specialKeyboardLayout getDeleteSpecialBlock:^{
             [weakSelf deleteAction];
+        }];
+        // 完成
+        [_specialKeyboardLayout getFinishBlock:^{
+            [weakSelf retractKeyboard];
         }];
         // 切换到字母键盘
         [_specialKeyboardLayout getChangerToCharacterBlock:^{

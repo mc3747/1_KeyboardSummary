@@ -22,6 +22,7 @@
     if (self = [super init]) {
         [self setLayerFeatures:self];
         self.textAlignment = NSTextAlignmentCenter;
+        self.textColor = [UIColor whiteColor];
         self.font = [UIFont systemFontOfSize:kSecutiryKeyboardTitleFont];
         self.userInteractionEnabled = YES;
         [self isExclusiveTouch];
@@ -30,15 +31,15 @@
 }
 #pragma mark - 选中状态
 - (void)selectedState {
-    self.layer.backgroundColor = [UIColor colorWithRed:51/255.0 green:167/255.0 blue:196/255.0 alpha:1.0].CGColor;
+    self.layer.backgroundColor = RGBColor(51, 167, 196).CGColor;
     self.enLargeLabel.hidden = NO;
     self.textColor = [UIColor whiteColor];
 }
 #pragma mark - 未选中状态
 - (void)notSeletedState {
-    self.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.layer.backgroundColor = RGBColor(57, 57, 57).CGColor;
     self.enLargeLabel.hidden = YES;
-    self.textColor = [UIColor blackColor];
+    self.textColor = [UIColor whiteColor];
 }
 
 - (void)changeLabelString:(NSString *)labelString {
@@ -48,7 +49,7 @@
 #pragma mark - 设置圆角以及边框特性
 - (void)setLayerFeatures:(UIView *)view {
     view.layer.cornerRadius = 5.f;
-    view.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    view.layer.backgroundColor = RGBColor(57, 57, 57).CGColor;
     view.layer.borderWidth = 0.5f;
     view.layer.borderColor = [UIColor colorWithRed:94/255.0 green:98/255.0 blue:99/255.0 alpha:1.0].CGColor;
 }
@@ -69,11 +70,12 @@
         _enLargeLabel = [[UILabel alloc] initWithFrame:CGRectMake(enlargeLabelX, self.bounds.origin.y - size.height - 5, size.width, size.height)];
         _enLargeLabel.textAlignment = NSTextAlignmentCenter;
         [self setLayerFeatures:_enLargeLabel];
-        self.enLargeLabel.layer.shadowColor = [UIColor colorWithRed:51/255.0 green:167/255.0 blue:196/255.0 alpha:1.0].CGColor;
+        self.enLargeLabel.layer.shadowColor =RGBColor(51, 167, 196).CGColor;
         self.enLargeLabel.layer.shadowRadius = 10.f;
         self.enLargeLabel.layer.shadowOffset = CGSizeMake(0, 0);
         self.enLargeLabel.layer.shadowOpacity = 0.8f;
         self.enLargeLabel.text = self.text;
+        self.enLargeLabel.textColor = [UIColor whiteColor];
         self.enLargeLabel.font = [UIFont systemFontOfSize:kCommonSecutiryKeyboardLargeLabelFont];
         _enLargeLabel.hidden = YES;
         [self addSubview:_enLargeLabel];

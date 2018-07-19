@@ -561,8 +561,8 @@
 		421A3A5D20EF050500BCDAF1 /* AccessoryLayout */ = {
 			isa = PBXGroup;
 			children = (
-				421A3A5E20EF050500BCDAF1 /* MCAccessoryLayout.m */,
 				421A3A5F20EF050500BCDAF1 /* MCAccessoryLayout.h */,
+				421A3A5E20EF050500BCDAF1 /* MCAccessoryLayout.m */,
 			);
 			path = AccessoryLayout;
 			sourceTree = "<group>";

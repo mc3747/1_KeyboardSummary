@@ -8,7 +8,7 @@
 
 #import "MyLinearLayout.h"
 
-typedef void(^AccessoryFinishClickBlock) ();
+typedef void(^AccessoryFinishClickBlock) (void);
 
 @interface MCAccessoryLayout : MyLinearLayout
 /**  点击收起键盘小箭头block*/

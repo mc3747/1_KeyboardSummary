@@ -7,6 +7,9 @@
 //
 
 #import "MCAccessoryLayout.h"
+
+#define kAccessoryBackgroundColor RGBColor(34, 34, 34)
+
 /**  整个键盘顶部的高度*/
 static CGFloat const kAccessoryLayoutHeight = 39.f;
 /**  整个键盘顶部的高度*/
@@ -30,8 +33,8 @@ static CGFloat const kFinishHeight = 25.f;
     if (self)
     {
         self.layer.borderWidth = kTopLineHeight;
-        self.layer.borderColor = [ COMMON_LIGHT_GREY_COLOR CGColor];
-        self.layer.backgroundColor = [[UIColor whiteColor] CGColor];
+//        self.layer.borderColor = [ COMMON_LIGHT_GREY_COLOR CGColor];
+        self.layer.backgroundColor = [kAccessoryBackgroundColor CGColor];
         self.orientation = MyOrientation_Horz;
         [self addTopAccessoryLayout];
     }
@@ -41,22 +44,22 @@ static CGFloat const kFinishHeight = 25.f;
 #pragma mark - 添加子控件
 - (void)addTopAccessoryLayout {
 // logo
-    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Custom_KeyBoard_Logo_Icon"]];
-    logoImageView.myLeading = kLogoLeftGap;
-    logoImageView.myTop = (kAccessoryLayoutHeight - kLogoHeight) * 0.5f;
-    logoImageView.myWidth = kLogoHeight;
-    logoImageView.myHeight = kLogoHeight;
-    [self addSubview:logoImageView];
+//    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Custom_KeyBoard_Logo_Icon"]];
+//    logoImageView.myLeading = kLogoLeftGap;
+//    logoImageView.myTop = (kAccessoryLayoutHeight - kLogoHeight) * 0.5f;
+//    logoImageView.myWidth = kLogoHeight;
+//    logoImageView.myHeight = kLogoHeight;
+//    [self addSubview:logoImageView];
 // 文字描述
     UILabel *keyboardDesLabel = [[UILabel alloc] init];
-    keyboardDesLabel.backgroundColor = [UIColor whiteColor];
-    keyboardDesLabel.text = @"正在使用***安全键盘";
-    keyboardDesLabel.textColor = [UIColor colorWithRed:60/255.0 green:60/255.0  blue:60/255.0  alpha:1.0];
+    keyboardDesLabel.backgroundColor = kAccessoryBackgroundColor;
+    keyboardDesLabel.text = @"安全键盘";
+    keyboardDesLabel.textColor = [UIColor colorWithRed:120/255.0 green:120/255.0  blue:120/255.0  alpha:1.0];
     keyboardDesLabel.font = [UIFont systemFontOfSize:kCommonSecutiryKeyboardSubtitleFont];
-    keyboardDesLabel.textAlignment = NSTextAlignmentLeft;
-    keyboardDesLabel.myLeading = kLogoLeftGap;
+    keyboardDesLabel.textAlignment = NSTextAlignmentCenter;
+     keyboardDesLabel.myLeading = 0;
     keyboardDesLabel.myTop = 0;
-    keyboardDesLabel.myWidth = [UIScreen mainScreen].bounds.size.width - kLogoLeftGap * 2.f -  kFinishRightGap - kFinishHeight * 2.f;
+    keyboardDesLabel.myWidth = [UIScreen mainScreen].bounds.size.width;
     keyboardDesLabel.myHeight = kAccessoryLayoutHeight;
     [self addSubview:keyboardDesLabel];
 // 收起按钮
@@ -65,7 +68,7 @@ static CGFloat const kFinishHeight = 25.f;
     [finishButton setImage:[UIImage imageNamed:@"Custom_KeyBoard_Down_Icon"] forState:UIControlStateNormal];
     [finishButton setImage:[UIImage imageNamed:@"AccessoryView_Finish_TouchDown"] forState:UIControlStateHighlighted];
     [finishButton addTarget:self action:@selector(finishTap) forControlEvents:UIControlEventTouchUpInside];
-    finishButton.myLeading = 0;
+    finishButton.myLeading = - kFinishRightGap - kFinishHeight;
         //增大点击范围
     finishButton.myWidth = kFinishHeight + kFinishRightGap;
     [finishButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];

@@ -19,13 +19,17 @@ typedef void(^CharacterKeyboardClikBlock) (void);
 /**  点击空格block*/
 @property (nonatomic, copy) CharacterKeyboardClikBlock characterKeyboardClickBlankSpaceBlock;
 /**  点击切换到数字键盘block*/
-@property (nonatomic, copy) CharacterKeyboardClikBlock characterKeyboardToNumberBlock;
+@property (nonatomic, copy) CharacterKeyboardClikBlock characterKeyboardFinishBlock;
 /**  点击切换到特殊字符键盘block*/
 @property (nonatomic, copy) CharacterKeyboardClikBlock characterKeyboardToSpecialBlock;
 
 - (void)getClickCharacterBlock:(CharacterKeyboardClikCharacterBlock)characterKeyboardClikCharacterBlock;
+
 - (void)getDeleteCharacterBlock:(CharacterKeyboardClikBlock)characterKeyboardDeleteCharacterBlock;
+
 - (void)getClickBlankSpaceBlock:(CharacterKeyboardClikBlock)characterKeyboardClickBlankSpaceBlock;
-- (void)getChangerToNumberBlock:(CharacterKeyboardClikBlock)characterKeyboardToNumberBlock;
+
+- (void)getFinishBlock:(CharacterKeyboardClikBlock)characterKeyboardFinishBlock;
+
 - (void)getChangerToSpecialBlock:(CharacterKeyboardClikBlock)characterKeyboardToSpecialBlock;
 @end

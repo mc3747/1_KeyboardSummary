@@ -22,11 +22,14 @@ static CGFloat const kColumnLeftOrRightGap = 3.f;
 /** 每个子layout高度 */
 static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
 /** 背景通用颜色 */
-#define CommonBackgroundColor [UIColor colorWithRed:208/256.f green:216/256.f blue:226/256.f alpha:1.f]
+#define CommonBackgroundColor [UIColor colorWithRed:34/256.f green:34/256.f blue:34/256.f alpha:1.f]
+
 /** 特殊字符按钮宽度 */
 #define CommonSpecialCharaterWidth (self.bounds.size.width - 9 * kColumnBetweenGap - kRowTopOrBottomGap - kColumnLeftOrRightGap) / 10.f
+
 /** 特殊字符按钮高度 */
 #define CommonSpecialCharaterHeighth (kSubLayoutHeighth - kRowTopOrBottomGap *2)
+
 /** 删除||切换数字||切换字母按钮宽度 */
 #define CommonDeleteButtonHeighth  (self.bounds.size.width - 8 * kColumnBetweenGap - 7*CommonSpecialCharaterWidth - 2 * kColumnLeftOrRightGap) / 2.f
 
@@ -46,7 +49,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         self.specialCharacterTitle = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",@"!",@"@",@"#",@"$",@"%",@"^",@"&",@"*",@"(",@")",
                                       @"'",@"\"",@"=",@"_",@":",@";",@"?",@"~",@"|",@"•",
                                       @"+",@"-",@"\\",@"/",@"[",@"]",@"{",@"}",@"delete",
-                                      @"ABC",@",",@".",@"<",@">",@"€",@"£",@"¥",@"确定",nil];
+                                      @"abc",@",",@".",@"<",@">",@"€",@"£",@"¥",@"完成",nil];
         [self addSubLayouts];
     }
     return self;
@@ -204,8 +207,8 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     toCharacterButton.myTop = kRowBetweenGap * 0.5f;
     toCharacterButton.myWidth = CommonDeleteButtonHeighth;
     toCharacterButton.myHeight = CommonSpecialCharaterHeighth;
-    [toCharacterButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [toCharacterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [toCharacterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [toCharacterButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     toCharacterButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [toCharacterButton.titleLabel setFont:[UIFont systemFontOfSize:kSecutiryKeyboardTitleFont]];
     [self setLayerFeatures:toCharacterButton];
@@ -226,20 +229,20 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         characterLabel.tag = 800 + i;
         [fourthRowLayout addSubview:characterLabel];
     }
-    // 切换到数字键盘按钮
+    // 完成按钮
     UIButton *toNumberButton = [[UIButton alloc] init];
     toNumberButton.myLeading = kColumnLeftOrRightGap;
     toNumberButton.myTop = kRowBetweenGap * 0.5f;
     toNumberButton.myWidth = CommonDeleteButtonHeighth;
     toNumberButton.myHeight = CommonSpecialCharaterHeighth;
-    [toNumberButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [toNumberButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [toNumberButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [toNumberButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     toNumberButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [toNumberButton.titleLabel setFont:[UIFont systemFontOfSize:kSecutiryKeyboardTitleFont]];
     [self setLayerFeatures:toNumberButton];
     [toNumberButton setBackgroundImage:[UIImage imageNamed:@"NumberKeyBoard_Number_TouchDown"] forState:UIControlStateHighlighted];
     [toNumberButton setTitle:self.specialCharacterTitle[47] forState:UIControlStateNormal];
-    [toNumberButton addTarget:self action:@selector(changeToNumberBlock) forControlEvents:UIControlEventTouchUpInside];
+    [toNumberButton addTarget:self action:@selector(changeToFinishBlock) forControlEvents:UIControlEventTouchUpInside];
     [fourthRowLayout addSubview:toNumberButton];
     
     
@@ -268,16 +271,16 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     _specialKeyboardDeleteCharacterBlock = specialKeyboardDeleteCharacterBlock;
 }
 
-#pragma mark - 切换到字母键盘按钮点击
-- (void)changeToNumberBlock {
+#pragma mark - 完成按钮点击
+- (void)changeToFinishBlock {
     [SoundAndShakeTool play];
-    if (self.specialKeyboardToNumberBlock) {
-        self.specialKeyboardToNumberBlock();
+    if (self.specialKeyboardFinishBlock) {
+        self.specialKeyboardFinishBlock();
     }
 }
 
-- (void)getChangerToNumberBlock:(SpecialKeyboardClikBlock)specialKeyboardToNumberBlock {
-    _specialKeyboardToNumberBlock = specialKeyboardToNumberBlock;
+- (void)getFinishBlock:(SpecialKeyboardClikBlock)specialKeyboardFinishBlock {
+    _specialKeyboardFinishBlock = specialKeyboardFinishBlock;
 }
 #pragma mark - 切换到数字键盘按钮点击
 - (void)changeToCharcterBlock {
