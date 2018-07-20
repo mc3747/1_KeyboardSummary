@@ -10,6 +10,17 @@
 #import "MCCharacterLabel.h"
 #import "SoundAndShakeTool.h"
 
+/*键盘背景颜色 */
+#define kBackgroundColor RGBColor(26, 26, 26)
+/*按钮普通背景颜色 */
+#define kButtonNormalColor RGBColor(43, 43, 43)
+/*按钮按下颜色 */
+#define kButtonHighlightColor RGBColor(43, 150, 183)
+
+/** 字母宽度 */
+#define CharacterWidth ([UIScreen mainScreen].bounds.size.width - 11 * kColumnGap) / 10.f
+/** 字母高度 */
+#define CharacterHeighth kSubLayoutHeighth - kRowGap * 2
 
 /** 字符键盘显示状态 */
 typedef NS_ENUM(NSInteger, ShiftClickState) {
@@ -25,14 +36,6 @@ static CGFloat const kRowGap = 3.f;
 static CGFloat const kColumnGap = 4.f;
 /** 每个子layout高度 */
 static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
-
-/** 背景通用颜色 */
-#define CommonBackgroundColor [UIColor colorWithRed:34/256.f green:34/256.f blue:34/256.f alpha:1.f]
-
-/** 字母宽度 */
-#define CharacterWidth ([UIScreen mainScreen].bounds.size.width - 11 * kColumnGap) / 10.f
-/** 字母高度 */
-#define CharacterHeighth kSubLayoutHeighth - kRowGap * 2
 
 @interface HybrideCharacterKeyboardLayout ()
 /** 小写字母键盘内容 */
@@ -57,7 +60,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     if (self)
     {
         
-        self.backgroundColor = CommonBackgroundColor;
+        self.backgroundColor = kBackgroundColor;
         self.orientation = MyOrientation_Vert;
         self.lowerCharacterTitle = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",@"q",@"w",@"e",@"r",@"t",@"y",@"u",@"i",@"o",@"p",@"a",@"s",@"d",@"f",@"g",@"h",@"j",@"k",@"l",@"shift",@"z",@"x",@"c",@"v",@"b",@"n",@"m",@"delete",@"*#.",@"空格",@"完成",nil];
         self.capitalCharacterTitle = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",@"Q",@"W",@"E",@"R",@"T",@"Y",@"U",@"I",@"O",@"P",@"A",@"S",@"D",@"F",@"G",@"H",@"J",@"K",@"L",@"SHIFT",@"Z",@"X",@"C",@"V",@"B",@"N",@"M",@"DELETE",@"*#.",@"空格",@"完成",nil];
@@ -225,14 +228,14 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         characterButton.layer.cornerRadius = 5.f;
         [characterButton setClipsToBounds:YES];
         [characterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [characterButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        [characterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         characterButton.titleLabel.textAlignment = NSTextAlignmentCenter;
         characterButton.myLeading = kColumnGap;
         characterButton.myTop = kRowGap;
         characterButton.myWidth = (fourthRowLayout.myWidth - 4 * kColumnGap) / 4.f;
         // 切换到特殊字符键盘按钮
         if (i == 38) {
-            [characterButton setBackgroundImage:[self imageWithColor:CommonBackgroundColor] forState:UIControlStateNormal];
+            [characterButton setBackgroundImage:[self imageWithColor:kButtonNormalColor] forState:UIControlStateNormal];
             [characterButton setTitle:self.lowerCharacterTitle[i] forState:UIControlStateNormal];
             [characterButton.titleLabel setFont:[UIFont systemFontOfSize:kSecutiryKeyboardTitleFont]];
             [self setLayerFeatures:characterButton];
@@ -248,7 +251,8 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         }
         // 完成按钮
         if (i == 40) {
-            [characterButton setBackgroundImage:[self imageWithColor:CommonBackgroundColor] forState:UIControlStateNormal];
+            [characterButton setBackgroundImage:[self imageWithColor:kButtonNormalColor] forState:UIControlStateNormal];
+            
             [characterButton setTitle:self.lowerCharacterTitle[i] forState:UIControlStateNormal];
             [characterButton.titleLabel setFont:[UIFont systemFontOfSize:kSecutiryKeyboardTitleFont]];
             [self setLayerFeatures:characterButton];
@@ -256,7 +260,6 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         }
         
         [characterButton setBackgroundImage:[UIImage imageNamed:@"NumberKeyBoard_Number_TouchDown"] forState:UIControlStateHighlighted];
-//        [self setLayerFeatures:characterButton];
         characterButton.myHeight = fourthRowLayout.myHeight - kRowGap * 2;
         [fourthRowLayout addSubview:characterButton];
         

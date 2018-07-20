@@ -9,6 +9,21 @@
 #import "HybrideSpecialKeyboardLayout.h"
 #import "MCCharacterLabel.h"
 #import "SoundAndShakeTool.h"
+
+/*键盘背景颜色 */
+#define kBackgroundColor RGBColor(26, 26, 26)
+/*按钮普通背景颜色 */
+#define kButtonNormalColor RGBColor(43, 43, 43)
+/*按钮按下颜色 */
+#define kButtonHighlightColor RGBColor(43, 150, 183)
+
+/** 特殊字符按钮宽度 */
+#define CommonSpecialCharaterWidth (self.bounds.size.width - 9 * kColumnBetweenGap - kRowTopOrBottomGap - kColumnLeftOrRightGap) / 10.f
+/** 特殊字符按钮高度 */
+#define CommonSpecialCharaterHeighth (kSubLayoutHeighth - kRowTopOrBottomGap *2)
+/** 删除||切换数字||切换字母按钮宽度 */
+#define CommonDeleteButtonHeighth  (self.bounds.size.width - 8 * kColumnBetweenGap - 7*CommonSpecialCharaterWidth - 2 * kColumnLeftOrRightGap) / 2.f
+
 /** 键盘总高度 */
 static CGFloat const kMainKeyboardHeight = 270;
 /** 键盘行间距 */
@@ -21,17 +36,6 @@ static CGFloat const kRowTopOrBottomGap = 3.f;
 static CGFloat const kColumnLeftOrRightGap = 3.f;
 /** 每个子layout高度 */
 static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
-/** 背景通用颜色 */
-#define CommonBackgroundColor [UIColor colorWithRed:34/256.f green:34/256.f blue:34/256.f alpha:1.f]
-
-/** 特殊字符按钮宽度 */
-#define CommonSpecialCharaterWidth (self.bounds.size.width - 9 * kColumnBetweenGap - kRowTopOrBottomGap - kColumnLeftOrRightGap) / 10.f
-
-/** 特殊字符按钮高度 */
-#define CommonSpecialCharaterHeighth (kSubLayoutHeighth - kRowTopOrBottomGap *2)
-
-/** 删除||切换数字||切换字母按钮宽度 */
-#define CommonDeleteButtonHeighth  (self.bounds.size.width - 8 * kColumnBetweenGap - 7*CommonSpecialCharaterWidth - 2 * kColumnLeftOrRightGap) / 2.f
 
 @interface HybrideSpecialKeyboardLayout()
 /** 特殊字符键盘内容 */
@@ -44,7 +48,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = CommonBackgroundColor;
+        self.backgroundColor = kBackgroundColor;
         self.orientation = MyOrientation_Vert;
         self.specialCharacterTitle = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",@"!",@"@",@"#",@"$",@"%",@"^",@"&",@"*",@"(",@")",
                                       @"'",@"\"",@"=",@"_",@":",@";",@"?",@"~",@"|",@"•",
@@ -207,8 +211,9 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     toCharacterButton.myTop = kRowBetweenGap * 0.5f;
     toCharacterButton.myWidth = CommonDeleteButtonHeighth;
     toCharacterButton.myHeight = CommonSpecialCharaterHeighth;
+    [toCharacterButton setBackgroundImage:[self imageWithColor:kButtonNormalColor] forState:UIControlStateNormal];
     [toCharacterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [toCharacterButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    [toCharacterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     toCharacterButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [toCharacterButton.titleLabel setFont:[UIFont systemFontOfSize:kSecutiryKeyboardTitleFont]];
     [self setLayerFeatures:toCharacterButton];
@@ -235,8 +240,9 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     toNumberButton.myTop = kRowBetweenGap * 0.5f;
     toNumberButton.myWidth = CommonDeleteButtonHeighth;
     toNumberButton.myHeight = CommonSpecialCharaterHeighth;
+    [toNumberButton setBackgroundImage:[self imageWithColor:kButtonNormalColor] forState:UIControlStateNormal];
     [toNumberButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [toNumberButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    [toNumberButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     toNumberButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [toNumberButton.titleLabel setFont:[UIFont systemFontOfSize:kSecutiryKeyboardTitleFont]];
     [self setLayerFeatures:toNumberButton];
@@ -295,7 +301,6 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
 #pragma mark - 设置圆角以及边框特性
 - (void)setLayerFeatures:(UIView *)view {
     view.layer.cornerRadius = 5.f;
-    view.layer.backgroundColor = CommonBackgroundColor.CGColor;
     view.layer.borderWidth = 0.5f;
     view.layer.borderColor = [UIColor colorWithRed:94/255.0 green:98/255.0 blue:99/255.0 alpha:1.0].CGColor;
 }
@@ -385,5 +390,19 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
             }
         }
     }
+}
+#pragma mark -  返回纯色背景
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 @end

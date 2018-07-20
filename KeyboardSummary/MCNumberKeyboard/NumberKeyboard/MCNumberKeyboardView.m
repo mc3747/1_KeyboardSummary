@@ -10,6 +10,18 @@
 #import "SoundAndShakeTool.h"
 #import "UIView+Extension.h"
 
+/*键盘背景颜色 */
+#define kBackgroundColor RGBColor(26, 26, 26)
+/*键盘顶部文字 */
+#define kAccessoryTextColor RGBColor(120, 120, 120)
+/*按钮背景颜色 */
+#define kButtonNormalColor RGBColor(43, 43, 43)
+/*按钮按下颜色 */
+#define kButtonHighlightColor RGBColor(43, 150, 183)
+/*按钮按下阴影的颜色 */
+#define kButtonShadowColor RGBColor(65, 124, 143)
+
+
 /** 键盘顶部高度 */
 #define kTopheight 39.f
 /** 键盘主体高度 */
@@ -90,21 +102,23 @@
         topView.backgroundColor = [UIColor whiteColor];
         //顶部细线
         self.layer.borderWidth = 0.5f;
-        self.layer.borderColor = [ COMMON_LIGHT_GREY_COLOR CGColor];
+        self.layer.borderColor = [kBackgroundColor CGColor];
         self.layer.backgroundColor = [[UIColor whiteColor] CGColor];
         //logo
-        UIImageView *logoView = [[UIImageView alloc] initWithFrame:CGRectMake(5, (kTopheight - 25) * 0.5f, 25, 25)];
-        logoView.image = [UIImage imageNamed:@"Custom_KeyBoard_Logo_Icon"];
-        [topView addSubview:logoView];
+//        UIImageView *logoView = [[UIImageView alloc] initWithFrame:CGRectMake(5, (kTopheight - 25) * 0.5f, 25, 25)];
+//        logoView.image = [UIImage imageNamed:@"Custom_KeyBoard_Logo_Icon"];
+//        [topView addSubview:logoView];
         //文字
-        UILabel *tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(35, 0, 200, kTopheight)];
-        tipsLabel.text = @"正在使用***安全键盘";
-        tipsLabel.textColor = [UIColor colorWithRed:60/255.0 green:60/255.0  blue:60/255.0  alpha:1.0];
+        UILabel *tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kTopheight)];
+        tipsLabel.text = @"安全键盘";
+        tipsLabel.textColor = kAccessoryTextColor;
+        tipsLabel.backgroundColor = kBackgroundColor;
         tipsLabel.font = [UIFont systemFontOfSize:15.f];
+        tipsLabel.textAlignment = NSTextAlignmentCenter;
         [topView addSubview:tipsLabel];
         //收起箭头
         UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        doneBtn.frame = CGRectMake(topView.width - 30 - 30, (topView.height - 30) * 0.5f, 30, 30);
+        doneBtn.frame = CGRectMake(topView.width - 60, (topView.height - 30) * 0.5f, 30, 30);
         [doneBtn setImage:[UIImage imageNamed:@"Custom_KeyBoard_Down_Icon"] forState:UIControlStateNormal];
         [doneBtn setImage:[UIImage imageNamed:@"AccessoryView_Finish_TouchDown"] forState:UIControlStateHighlighted];
         [topView addSubview:doneBtn];
@@ -131,7 +145,7 @@
     if (!keyBoardView) {
         keyBoardView = [[UIView alloc] initWithFrame:CGRectMake(0, kTopheight, MAIN_SCREEN_WIDTH, Kheight)];
         keyBoardView.tag = 20001;
-        keyBoardView.backgroundColor = [UIColor colorWithRed:208/256.f green:216/256.f blue:226/256.f alpha:1.f];
+        keyBoardView.backgroundColor = kBackgroundColor;
         [self addSubview:keyBoardView];
     }
     
@@ -165,12 +179,17 @@
         button.layer.cornerRadius = 5.f;
         button.layer.borderWidth = 0.5f;
         button.layer.borderColor = [UIColor colorWithRed:94/255.0 green:98/255.0 blue:99/255.0 alpha:1.0].CGColor;
-        button.layer.backgroundColor = [UIColor whiteColor].CGColor;
+        button.layer.backgroundColor = kButtonNormalColor.CGColor;
 
-        [button setBackgroundImage:[UIImage imageNamed:@"NumberKeyBoard_Number_TouchDown"] forState:UIControlStateHighlighted];
+//        [button setBackgroundImage:[UIImage imageNamed:@"NumberKeyBoard_Number_TouchDown"] forState:UIControlStateHighlighted];
+        UIImage *image = [self js_createRoundedImageWithColor:kButtonHighlightColor withSize:button.size andCornerRadius:5.f];
+        
+        [button setBackgroundImage:image forState:UIControlStateHighlighted];
+        
         button.titleLabel.font = [UIFont systemFontOfSize:19.0f];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [button addTarget:self action:@selector(touchDownButton:) forControlEvents:UIControlEventTouchDown];
         [button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     
@@ -186,6 +205,8 @@
             title = @".";
         }else if (NumberKeyboardStyleOrderX == self.numberKeyboardStyle) {
             title = @"X";
+            [button setBackgroundImage:[self imageWithColor:kBackgroundColor] forState:UIControlStateNormal];
+            [button setTitleColor:kAccessoryTextColor forState:UIControlStateNormal];
         };
         
     }else if (num == 11) {
@@ -195,20 +216,27 @@
         [button setImage:[UIImage imageNamed:@"Custom_KeyBoard_Clear_Icon"] forState:UIControlStateNormal];
     }
     [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    
-    if (num == 10 || num == 12) {
-        button.backgroundColor = [UIColor colorWithRed:208/256.f green:216/256.f blue:226/256.f alpha:1.f];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    }
     
     return button;
 }
 
-#pragma mark - 按钮点击
+#pragma mark - 按钮按下
+-(void)touchDownButton:(UIButton *)sender
+{
+    sender.layer.shadowColor = kButtonShadowColor.CGColor;
+    sender.layer.shadowOffset = CGSizeMake(0,0);
+    sender.layer.shadowOpacity = 0.5;
+    sender.layer.shadowRadius = 5.0;
+}
+
+#pragma mark - 按钮抬起
 -(void)clickButton:(UIButton *)sender
 {
     [SoundAndShakeTool play];
+    sender.layer.shadowColor = [UIColor clearColor].CGColor;
+    sender.layer.shadowOffset = CGRectZero.size;
+    sender.layer.shadowOpacity = 0.f;
+    sender.layer.shadowRadius = 0.f;
     if (self.returnBlock) {
         if (sender.tag == 10 && (NumberKeyboardStyleOrderDelete == self.numberKeyboardStyle)) {
             self.returnBlock(@"", ReturnBlockTypeClearAll);
@@ -289,7 +317,8 @@
     for (UIButton *btn in self.keyBoardView.subviews) {
         if (btn.tag == 10 && ([btn.titleLabel.text isEqualToString:@"X"] || [btn.titleLabel.text isEqualToString:@"."])) {
             [btn setEnabled:YES];
-            [btn setBackgroundImage:[self imageWithColor: [UIColor whiteColor]] forState:UIControlStateNormal];
+            [btn setBackgroundImage:[self imageWithColor: kButtonNormalColor] forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         }
     }
 }
@@ -298,7 +327,8 @@
     for (UIButton *btn in self.keyBoardView.subviews) {
         if (btn.tag == 10 && ([btn.titleLabel.text isEqualToString:@"X"] || [btn.titleLabel.text isEqualToString:@"."])) {
             [btn setEnabled:NO];
-            [btn setBackgroundImage:[self imageWithColor:COMMON_GREY_COLOR] forState:UIControlStateNormal];
+            [btn setBackgroundImage:[self imageWithColor:kBackgroundColor] forState:UIControlStateNormal];
+            [btn setTitleColor:kAccessoryTextColor forState:UIControlStateNormal];
         }
     }
 }
@@ -317,4 +347,37 @@
     
     return image;
 }
+
+// 生成纯色图片
+- (UIImage *)js_createImageWithColor:(UIColor *)color withSize:(CGSize)imageSize{
+    CGRect rect = CGRectMake(0.0f, 0.0f, imageSize.width, imageSize.height);
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resultImage;
+}
+
+// 生成圆角图片
+- (UIImage *)js_imageWithOriginalImage:(UIImage *)originalImage andCornerRadius:(CGFloat)cornerRadius{
+    CGRect rect = CGRectMake(0, 0, originalImage.size.width, originalImage.size.height);
+    UIGraphicsBeginImageContextWithOptions(originalImage.size, NO, 0.0);
+    [[UIBezierPath bezierPathWithRoundedRect:rect
+                                cornerRadius:cornerRadius] addClip];
+    [originalImage drawInRect:rect];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+// 生成纯色圆角图片
+- (UIImage *)js_createRoundedImageWithColor:(UIColor *)color withSize:(CGSize)imageSize andCornerRadius:(CGFloat)cornerRadius{
+    UIImage *originalImage = [self js_createImageWithColor:color withSize:imageSize];
+    originalImage = [self js_imageWithOriginalImage:originalImage andCornerRadius:cornerRadius];
+    return originalImage;
+}
+
+
 @end

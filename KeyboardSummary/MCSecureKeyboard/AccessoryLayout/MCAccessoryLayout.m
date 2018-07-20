@@ -8,7 +8,10 @@
 
 #import "MCAccessoryLayout.h"
 
+ /*背景颜色 */
 #define kAccessoryBackgroundColor RGBColor(34, 34, 34)
+/*键盘顶部文字 */
+#define kAccessoryTextColor RGBColor(120, 120, 120)
 
 /**  整个键盘顶部的高度*/
 static CGFloat const kAccessoryLayoutHeight = 39.f;
@@ -54,7 +57,7 @@ static CGFloat const kFinishHeight = 25.f;
     UILabel *keyboardDesLabel = [[UILabel alloc] init];
     keyboardDesLabel.backgroundColor = kAccessoryBackgroundColor;
     keyboardDesLabel.text = @"安全键盘";
-    keyboardDesLabel.textColor = [UIColor colorWithRed:120/255.0 green:120/255.0  blue:120/255.0  alpha:1.0];
+    keyboardDesLabel.textColor = kAccessoryTextColor;
     keyboardDesLabel.font = [UIFont systemFontOfSize:kCommonSecutiryKeyboardSubtitleFont];
     keyboardDesLabel.textAlignment = NSTextAlignmentCenter;
      keyboardDesLabel.myLeading = 0;
