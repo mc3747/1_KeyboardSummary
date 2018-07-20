@@ -183,9 +183,7 @@
 
 //        [button setBackgroundImage:[UIImage imageNamed:@"NumberKeyBoard_Number_TouchDown"] forState:UIControlStateHighlighted];
         UIImage *image = [self js_createRoundedImageWithColor:kButtonHighlightColor withSize:button.size andCornerRadius:5.f];
-        
         [button setBackgroundImage:image forState:UIControlStateHighlighted];
-        
         button.titleLabel.font = [UIFont systemFontOfSize:19.0f];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];

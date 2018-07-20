@@ -333,13 +333,13 @@
                                         <rect key="frame" x="8" y="20" width="132" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ASCII Capable" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jhi-eQ-QB8">
                                         <rect key="frame" x="161" y="20" width="119" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="alert"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numbers" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXU-bU-qag">
                                         <rect key="frame" x="8" y="81" width="132" height="30"/>
@@ -453,6 +453,10 @@
                         <viewLayoutGuide key="safeArea" id="Gmg-ep-3XV"/>
                     </view>
                     <navigationItem key="navigationItem" id="KTj-Nt-ex3"/>
+                    <connections>
+                        <outlet property="numberPadTF" destination="7uz-mh-6te" id="oTN-LE-09y"/>
+                        <outlet property="phonePadTF" destination="TR9-PJ-6C1" id="WLi-37-aHg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXS-7v-a52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
