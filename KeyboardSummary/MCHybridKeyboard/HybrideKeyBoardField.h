@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIFloatLabelTextField.h"
 
 @class HybrideKeyBoardField;
 /**  键盘类型*/
@@ -26,7 +27,7 @@ typedef void(^keyBoardWillShowBlock)(void);
 typedef void(^keyBoardWillHideBlock)(void);
 
 
-@interface HybrideKeyBoardField : UITextField
+@interface HybrideKeyBoardField : UIFloatLabelTextField
 /*
  *  监听键盘输入值的变化
  */
