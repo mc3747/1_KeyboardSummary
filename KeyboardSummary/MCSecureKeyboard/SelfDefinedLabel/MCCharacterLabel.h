@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MCCharacterLabel : UILabel
+/*是否隐藏大label*/
+@property (nonatomic, assign) BOOL isHidBigLabel;
 /*是否是最左侧label*/
 @property (nonatomic, assign) BOOL isLeftLabel;
 /*是否是最右侧label*/

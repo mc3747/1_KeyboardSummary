@@ -32,19 +32,25 @@
 #pragma mark - 选中状态
 - (void)selectedState {
     self.layer.backgroundColor = RGBColor(51, 167, 196).CGColor;
-    self.enLargeLabel.hidden = NO;
+    if (!_isHidBigLabel) {
+        self.enLargeLabel.hidden = NO;
+    };
     self.textColor = [UIColor whiteColor];
 }
 #pragma mark - 未选中状态
 - (void)notSeletedState {
     self.layer.backgroundColor = RGBColor(57, 57, 57).CGColor;
-    self.enLargeLabel.hidden = YES;
+    if (!_isHidBigLabel) {
+        self.enLargeLabel.hidden = YES;
+    };
     self.textColor = [UIColor whiteColor];
 }
 
 - (void)changeLabelString:(NSString *)labelString {
     self.text = labelString;
-    self.enLargeLabel.text = labelString;
+    if (!_isHidBigLabel) {
+        self.enLargeLabel.text = labelString;
+    };
 }
 #pragma mark - 设置圆角以及边框特性
 - (void)setLayerFeatures:(UIView *)view {
