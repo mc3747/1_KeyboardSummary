@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4208F4562122D4CC002B1607 /* MCNewNumberKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208F4542122D4CC002B1607 /* MCNewNumberKeyboardLayout.m */; };
+		4208F4592122DE69002B1607 /* MCNewNumberKeyboardTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208F4582122DE69002B1607 /* MCNewNumberKeyboardTextField.m */; };
 		421A3A0E20EF043000BCDAF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A0D20EF043000BCDAF1 /* AppDelegate.m */; };
 		421A3A1120EF043000BCDAF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3A1020EF043000BCDAF1 /* ViewController.m */; };
 		421A3A1420EF043000BCDAF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421A3A1220EF043000BCDAF1 /* Main.storyboard */; };
@@ -137,6 +139,7 @@
 		42778B6720F7357700B7582F /* HybrideCharacterKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B6120F7357700B7582F /* HybrideCharacterKeyboardLayout.m */; };
 		42778B6820F7357700B7582F /* HybrideSpecialKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B6520F7357700B7582F /* HybrideSpecialKeyboardLayout.m */; };
 		42778B6920F7357700B7582F /* HybrideKeyBoardField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B6620F7357700B7582F /* HybrideKeyBoardField.m */; };
+		42876DFC2123C20C006EB94C /* NewNumberKeyboarcVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42876DFB2123C20C006EB94C /* NewNumberKeyboarcVC.m */; };
 		429649D720FC341C0036F166 /* PasswordKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 429649D620FC341C0036F166 /* PasswordKeyboardVC.m */; };
 		42BAFEFC21087D37003CFD9A /* UIFloatLabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAFEFA21087D36003CFD9A /* UIFloatLabelTextField.m */; };
 		42C6582F20FD729400CCB957 /* MCNumberKeyboardTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6582320FD729300CCB957 /* MCNumberKeyboardTextFieldView.m */; };
@@ -163,6 +166,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4208F4542122D4CC002B1607 /* MCNewNumberKeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNewNumberKeyboardLayout.m; sourceTree = "<group>"; };
+		4208F4552122D4CC002B1607 /* MCNewNumberKeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNewNumberKeyboardLayout.h; sourceTree = "<group>"; };
+		4208F4572122DE69002B1607 /* MCNewNumberKeyboardTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNewNumberKeyboardTextField.h; sourceTree = "<group>"; };
+		4208F4582122DE69002B1607 /* MCNewNumberKeyboardTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCNewNumberKeyboardTextField.m; sourceTree = "<group>"; };
 		421A3A0920EF043000BCDAF1 /* KeyboardSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		421A3A0C20EF043000BCDAF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		421A3A0D20EF043000BCDAF1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -362,6 +369,8 @@
 		42778B6420F7357700B7582F /* HybrideSpecialKeyboardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HybrideSpecialKeyboardLayout.h; sourceTree = "<group>"; };
 		42778B6520F7357700B7582F /* HybrideSpecialKeyboardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybrideSpecialKeyboardLayout.m; sourceTree = "<group>"; };
 		42778B6620F7357700B7582F /* HybrideKeyBoardField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybrideKeyBoardField.m; sourceTree = "<group>"; };
+		42876DFA2123C20C006EB94C /* NewNumberKeyboarcVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewNumberKeyboarcVC.h; sourceTree = "<group>"; };
+		42876DFB2123C20C006EB94C /* NewNumberKeyboarcVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewNumberKeyboarcVC.m; sourceTree = "<group>"; };
 		429649D520FC341C0036F166 /* PasswordKeyboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordKeyboardVC.h; sourceTree = "<group>"; };
 		429649D620FC341C0036F166 /* PasswordKeyboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordKeyboardVC.m; sourceTree = "<group>"; };
 		42BAFEFA21087D36003CFD9A /* UIFloatLabelTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFloatLabelTextField.m; sourceTree = "<group>"; };
@@ -401,6 +410,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4208F4532122D4CC002B1607 /* MCNewNumberKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4208F4572122DE69002B1607 /* MCNewNumberKeyboardTextField.h */,
+				4208F4582122DE69002B1607 /* MCNewNumberKeyboardTextField.m */,
+				4208F4552122D4CC002B1607 /* MCNewNumberKeyboardLayout.h */,
+				4208F4542122D4CC002B1607 /* MCNewNumberKeyboardLayout.m */,
+			);
+			path = MCNewNumberKeyboard;
+			sourceTree = "<group>";
+		};
 		421A3A0020EF043000BCDAF1 = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +447,7 @@
 				421A3AB020EF139600BCDAF1 /* Resources */,
 				421A3A3E20EF050400BCDAF1 /* MCChineseKeyboard */,
 				421A3A4120EF050500BCDAF1 /* MCNumberKeyboard */,
+				4208F4532122D4CC002B1607 /* MCNewNumberKeyboard */,
 				421A3A4B20EF050500BCDAF1 /* MCSecureKeyboard */,
 				42778B5920F706E700B7582F /* MCHybridKeyboard */,
 				429649CE20FC23210036F166 /* MCPasswordKeyboard */,
@@ -444,6 +465,8 @@
 				429649D620FC341C0036F166 /* PasswordKeyboardVC.m */,
 				42C6583B20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.h */,
 				42C6583C20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m */,
+				42876DFA2123C20C006EB94C /* NewNumberKeyboarcVC.h */,
+				42876DFB2123C20C006EB94C /* NewNumberKeyboarcVC.m */,
 				421A3A1220EF043000BCDAF1 /* Main.storyboard */,
 				421A3A1520EF043200BCDAF1 /* Assets.xcassets */,
 				421A3A1720EF043200BCDAF1 /* LaunchScreen.storyboard */,
@@ -1138,10 +1161,10 @@
 		42C6582920FD729300CCB957 /* NumberKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				42C6582A20FD729300CCB957 /* MCNumberKeyboardView.h */,
-				42C6582C20FD729300CCB957 /* MCNumberKeyboardView.m */,
 				42C6582D20FD729300CCB957 /* MCNumberKeyboardTextField.h */,
 				42C6582B20FD729300CCB957 /* MCNumberKeyboardTextField.m */,
+				42C6582A20FD729300CCB957 /* MCNumberKeyboardView.h */,
+				42C6582C20FD729300CCB957 /* MCNumberKeyboardView.m */,
 			);
 			path = NumberKeyboard;
 			sourceTree = "<group>";
@@ -1357,6 +1380,7 @@
 				42778B5220F6F6E400B7582F /* IQKeyboardManager.m in Sources */,
 				421A3AAD20EF058500BCDAF1 /* MyLayoutSizeClass.m in Sources */,
 				42778B5C20F7339900B7582F /* HybrideKeyboardVC.m in Sources */,
+				4208F4592122DE69002B1607 /* MCNewNumberKeyboardTextField.m in Sources */,
 				422ED2C120FF45F000C77C64 /* MCPasswordKeyboardView.m in Sources */,
 				429649D720FC341C0036F166 /* PasswordKeyboardVC.m in Sources */,
 				42778B4D20F6F6E400B7582F /* IQTitleBarButtonItem.m in Sources */,
@@ -1372,6 +1396,7 @@
 				421A3AB920EF1AF600BCDAF1 /* SystemKeyboardVC.m in Sources */,
 				421A3A9C20EF058500BCDAF1 /* MyFlowLayout.m in Sources */,
 				421A3AA620EF058500BCDAF1 /* MyFloatLayout.m in Sources */,
+				4208F4562122D4CC002B1607 /* MCNewNumberKeyboardLayout.m in Sources */,
 				42C6582F20FD729400CCB957 /* MCNumberKeyboardTextFieldView.m in Sources */,
 				421A3AA320EF058500BCDAF1 /* MyBaseLayout.m in Sources */,
 				42BAFEFC21087D37003CFD9A /* UIFloatLabelTextField.m in Sources */,
@@ -1387,6 +1412,7 @@
 				422ED2C220FF45F000C77C64 /* MCPasswordKeyboardTextView.m in Sources */,
 				421A3A1C20EF043200BCDAF1 /* main.m in Sources */,
 				42778B5720F6F6E400B7582F /* IQUIViewController+Additions.m in Sources */,
+				42876DFC2123C20C006EB94C /* NewNumberKeyboarcVC.m in Sources */,
 				421A3AA820EF058500BCDAF1 /* MyDimeScale.m in Sources */,
 				42778B5020F6F6E400B7582F /* IQPreviousNextView.m in Sources */,
 				421A3AA120EF058500BCDAF1 /* MyMaker.m in Sources */,

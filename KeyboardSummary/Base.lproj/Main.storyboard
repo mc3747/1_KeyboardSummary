@@ -68,6 +68,15 @@
                                     <segue destination="YXm-iz-hiZ" kind="push" id="P1w-OA-UAc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7E-4Y-YOR">
+                                <rect key="frame" x="76" y="495" width="222" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.087506058469999995" green="0.79567833129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="6，新定制数字键盘"/>
+                                <connections>
+                                    <segue destination="dV5-o5-fbi" kind="push" id="RsJ-Ol-KMb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -77,6 +86,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="669.60000000000002" y="242.42878560719643"/>
+        </scene>
+        <!--New Number KeyboarcVC-->
+        <scene sceneID="c2C-Sz-OqT">
+            <objects>
+                <viewController id="dV5-o5-fbi" customClass="NewNumberKeyboarcVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2zU-uN-wEC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Xbd-Tj-82n"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xgs-HU-NeU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m2B-FJ-WeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="1013"/>
         </scene>
         <!--Hybride KeyboardVC-->
         <scene sceneID="CHb-rY-BAx">
