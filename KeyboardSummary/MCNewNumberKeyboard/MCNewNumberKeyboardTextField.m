@@ -142,18 +142,18 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
     }];
     //删除1位
     [self.keyboardView getClickDeleteBlock:^{
+        [weakSelf monitorDeleteContent:weakSelf.textContent];
         if (weakSelf.textContent.length > 0) {
             weakSelf.textContent = [weakSelf.textContent substringToIndex:weakSelf.text.length - 1];
         }
         weakSelf.text = weakSelf.textContent;
-        [weakSelf monitorTextLength:weakSelf.textContent];
         [weakSelf monitorTextField];
     }];
     //删除全部
     [self.keyboardView getClickTotalDeleteBlock:^{
+        [weakSelf monitorDeleteContent:weakSelf.textContent];
         weakSelf.textContent = @"";
         weakSelf.text = weakSelf.textContent;
-        [weakSelf monitorTextLength:weakSelf.textContent];
         [weakSelf monitorTextField];
     }];
 }
@@ -175,33 +175,33 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
     
     if (NumberTextFieldStylePhone == _textFieldStyle) {
         // 手机号码
+        [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToPhone:self andString:textString];
         
     } else if (NumberTextFieldStyleBankCard == _textFieldStyle) {
         // 银行卡
+        [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToBankCard:self andString:textString];
         
     } else if (NumberTextFieldStyleIdentityCard == _textFieldStyle) {
         // 身份证
+        [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToIdentityCard:self andString:textString];
-        [self monitorTextLength:textString];
         
     } else if (NumberTextFieldStyleInputWithoutDot == _textFieldStyle ) {
         // 输入整数金额
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:10];
-        [self monitorTextLength:textString];
         [self monitorTextContent:textString and:numberString];
-        
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:10];
+       
     }else if (NumberTextFieldStyleInputWithDot == _textFieldStyle) {
         // 输入小数金额
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:13];
-        [self monitorTextLength:textString];
         [self monitorTextContent:textString and:numberString];
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:13];
         
     }else if (NumberTextFieldStyleRandomInputWithoutDot == _textFieldStyle ) {
         // 输入交易密码
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:23];
-        [self monitorTextLength:textString];
+          [self monitorTextContent:textString and:numberString];
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:6];
         
     } else {
         // 默认
@@ -211,20 +211,63 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
     self.textContent = self.text;
 }
 
-#pragma mark -  输入内容
-- (void)monitorTextLength:(NSString *)text {
+#pragma mark -  监听删除的内容:textString为删除前的字符串
+- (void)monitorDeleteContent:(NSString *)textSring {
     
-    if (text.length == 20 && NumberTextFieldStyleIdentityCard == _textFieldStyle ) {
-        [self.keyboardView activeButtonX];
+     NSRange range = NSMakeRange(textSring.length, 0);
+    
+    if (NumberTextFieldStyleInputWithDot == _textFieldStyle) {
+        //  内容是否已经有小数点
+        NSString *lastString = [textSring substringFromIndex:textSring.length - 1];
         
-    } else if(![text containsString:@"."] && NumberTextFieldStyleInputWithDot == _textFieldStyle) {
-        [self.keyboardView activeButtonX];
+        if ([textSring containsString:@"."] && [lastString isEqualToString:@"."]) {
+            [self.keyboardView activeButtonX];
+            
+        }else if([textSring containsString:@"."] && ![lastString isEqualToString:@"."]){
+            [self.keyboardView nonActiveButtonX];
+            
+        }else {
+            [self.keyboardView activeButtonX];
+        };
         
-    } else {
-        [self.keyboardView nonActiveButtonX];
+        //    内容
+        if (textSring.length == 1) {
+            [_keyboardView activeNumberButton];
+            [self.keyboardView nonActiveButtonX];
+            
+        }else if (textSring.length == 2) {
+            NSString *firstNumber = [textSring substringToIndex:1];
+            NSString *secondNumber = [textSring substringWithRange:NSMakeRange(1, 1)];
+            if([firstNumber  isEqualToString:@"0"] && [secondNumber isEqualToString:@"."]){
+                [_keyboardView nonActiveNumberButton];
+                
+            }else if ([firstNumber  isEqualToString:@"0"] && ![secondNumber isEqualToString:@"."]) {
+                [_keyboardView activeNumberButton];
+                
+            }else {
+                [_keyboardView activeNumberButton];
+            };
+        }
+    }else if (NumberTextFieldStyleIdentityCard == _textFieldStyle){
+        if (textSring.length == 21) {
+            [self.keyboardView activeButtonX];
+        }else {
+            [self.keyboardView nonActiveButtonX];
+        };
+        
+    }else if (NumberTextFieldStyleRandomInputWithoutDot == _textFieldStyle){
+        
+        [self.keyboardView activeNumberButton];
+        
     };
+
+    
+    BOOL isValid = [self moneyInputJudge:textSring range:range] ;
+    NSString *returnString = isValid?textSring:[textSring substringToIndex:textSring.length - 1];
+    self.text = returnString;
+    
 }
-#pragma mark -  输入首位是否为0
+#pragma mark -  输入首位是否为0，只监听输入内容
 /*限制条件：
  *  1，[第一位不允许输入小数点'.']
  *  2，[只允许出现一次小数点]
@@ -232,24 +275,52 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
  *  4，整数金额输入框，第一位不可输入为0
  *  5，小数金额输入框，第一位是0，第二位只能输入小数点
  */
+//textString为输入前的字符串
 - (void)monitorTextContent:(NSString *)textSring and:(NSString *)numberString {
     BOOL isValid = YES;
     NSRange range = NSMakeRange(textSring.length, 0);
     if (textSring.length > 0) {
-        if ([numberString isEqualToString:@"0"] && range.location == 1 && (NumberTextFieldStyleInputWithoutDot == _textFieldStyle)) {
-            isValid = NO;
-            
-        }else if ( (NumberTextFieldStyleInputWithDot == _textFieldStyle)) {
+            //整数键盘首位不能输入0
+        if (NumberTextFieldStyleInputWithoutDot == _textFieldStyle) {
             if ([numberString isEqualToString:@"0"] && range.location == 1) {
-                isValid = YES;
+                isValid = NO;
+            };
+            
+        }else if (NumberTextFieldStyleInputWithDot == _textFieldStyle) {
+            
+            //  输入第一位是0，只能输入小数点，不能输入数字
+            if ([numberString isEqualToString:@"0"] && range.location == 1) {
                 [_keyboardView nonActiveNumberButton];
-            }else {
+             
+            }else{
                 [_keyboardView activeNumberButton];
             };
             
+            //  输入内容是否已经有小数点
+            if ([textSring containsString:@"."]) {
+                 [self.keyboardView nonActiveButtonX];
+            }else {
+                 [self.keyboardView activeButtonX];
+            };
+            
+        }else if (NumberTextFieldStyleIdentityCard == _textFieldStyle){
+            if (textSring.length == 20) {
+                [self.keyboardView activeButtonX];
+            }else {
+                [self.keyboardView nonActiveButtonX];
+            };
+            
+        }else if (NumberTextFieldStyleRandomInputWithoutDot == _textFieldStyle){
+            if (textSring.length == 6) {
+                [self.keyboardView nonActiveNumberButton];
+            }else {
+                [self.keyboardView activeNumberButton];
+            };
         };
+        
+        isValid = [self moneyInputJudge:textSring range:range] && isValid;
     };
-     isValid = [self moneyInputJudge:textSring range:range];
+    
     NSString *returnString = isValid?textSring:[textSring substringToIndex:textSring.length - 1];
     self.text = returnString;
 }

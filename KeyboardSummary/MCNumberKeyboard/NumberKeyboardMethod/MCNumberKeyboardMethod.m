@@ -319,8 +319,7 @@
     }
     return curTargetCursorPosition;
 }
-#pragma mark - 输入金额
-//输入金额:最大长度10位
+#pragma mark - 输入金额位数限制
 + (void)formatToInputAmount:(UITextField *)textField andString:(NSString *)textString andMaxLength:(NSInteger )maxLength{
     
     // 手机号码超过11位，进行限制

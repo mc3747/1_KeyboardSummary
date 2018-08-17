@@ -9,6 +9,7 @@
 #import "MyLinearLayout.h"
 
 typedef void(^NumberKeyboardClickInputBlock) (NSString *numberStr);
+
 typedef void(^NumberKeyboardClickNonInputBlock)(void);
 
 /*键盘view类型 */

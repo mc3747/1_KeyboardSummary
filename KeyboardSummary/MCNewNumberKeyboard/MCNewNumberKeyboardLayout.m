@@ -187,6 +187,7 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
             subButton.myHeight = CommonButtonHeight;
             [self setUpToCharacterButton:subButton];
             _leftBottomButton = subButton;
+            [self nonActiveButtonX];
             [fourthRowLayout addSubview:subButton];
             
         }else if (i == 10) {
@@ -222,6 +223,7 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
         titleString = @"全部删除";
     }else if (NumberKeyboardStylePoint == self.keyboardStyle) {
         titleString = @".";
+        
     }else if (NumberKeyboardStyleX == self.keyboardStyle) {
         titleString = @"X";
     }else {

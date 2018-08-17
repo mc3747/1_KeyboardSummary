@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MCNewNumberKeyboardTextField *textField1 = [[MCNewNumberKeyboardTextField alloc] initWithFrame:CGRectMake(50, 100, 200, 50) andStyle:NumberTextFieldStyleInputWithDot];
+    MCNewNumberKeyboardTextField *textField1 = [[MCNewNumberKeyboardTextField alloc] initWithFrame:CGRectMake(50, 100, 200, 50) andStyle:NumberTextFieldStyleRandomInputWithoutDot];
     [textField1 shouldChangeNumbers:^(MCNewNumberKeyboardTextField *textField, NSString *inputString, NSString *displayString) {
         NSLog(@"输入值：%@",inputString);
         NSLog(@"显示值：%@",displayString);
