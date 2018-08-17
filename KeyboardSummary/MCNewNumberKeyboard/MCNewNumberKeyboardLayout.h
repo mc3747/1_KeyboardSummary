@@ -57,4 +57,11 @@ typedef NS_ENUM(NSInteger, NumberKeyboardStyle) {
 
 /*取消激活身份证的X按钮 */
 - (void)nonActiveButtonX;
+
+/*激活数字按钮 */
+- (void)activeNumberButton;
+
+/*取消激活数字按钮 */
+- (void)nonActiveNumberButton;
+
 @end

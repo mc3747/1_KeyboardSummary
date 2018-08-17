@@ -41,13 +41,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KeyboardSummary/MCNewNumberKeyboard/MCNewNumberKeyboardLayout.m"
-            timestampString = "556006621.054991"
+            filePath = "KeyboardSummary/MCSecureKeyboard/SelfDefinedLabel/MCCharacterLabel.m"
+            timestampString = "556108486.4172291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "-setUpToCharacterButton:"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-notActiveState"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KeyboardSummary/MCSecureKeyboard/SelfDefinedLabel/MCCharacterLabel.m"
+            timestampString = "556108486.417303"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-init"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KeyboardSummary/MCSecureKeyboard/SelfDefinedLabel/MCCharacterLabel.m"
+            timestampString = "556108486.417359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-notSeletedState"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -39,6 +39,7 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
 @interface MCNewNumberKeyboardLayout ()
 @property(nonatomic,strong)NSMutableArray *numberArray;
 @property (nonatomic, strong) UIButton *leftBottomButton;
+@property (nonatomic, assign) BOOL isNotActive;
 @end
 @implementation MCNewNumberKeyboardLayout
 - (void)dealloc {
@@ -289,12 +290,15 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
             
             CGRect rect = [linerLayout convertRect:characterLabel.frame toView:self];
             if ( characterLabel.tag >= 600) {
-                if (CGRectContainsPoint(rect, point)) {
+                if (_isNotActive) {
+                    [characterLabel notActiveState];
                     
+                }else if (CGRectContainsPoint(rect, point)) {
                     [characterLabel selectedState];
-                } else {
+                    
+                }else {
                     [characterLabel notSeletedState];
-                }
+                };
             }
             
         }
@@ -311,10 +315,13 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
             
             CGRect rect = [linerLayout convertRect:characterLabel.frame toView:self];
             if ( characterLabel.tag >= 600) {
-                if (CGRectContainsPoint(rect, point)) {
-                    //                    NSLog(@"%@",characterLabel.text);
+                if (_isNotActive) {
+                    [characterLabel notActiveState];
+                    
+                }else if (CGRectContainsPoint(rect, point)) {
                     [characterLabel selectedState];
-                } else {
+                    
+                }else {
                     [characterLabel notSeletedState];
                 }
             }
@@ -331,10 +338,14 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
             
             CGRect rect = [linerLayout convertRect:characterLabel.frame toView:self];
             if ( characterLabel.tag >= 600) {
-                if (CGRectContainsPoint(rect, point)) {
+                if (_isNotActive) {
+                    [characterLabel notActiveState];
+                    
+                }else if(CGRectContainsPoint(rect, point)) {
                     //                    NSLog(@"%@",characterLabel.text);
                     [characterLabel notSeletedState];
                     [self clickCharacterBlock:characterLabel.text];
+                    
                 } else {
                     //                    NSLog(@"不在范围");
                     [characterLabel notSeletedState];
@@ -434,5 +445,27 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
             _leftBottomButton.layer.backgroundColor = kBackgroundColor.CGColor;
         };
 }
+#pragma mark - 激活数字按钮
+- (void)activeNumberButton {
+    _isNotActive = NO;
+    for (MyLinearLayout *linerLayout in self.subviews) {
+        for (MCCharacterLabel *characterLabel in linerLayout.subviews) {
+            if ( characterLabel.tag >= 600) {
+               [characterLabel notSeletedState];
+            }
+        }
+    }
+}
 
+#pragma mark - 未激活数字按钮
+- (void)nonActiveNumberButton {
+    _isNotActive = YES;
+    for (MyLinearLayout *linerLayout in self.subviews) {
+        for (MCCharacterLabel *characterLabel in linerLayout.subviews) {
+            if ( characterLabel.tag >= 600) {
+                [characterLabel notActiveState];
+            }
+        }
+    }
+}
 @end

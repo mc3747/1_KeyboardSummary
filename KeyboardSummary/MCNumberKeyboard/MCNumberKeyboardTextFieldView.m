@@ -291,7 +291,7 @@ static NSInteger kNum = 6;
         
     } else if (NumberTextFieldStyleInputWithoutDot == _textFieldStyle || NumberTextFieldStyleInputWithDot == _textFieldStyle) {
         // 输入金额
-        [MCNumberKeyboardMethod formatToInputAmount:_textField andString:textString];
+        [MCNumberKeyboardMethod formatToInputAmount:_textField andString:textString andMaxLength:10];
          [self monitorTextLength:textString];
     };
     

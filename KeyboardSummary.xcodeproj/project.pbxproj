@@ -121,6 +121,7 @@
 		422ED2C220FF45F000C77C64 /* MCPasswordKeyboardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422ED2BB20FF45F000C77C64 /* MCPasswordKeyboardTextView.m */; };
 		422ED2C320FF45F000C77C64 /* PasswordKeyboardTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 422ED2BF20FF45F000C77C64 /* PasswordKeyboardTextField.m */; };
 		422ED2C420FF45F000C77C64 /* PasswordKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422ED2C020FF45F000C77C64 /* PasswordKeyboardView.m */; };
+		4238B93A212561A500AF272E /* UITextField+Judge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4238B939212561A500AF272E /* UITextField+Judge.m */; };
 		42778B4B20F6F6E400B7582F /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B2A20F6F6E300B7582F /* IQTextView.m */; };
 		42778B4C20F6F6E400B7582F /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B2E20F6F6E300B7582F /* IQToolbar.m */; };
 		42778B4D20F6F6E400B7582F /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B3020F6F6E300B7582F /* IQTitleBarButtonItem.m */; };
@@ -332,6 +333,8 @@
 		422ED2BE20FF45F000C77C64 /* PasswordKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordKeyboardView.h; sourceTree = "<group>"; };
 		422ED2BF20FF45F000C77C64 /* PasswordKeyboardTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordKeyboardTextField.m; sourceTree = "<group>"; };
 		422ED2C020FF45F000C77C64 /* PasswordKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordKeyboardView.m; sourceTree = "<group>"; };
+		4238B938212561A400AF272E /* UITextField+Judge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Judge.h"; sourceTree = "<group>"; };
+		4238B939212561A500AF272E /* UITextField+Judge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Judge.m"; sourceTree = "<group>"; };
 		42778B2A20F6F6E300B7582F /* IQTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTextView.m; sourceTree = "<group>"; };
 		42778B2B20F6F6E300B7582F /* IQTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTextView.h; sourceTree = "<group>"; };
 		42778B2D20F6F6E300B7582F /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
@@ -519,6 +522,8 @@
 			children = (
 				421A3A4920EF050500BCDAF1 /* MCNumberKeyboardMethod.h */,
 				421A3A4A20EF050500BCDAF1 /* MCNumberKeyboardMethod.m */,
+				4238B938212561A400AF272E /* UITextField+Judge.h */,
+				4238B939212561A500AF272E /* UITextField+Judge.m */,
 			);
 			path = NumberKeyboardMethod;
 			sourceTree = "<group>";
@@ -1417,6 +1422,7 @@
 				42778B5020F6F6E400B7582F /* IQPreviousNextView.m in Sources */,
 				421A3AA120EF058500BCDAF1 /* MyMaker.m in Sources */,
 				421A3A6320EF050500BCDAF1 /* ChineseKeyboardTextField.m in Sources */,
+				4238B93A212561A500AF272E /* UITextField+Judge.m in Sources */,
 				421A3AA020EF058500BCDAF1 /* MyGridLayout.m in Sources */,
 				42778B6920F7357700B7582F /* HybrideKeyBoardField.m in Sources */,
 				42778B4F20F6F6E400B7582F /* IQUIView+IQKeyboardToolbar.m in Sources */,

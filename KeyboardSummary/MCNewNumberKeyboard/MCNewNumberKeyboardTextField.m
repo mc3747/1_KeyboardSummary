@@ -10,13 +10,15 @@
 #import "MCNewNumberKeyboardLayout.h"
 #import "MCNumberKeyboardMethod.h"
 #import "MCAccessoryLayout.h"
+#import "UITextField+Judge.h"
+
 
 /** 键盘主体高度 */
 static CGFloat const kMainKeyboardHeight = 216;
 /** 键盘顶部高度 */
 static CGFloat const kAccessoryKeyboardHeight = 39;
 
-@interface MCNewNumberKeyboardTextField()
+@interface MCNewNumberKeyboardTextField()<UITextFieldDelegate>
 @property (nonatomic, strong) MCAccessoryLayout         *accessoryLayout;
 @property (nonatomic, strong) MCNewNumberKeyboardLayout *keyboardView;
 @property (nonatomic, assign) NumberKeyboardStyle       keyboardStyle;
@@ -29,6 +31,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 - (instancetype)initWithFrame:(CGRect)frame andStyle:(NumberTextFieldStyle )textFieldStyle {
     self = [super initWithFrame:frame];
     if (self) {
+        self.delegate = self;
         _textFieldStyle = textFieldStyle;
         [self getViewCharacter:textFieldStyle];
         [self configTextField];
@@ -122,19 +125,19 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
     //数字
     [self.keyboardView getClickNumberBlock:^(NSString *numberStr) {
         weakSelf.textContent = [weakSelf.textContent stringByAppendingString:numberStr];
-        [weakSelf monitorTextFieldInput:weakSelf.textContent];
+        [weakSelf monitorTextFieldInput:weakSelf.textContent numberString:numberStr];
         [weakSelf monitorTextField];
     }];
     //小数点
     [self.keyboardView getClickDotBlock:^(NSString *numberStr) {
         weakSelf.textContent = [weakSelf.textContent stringByAppendingString:numberStr];
-        [weakSelf monitorTextFieldInput:weakSelf.textContent];
+        [weakSelf monitorTextFieldInput:weakSelf.textContent numberString:numberStr];
         [weakSelf monitorTextField];
     }];
     //字符X
     [self.keyboardView getClickXBlock:^(NSString *numberStr) {
         weakSelf.textContent = [weakSelf.textContent stringByAppendingString:numberStr];
-        [weakSelf monitorTextFieldInput:weakSelf.textContent];
+        [weakSelf monitorTextFieldInput:weakSelf.textContent numberString:numberStr];
         [weakSelf monitorTextField];
     }];
     //删除1位
@@ -164,8 +167,10 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
     };
 }
 
+
 #pragma mark - 监听textField的输入
-- (void)monitorTextFieldInput:(NSString *)textString {
+- (void)monitorTextFieldInput:(NSString *)textString numberString:(NSString *)numberString{
+    
     self.text = textString;
     
     if (NumberTextFieldStylePhone == _textFieldStyle) {
@@ -183,23 +188,30 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
         
     } else if (NumberTextFieldStyleInputWithoutDot == _textFieldStyle ) {
         // 输入整数金额
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString];
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:10];
         [self monitorTextLength:textString];
+        [self monitorTextContent:textString and:numberString];
         
     }else if (NumberTextFieldStyleInputWithDot == _textFieldStyle) {
         // 输入小数金额
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString];
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:13];
         [self monitorTextLength:textString];
+        [self monitorTextContent:textString and:numberString];
         
     }else if (NumberTextFieldStyleRandomInputWithoutDot == _textFieldStyle ) {
         // 输入交易密码
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString];
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:23];
         [self monitorTextLength:textString];
+        
+    } else {
+        // 默认
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:23];
     };
     
     self.textContent = self.text;
 }
-#pragma mark -  编辑内容
+
+#pragma mark -  输入内容
 - (void)monitorTextLength:(NSString *)text {
     
     if (text.length == 20 && NumberTextFieldStyleIdentityCard == _textFieldStyle ) {
@@ -212,7 +224,35 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
         [self.keyboardView nonActiveButtonX];
     };
 }
-
+#pragma mark -  输入首位是否为0
+/*限制条件：
+ *  1，[第一位不允许输入小数点'.']
+ *  2，[只允许出现一次小数点]
+ *  3，[只支持输入小数点后2位]
+ *  4，整数金额输入框，第一位不可输入为0
+ *  5，小数金额输入框，第一位是0，第二位只能输入小数点
+ */
+- (void)monitorTextContent:(NSString *)textSring and:(NSString *)numberString {
+    BOOL isValid = YES;
+    NSRange range = NSMakeRange(textSring.length, 0);
+    if (textSring.length > 0) {
+        if ([numberString isEqualToString:@"0"] && range.location == 1 && (NumberTextFieldStyleInputWithoutDot == _textFieldStyle)) {
+            isValid = NO;
+            
+        }else if ( (NumberTextFieldStyleInputWithDot == _textFieldStyle)) {
+            if ([numberString isEqualToString:@"0"] && range.location == 1) {
+                isValid = YES;
+                [_keyboardView nonActiveNumberButton];
+            }else {
+                [_keyboardView activeNumberButton];
+            };
+            
+        };
+    };
+     isValid = [self moneyInputJudge:textSring range:range];
+    NSString *returnString = isValid?textSring:[textSring substringToIndex:textSring.length - 1];
+    self.text = returnString;
+}
 #pragma mark - 回调方法
 - (void)shouldChangeNumbers:(NumberTextFieldBlock)returnBlock {
     _returnBlock = returnBlock;

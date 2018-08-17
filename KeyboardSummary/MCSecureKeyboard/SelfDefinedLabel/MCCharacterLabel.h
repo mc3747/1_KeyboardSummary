@@ -19,6 +19,8 @@
 - (void)selectedState;
 /*未选中状态*/
 - (void)notSeletedState;
+/*未激活状态*/
+- (void)notActiveState;
 /*更新显示字符*/
 - (void)changeLabelString:(NSString *)labelString;
 @end

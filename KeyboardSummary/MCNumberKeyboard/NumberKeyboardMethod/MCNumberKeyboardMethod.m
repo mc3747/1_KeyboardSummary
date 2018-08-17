@@ -320,18 +320,17 @@
     return curTargetCursorPosition;
 }
 #pragma mark - 输入金额
-//输入金额:最大长度10位？/首位是否能够为0？/输入小数点后的规则
-+ (void)formatToInputAmount:(UITextField *)textField andString:(NSString *)textString {
+//输入金额:最大长度10位
++ (void)formatToInputAmount:(UITextField *)textField andString:(NSString *)textString andMaxLength:(NSInteger )maxLength{
     
-    NSInteger kMaxLength = 10;
     // 手机号码超过11位，进行限制
     UITextRange *selectedRange = [textField markedTextRange];
     //获取高亮部分
     UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
     // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
     if (!position) {
-        if (textField.text.length > kMaxLength) {
-            textField.text = [textField.text substringToIndex:kMaxLength];
+        if (textField.text.length > maxLength) {
+            textField.text = [textField.text substringToIndex:maxLength];
         }
     };
     

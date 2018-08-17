@@ -29,9 +29,22 @@
     } ;
     return self;
 }
+
 #pragma mark - 选中状态
 - (void)selectedState {
     self.layer.backgroundColor = RGBColor(51, 167, 196).CGColor;
+    self.userInteractionEnabled = YES;
+    self.enabled = YES;
+    if (!_isHidBigLabel) {
+        self.enLargeLabel.hidden = NO;
+    };
+    self.textColor = [UIColor whiteColor];
+}
+#pragma mark - 未激活状态
+- (void)notActiveState {
+    self.layer.backgroundColor = RGBColor(26, 26, 26).CGColor;
+    self.userInteractionEnabled = NO;
+    self.enabled = NO;
     if (!_isHidBigLabel) {
         self.enLargeLabel.hidden = NO;
     };
@@ -40,6 +53,8 @@
 #pragma mark - 未选中状态
 - (void)notSeletedState {
     self.layer.backgroundColor = RGBColor(57, 57, 57).CGColor;
+    self.userInteractionEnabled = YES;
+    self.enabled = YES;
     if (!_isHidBigLabel) {
         self.enLargeLabel.hidden = YES;
     };

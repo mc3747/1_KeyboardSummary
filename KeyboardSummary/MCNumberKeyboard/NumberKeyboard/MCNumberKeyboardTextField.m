@@ -182,17 +182,17 @@
         
     } else if (MCNumberKeyboardStyleInputWithoutDot == _mcKeyboardStyle ) {
         // 输入整数金额
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString];
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:10];
         [self monitorTextLength:textString];
         
     }else if (MCNumberKeyboardStyleInputWithDot == _mcKeyboardStyle) {
         // 输入小数金额
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString];
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:13];
         [self monitorTextLength:textString];
         
     }else if (MCNumberKeyboardStyleRandomInputWithoutDot == _mcKeyboardStyle ) {
         // 输入交易密码
-        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString];
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:23];
         [self monitorTextLength:textString];
     };
     

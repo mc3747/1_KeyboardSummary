@@ -16,6 +16,7 @@
 + (void)formatToBankCard:(UITextField *)textField andString:(NSString *)textString;
 //身份证 6 4 4 4
 + (void)formatToIdentityCard:(UITextField *)textField andString:(NSString *)textString;
+
 //输入金额:最长10位
-+ (void)formatToInputAmount:(UITextField *)textField andString:(NSString *)textString;
++ (void)formatToInputAmount:(UITextField *)textField andString:(NSString *)textString andMaxLength:(NSInteger )maxLength;
 @end
