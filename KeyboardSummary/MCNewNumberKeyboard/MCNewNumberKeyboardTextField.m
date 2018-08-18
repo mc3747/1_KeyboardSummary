@@ -23,7 +23,12 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 @property (nonatomic, strong) MCNewNumberKeyboardLayout *keyboardView;
 @property (nonatomic, assign) NumberKeyboardStyle       keyboardStyle;
 @property (nonatomic, assign) BOOL isNumberKeyboardOrder;
+//显示值
 @property (nonatomic, copy) NSString *textContent;
+//有效值
+@property (nonatomic, copy) NSString *effectContent;
+
+@property (nonatomic, strong) UIView *warningView;
 @end
 
 @implementation MCNewNumberKeyboardTextField
@@ -160,47 +165,50 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 
 #pragma mark -  回调输出
 - (void)monitorTextField {
-    NSString *inputString = [self.textContent stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *inputString =[self returnEffectString:self.textContent];
     
     if (self.returnBlock) {
         self.returnBlock(self, inputString, self.textContent);
     };
 }
+#pragma mark -  不含空格的字符串
+- (NSString *)returnEffectString:(NSString *)textContent {
+    if (textContent.length > 0) {
+        return [textContent stringByReplacingOccurrencesOfString:@" " withString:@""];
 
+    }else {
+        return @"";
+    }
+}
 
 #pragma mark - 监听textField的输入
 - (void)monitorTextFieldInput:(NSString *)textString numberString:(NSString *)numberString{
     
     self.text = textString;
+    [self monitorTextContent:textString and:numberString];
     
     if (NumberTextFieldStylePhone == _textFieldStyle) {
         // 手机号码
-        [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToPhone:self andString:textString];
         
     } else if (NumberTextFieldStyleBankCard == _textFieldStyle) {
         // 银行卡
-        [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToBankCard:self andString:textString];
         
     } else if (NumberTextFieldStyleIdentityCard == _textFieldStyle) {
         // 身份证
-        [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToIdentityCard:self andString:textString];
         
     } else if (NumberTextFieldStyleInputWithoutDot == _textFieldStyle ) {
         // 输入整数金额
-        [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:10];
        
     }else if (NumberTextFieldStyleInputWithDot == _textFieldStyle) {
         // 输入小数金额
-        [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:13];
         
     }else if (NumberTextFieldStyleRandomInputWithoutDot == _textFieldStyle ) {
         // 输入交易密码
-          [self monitorTextContent:textString and:numberString];
         [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:6];
         
     } else {
@@ -214,7 +222,6 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 #pragma mark -  监听删除的内容:textString为删除前的字符串
 - (void)monitorDeleteContent:(NSString *)textSring {
     
-     NSRange range = NSMakeRange(textSring.length, 0);
     
     if (NumberTextFieldStyleInputWithDot == _textFieldStyle) {
         //  内容是否已经有小数点
@@ -241,13 +248,11 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
             if([firstNumber  isEqualToString:@"0"] && [secondNumber isEqualToString:@"."]){
                 [_keyboardView nonActiveNumberButton];
                 
-            }else if ([firstNumber  isEqualToString:@"0"] && ![secondNumber isEqualToString:@"."]) {
-                [_keyboardView activeNumberButton];
-                
             }else {
                 [_keyboardView activeNumberButton];
             };
         }
+        
     }else if (NumberTextFieldStyleIdentityCard == _textFieldStyle){
         if (textSring.length == 21) {
             [self.keyboardView activeButtonX];
@@ -255,18 +260,26 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
             [self.keyboardView nonActiveButtonX];
         };
         
-    }else if (NumberTextFieldStyleRandomInputWithoutDot == _textFieldStyle){
+    }else{
         
         [self.keyboardView activeNumberButton];
         
     };
 
     
-    BOOL isValid = [self moneyInputJudge:textSring range:range] ;
-    NSString *returnString = isValid?textSring:[textSring substringToIndex:textSring.length - 1];
-    self.text = returnString;
+    if (textSring.length >=2) {
+        NSString *lastString = [textSring substringWithRange:NSMakeRange(textSring.length - 2, 1)];
+        BOOL isValid = ![lastString isEqualToString:@" "];
+        NSString *returnString = isValid?textSring:[textSring substringToIndex:textSring.length - 1];
+        self.text = returnString;
+        
+    }else {
+         self.text = textSring;
+    };
+   
     
 }
+
 #pragma mark -  输入首位是否为0，只监听输入内容
 /*限制条件：
  *  1，[第一位不允许输入小数点'.']
@@ -276,16 +289,43 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
  *  5，小数金额输入框，第一位是0，第二位只能输入小数点
  */
 //textString为输入前的字符串
-- (void)monitorTextContent:(NSString *)textSring and:(NSString *)numberString {
+- (void)monitorTextContent:(NSString *)textString and:(NSString *)numberString {
     BOOL isValid = YES;
-    NSRange range = NSMakeRange(textSring.length, 0);
-    if (textSring.length > 0) {
-            //整数键盘首位不能输入0
-        if (NumberTextFieldStyleInputWithoutDot == _textFieldStyle) {
+    NSRange range = NSMakeRange(textString.length, 0);
+    NSString *effectString = [self returnEffectString:textString];
+    if (textString.length > 0) {
+        
+//默认键盘
+        if (NumberTextFieldStyleDefault == _textFieldStyle) {
+            [self limitNumberButton:effectString textLength:23];
+            if (effectString.length > 3) {
+                [self addWarningView];
+            } else {
+                [self hideWarningView];
+            };
+            
+//电话号码键盘
+        }else if (NumberTextFieldStylePhone == _textFieldStyle){
+            [self limitNumberButton:effectString textLength:11];
+            
+//银卡卡键盘
+        }else if (NumberTextFieldStyleBankCard == _textFieldStyle){
+            [self limitNumberButton:effectString textLength:19];
+            
+//身份证键盘
+        }else if (NumberTextFieldStyleIdentityCard == _textFieldStyle){
+            if (effectString.length == 17) {
+                [self.keyboardView activeButtonX];
+            }else {
+                [self.keyboardView nonActiveButtonX];
+            };
+//整数键盘
+        }else if (NumberTextFieldStyleInputWithoutDot == _textFieldStyle) {
+            //首位不能输入0
             if ([numberString isEqualToString:@"0"] && range.location == 1) {
                 isValid = NO;
             };
-            
+//小数键盘
         }else if (NumberTextFieldStyleInputWithDot == _textFieldStyle) {
             
             //  输入第一位是0，只能输入小数点，不能输入数字
@@ -297,36 +337,54 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
             };
             
             //  输入内容是否已经有小数点
-            if ([textSring containsString:@"."]) {
+            if ([textString containsString:@"."]) {
                  [self.keyboardView nonActiveButtonX];
             }else {
                  [self.keyboardView activeButtonX];
             };
-            
-        }else if (NumberTextFieldStyleIdentityCard == _textFieldStyle){
-            if (textSring.length == 20) {
-                [self.keyboardView activeButtonX];
-            }else {
-                [self.keyboardView nonActiveButtonX];
-            };
-            
+//密码键盘
         }else if (NumberTextFieldStyleRandomInputWithoutDot == _textFieldStyle){
-            if (textSring.length == 6) {
-                [self.keyboardView nonActiveNumberButton];
-            }else {
-                [self.keyboardView activeNumberButton];
-            };
+            
+            [self limitNumberButton:effectString textLength:6];
         };
         
-        isValid = [self moneyInputJudge:textSring range:range] && isValid;
+        isValid = [self moneyInputJudge:textString range:range] && isValid;
     };
-    
-    NSString *returnString = isValid?textSring:[textSring substringToIndex:textSring.length - 1];
+    //是否允许输入
+    NSString *returnString = isValid?textString:[textString substringToIndex:textString.length - 1];
     self.text = returnString;
 }
 #pragma mark - 回调方法
 - (void)shouldChangeNumbers:(NumberTextFieldBlock)returnBlock {
     _returnBlock = returnBlock;
+}
+
+#pragma mark -  限制位数，是否激活数字按钮
+- (void)limitNumberButton:(NSString *)textString textLength:(NSUInteger )textLength {
+    
+    if (textString.length == textLength) {
+        [self.keyboardView nonActiveNumberButton];
+    }else {
+        [self.keyboardView activeNumberButton];
+    };
+}
+
+- (void)addWarningView {
+    self.warningView.hidden = NO;
+}
+- (void)hideWarningView {
+    self.warningView.hidden = YES;
+}
+
+- (UIView *)warningView
+{
+    if (!_warningView) {
+        _warningView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height, MAIN_SCREEN_WIDTH, 30)];
+        _warningView.backgroundColor = [UIColor redColor];
+        [self addSubview:_warningView];
+    }
+    
+    return _warningView;
 }
 #pragma mark - 顶部提示layout
 - (MCAccessoryLayout *)accessoryLayout
