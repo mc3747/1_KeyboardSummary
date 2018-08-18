@@ -147,6 +147,7 @@
 		42C6583220FD729400CCB957 /* MCNumberKeyboardTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6582B20FD729300CCB957 /* MCNumberKeyboardTextField.m */; };
 		42C6583320FD729400CCB957 /* MCNumberKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6582C20FD729300CCB957 /* MCNumberKeyboardView.m */; };
 		42C6583D20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6583C20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m */; };
+		42DE977F21283A5B00A4BBD6 /* MCNewNumberKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DE977E21283A5B00A4BBD6 /* MCNewNumberKeyboardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -386,6 +387,8 @@
 		42C6582E20FD729300CCB957 /* MCNumberKeyboardTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNumberKeyboardTextFieldView.h; sourceTree = "<group>"; };
 		42C6583B20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfDefinedSystemKeyboardVC.h; sourceTree = "<group>"; };
 		42C6583C20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfDefinedSystemKeyboardVC.m; sourceTree = "<group>"; };
+		42DE977D21283A5B00A4BBD6 /* MCNewNumberKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNewNumberKeyboardView.h; sourceTree = "<group>"; };
+		42DE977E21283A5B00A4BBD6 /* MCNewNumberKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCNewNumberKeyboardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +419,8 @@
 		4208F4532122D4CC002B1607 /* MCNewNumberKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				42DE977D21283A5B00A4BBD6 /* MCNewNumberKeyboardView.h */,
+				42DE977E21283A5B00A4BBD6 /* MCNewNumberKeyboardView.m */,
 				4208F4572122DE69002B1607 /* MCNewNumberKeyboardTextField.h */,
 				4208F4582122DE69002B1607 /* MCNewNumberKeyboardTextField.m */,
 				4208F4552122D4CC002B1607 /* MCNewNumberKeyboardLayout.h */,
@@ -1428,6 +1433,7 @@
 				42778B4F20F6F6E400B7582F /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				421A3AAC20EF058500BCDAF1 /* MyBorderline.m in Sources */,
 				421A3AAA20EF058500BCDAF1 /* MyLinearLayout.m in Sources */,
+				42DE977F21283A5B00A4BBD6 /* MCNewNumberKeyboardView.m in Sources */,
 				421A3A0E20EF043000BCDAF1 /* AppDelegate.m in Sources */,
 				42778B5420F6F6E400B7582F /* IQUITextFieldView+Additions.m in Sources */,
 				421A3AA420EF058500BCDAF1 /* MyPathLayout.m in Sources */,

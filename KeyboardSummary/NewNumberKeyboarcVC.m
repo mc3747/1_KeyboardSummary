@@ -8,6 +8,7 @@
 
 #import "NewNumberKeyboarcVC.h"
 #import "MCNewNumberKeyboardTextField.h"
+#import "MCNewNumberKeyboardView.h"
 
 @interface NewNumberKeyboarcVC ()
 
@@ -17,11 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MCNewNumberKeyboardTextField *textField1 = [[MCNewNumberKeyboardTextField alloc] initWithFrame:CGRectMake(20, 100, 300, 50) andStyle:NumberTextFieldStyleDefault];
-    textField1.placeholder = @"1,默认";
-    [textField1 shouldChangeNumbers:^(MCNewNumberKeyboardTextField *textField, NSString *inputString, NSString *displayString) {
+//    MCNewNumberKeyboardTextField *textField1 = [[MCNewNumberKeyboardTextField alloc] initWithFrame:CGRectMake(20, 100, 300, 50) andStyle:NumberTextFieldStyleDefault];
+    MCNewNumberKeyboardView *textField1 = [[MCNewNumberKeyboardView alloc] initWithFrame:CGRectMake(20, 100, 300, 50) andStyle:NumberTextFieldStyleDefault];
+    textField1.textField.placeholder = @"1,默认";
+    [textField1.textField shouldChangeNumbers:^(MCNewNumberKeyboardTextField *textField, NSString *inputString, NSString *displayString) {
         NSLog(@"输入值：%@",inputString);
         NSLog(@"显示值：%@",displayString);
+        if (inputString.length > 3) {
+            textField1.frame = CGRectMake(20, 100, textField1.bounds.size.width, 80);
+            [textField1 showWarningView:@"报错了"];
+            
+        }else {
+            textField1.frame = CGRectMake(20, 100, textField1.bounds.size.width, 50);
+            [textField1 hideWarningView];
+        };
     }];
     [self.view addSubview:textField1];
     

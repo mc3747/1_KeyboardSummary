@@ -28,7 +28,6 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 //有效值
 @property (nonatomic, copy) NSString *effectContent;
 
-@property (nonatomic, strong) UIView *warningView;
 @end
 
 @implementation MCNewNumberKeyboardTextField
@@ -298,11 +297,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 //默认键盘
         if (NumberTextFieldStyleDefault == _textFieldStyle) {
             [self limitNumberButton:effectString textLength:23];
-            if (effectString.length > 3) {
-                [self addWarningView];
-            } else {
-                [self hideWarningView];
-            };
+
             
 //电话号码键盘
         }else if (NumberTextFieldStylePhone == _textFieldStyle){
@@ -369,23 +364,6 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
     };
 }
 
-- (void)addWarningView {
-    self.warningView.hidden = NO;
-}
-- (void)hideWarningView {
-    self.warningView.hidden = YES;
-}
-
-- (UIView *)warningView
-{
-    if (!_warningView) {
-        _warningView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height, MAIN_SCREEN_WIDTH, 30)];
-        _warningView.backgroundColor = [UIColor redColor];
-        [self addSubview:_warningView];
-    }
-    
-    return _warningView;
-}
 #pragma mark - 顶部提示layout
 - (MCAccessoryLayout *)accessoryLayout
 {
