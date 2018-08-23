@@ -18,9 +18,16 @@
 #define kButtonHighlightColor RGBColor(43, 150, 183)
 
 /** 字母宽度 */
-#define CharacterWidth ([UIScreen mainScreen].bounds.size.width - 11 * kColumnGap) / 10.f
+#define CharacterWidth (self.bounds.size.width - 9 * kColumnBetweenGap - 2 * kColumnLeftOrRightGap) / 10.f
+
 /** 字母高度 */
-#define CharacterHeighth kSubLayoutHeighth - kRowGap * 2
+#define CharacterHeighth (kMainKeyboardHeight - kRowBetweenGap * 4 - kRowTopOrBottomGap *2) / 5.f
+
+/** 上下子layout高度 */
+#define  CommonTopAndBottomLayoutHeight (CharacterHeighth + kRowTopOrBottomGap + kRowBetweenGap*0.5f)
+
+/** 中间子layout高度 */
+#define  CommonMiddleLayoutHeight (CharacterHeighth + kRowBetweenGap)
 
 /** 字符键盘显示状态 */
 typedef NS_ENUM(NSInteger, ShiftClickState) {
@@ -31,11 +38,13 @@ typedef NS_ENUM(NSInteger, ShiftClickState) {
 /** 键盘总高度 */
 static CGFloat const kMainKeyboardHeight = 270;
 /** 键盘行间距 */
-static CGFloat const kRowGap = 3.f;
+static CGFloat const kRowBetweenGap = 3.f;
 /** 键盘列间距 */
-static CGFloat const kColumnGap = 4.f;
-/** 每个子layout高度 */
-static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
+static CGFloat const kColumnBetweenGap = 4.f;
+/** 键盘行上下边距 */
+static CGFloat const kRowTopOrBottomGap = 2.f;
+/** 键盘列左右边距 */
+static CGFloat const kColumnLeftOrRightGap = 3.f;
 
 @interface HybrideCharacterKeyboardLayout ()
 /** 小写字母键盘内容 */
@@ -83,7 +92,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     MyLinearLayout *firstRowLayout = [[MyLinearLayout alloc] initWithOrientation:MyOrientation_Horz];
     firstRowLayout.myLeading = 0;
     firstRowLayout.myTop = 0;
-    firstRowLayout.myHeight = kSubLayoutHeighth;
+    firstRowLayout.myHeight = CommonTopAndBottomLayoutHeight;
     firstRowLayout.myWidth =  self.bounds.size.width;
     
     // 第0排按钮
@@ -93,16 +102,17 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         MCCharacterLabel *characterLabel = [[MCCharacterLabel alloc] init];
         characterLabel.isLeftLabel = NO;
         characterLabel.isRightLabel = NO;
+        characterLabel.myLeading = kColumnBetweenGap;
+        characterLabel.myTop = kRowTopOrBottomGap;
+        characterLabel.myWidth = CharacterWidth;
+        characterLabel.myHeight = CharacterHeighth;
         if (i == 0) {
             characterLabel.isLeftLabel = YES;
+            characterLabel.myLeading = kColumnLeftOrRightGap;
         }
         if (i == 9) {
             characterLabel.isRightLabel = YES;
-        }
-        characterLabel.myLeading = kColumnGap;
-        characterLabel.myTop = kRowGap;
-        characterLabel.myWidth = CharacterWidth;
-        characterLabel.myHeight = CharacterHeighth;
+        };
         characterLabel.text = charcterStr;
         characterLabel.tag = 700 + i;
         [firstRowLayout addSubview:characterLabel];
@@ -115,7 +125,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     MyLinearLayout *firstRowLayout = [[MyLinearLayout alloc] initWithOrientation:MyOrientation_Horz];
     firstRowLayout.myLeading = 0;
     firstRowLayout.myTop = 0;
-    firstRowLayout.myHeight = kSubLayoutHeighth;
+    firstRowLayout.myHeight = CommonMiddleLayoutHeight;
     firstRowLayout.myWidth =  self.bounds.size.width;
     
 // 第一排按钮
@@ -125,16 +135,17 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         MCCharacterLabel *characterLabel = [[MCCharacterLabel alloc] init];
         characterLabel.isLeftLabel = NO;
         characterLabel.isRightLabel = NO;
+        characterLabel.myLeading = kColumnBetweenGap;
+        characterLabel.myTop = kRowBetweenGap * 0.5f;;
+        characterLabel.myWidth = CharacterWidth;
+        characterLabel.myHeight = CharacterHeighth;
         if (i == 10) {
             characterLabel.isLeftLabel = YES;
+            characterLabel.myLeading = kColumnLeftOrRightGap;
         }
         if (i == 19) {
             characterLabel.isRightLabel = YES;
-        }
-        characterLabel.myLeading = kColumnGap;
-        characterLabel.myTop = kRowGap;
-        characterLabel.myWidth = CharacterWidth;
-        characterLabel.myHeight = CharacterHeighth;
+        };
         characterLabel.text = charcterStr;
         characterLabel.tag = 700 + i;
         [firstRowLayout addSubview:characterLabel];
@@ -148,17 +159,17 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     secondRowLayout.myLeading = 0;
     secondRowLayout.myTop = 0;
     secondRowLayout.myWidth = self.bounds.size.width;
-    secondRowLayout.myHeight = kSubLayoutHeighth;
+    secondRowLayout.myHeight = CommonMiddleLayoutHeight;
 // 第二排按钮
     for (int i = 20; i <= 28; i ++) {
         NSString *charcterStr = self.lowerCharacterTitle[i];
         MCCharacterLabel *characterLabel = [[MCCharacterLabel alloc] init];
-        characterLabel.myLeading = kColumnGap;
-        characterLabel.myTop = kRowGap;
+        characterLabel.myLeading = kColumnBetweenGap;
+        characterLabel.myTop = kRowBetweenGap * 0.5f;;
         characterLabel.myWidth = CharacterWidth;
         characterLabel.myHeight = CharacterHeighth;
         if (i == 20) {
-            characterLabel.myLeading = (secondRowLayout.myWidth - 8 *kColumnGap - 9 * CharacterWidth) / 2;
+            characterLabel.myLeading = (secondRowLayout.myWidth - 8 *kColumnBetweenGap - 9 * CharacterWidth) / 2;
         }
         characterLabel.text = charcterStr;
         characterLabel.tag = 700 + i;
@@ -173,7 +184,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     thirdRowLayout.myLeading = 0;
     thirdRowLayout.myTop = 0;
     thirdRowLayout.myWidth = self.bounds.size.width;
-    thirdRowLayout.myHeight = kSubLayoutHeighth;
+    thirdRowLayout.myHeight = CommonMiddleLayoutHeight;
     
 // shift按钮
     UIButton *shiftCharcterBtn = [[UIButton alloc] init];
@@ -181,9 +192,9 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     [shiftCharcterBtn setImage:[UIImage imageNamed:@"CharacterKeyBoard_Shift_Small_HightLight"] forState:UIControlStateHighlighted];
     [shiftCharcterBtn addTarget:self action:@selector(singleClikshiftButton) forControlEvents:UIControlEventTouchDown];
     [shiftCharcterBtn addTarget:self action:@selector(doubleClikshiftButton) forControlEvents:UIControlEventTouchDownRepeat];
-    shiftCharcterBtn.myLeading = kColumnGap;
-    shiftCharcterBtn.myTop = kRowGap;
-    shiftCharcterBtn.myWidth = (thirdRowLayout.myWidth - 10 * kColumnGap - 7 *CharacterWidth) / 2.f;
+    shiftCharcterBtn.myLeading = kColumnLeftOrRightGap;
+    shiftCharcterBtn.myTop = kRowBetweenGap * 0.5f;;
+    shiftCharcterBtn.myWidth = (thirdRowLayout.myWidth - 10 * kColumnBetweenGap - 7 *CharacterWidth) / 2.f;
     shiftCharcterBtn.myHeight = CharacterHeighth;
     [thirdRowLayout addSubview:shiftCharcterBtn];
     _shiftButton = shiftCharcterBtn;
@@ -191,8 +202,8 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     for (int i = 30; i <= 36; i ++) {
         NSString *charcterStr = self.lowerCharacterTitle[i];
         MCCharacterLabel *characterLabel = [[MCCharacterLabel alloc] init];
-        characterLabel.myLeading = kColumnGap;
-        characterLabel.myTop = kRowGap;
+        characterLabel.myLeading = kColumnBetweenGap;
+        characterLabel.myTop = kRowBetweenGap * 0.5f;
         characterLabel.myWidth = CharacterWidth;
         characterLabel.myHeight = CharacterHeighth;
                 characterLabel.text = charcterStr;
@@ -204,9 +215,9 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     [deleteCharcterBtn setImage:[UIImage imageNamed:@"CharacterKeyBoard_Back_Normal"] forState:UIControlStateNormal];
     [deleteCharcterBtn setImage:[UIImage imageNamed:@"CharacterKeyBoard_Back_TouchDown"] forState:UIControlStateHighlighted];
     [deleteCharcterBtn addTarget:self action:@selector(deleteCharacterBlock) forControlEvents:UIControlEventTouchUpInside];
-    deleteCharcterBtn.myLeading = kColumnGap;
-    deleteCharcterBtn.myTop = kRowGap;
-    deleteCharcterBtn.myWidth = (thirdRowLayout.myWidth - 10 * kColumnGap - 7 *CharacterWidth) / 2.f;
+    deleteCharcterBtn.myLeading = kColumnBetweenGap;
+    deleteCharcterBtn.myTop = kRowBetweenGap * 0.5f;
+    deleteCharcterBtn.myWidth = (thirdRowLayout.myWidth - 10 * kColumnBetweenGap - 7 *CharacterWidth) / 2.f;
     deleteCharcterBtn.myHeight = CharacterHeighth;
     [thirdRowLayout addSubview:deleteCharcterBtn];
     
@@ -219,7 +230,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
     fourthRowLayout.myLeading = 0;
     fourthRowLayout.myTop = 0;
     fourthRowLayout.myWidth = self.bounds.size.width;
-    fourthRowLayout.myHeight = kSubLayoutHeighth;
+    fourthRowLayout.myHeight = CommonTopAndBottomLayoutHeight;
     
 // 切换到特殊字符键盘按钮
     for (int i = 38; i <= 40; i ++) {
@@ -230,11 +241,13 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         [characterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [characterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         characterButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        characterButton.myLeading = kColumnGap;
-        characterButton.myTop = kRowGap;
-        characterButton.myWidth = (fourthRowLayout.myWidth - 4 * kColumnGap) / 4.f;
+        characterButton.myLeading = kColumnBetweenGap;
+        characterButton.myTop =  kRowBetweenGap * 0.5f;
+        characterButton.myWidth = (fourthRowLayout.myWidth - 4 * kColumnBetweenGap) / 4.f;
+        characterButton.myHeight = CharacterHeighth;
         // 切换到特殊字符键盘按钮
         if (i == 38) {
+            characterButton.myLeading = kColumnLeftOrRightGap;
             [characterButton setBackgroundImage:[self imageWithColor:kButtonNormalColor] forState:UIControlStateNormal];
             [characterButton setTitle:self.lowerCharacterTitle[i] forState:UIControlStateNormal];
             [characterButton.titleLabel setFont:[UIFont systemFontOfSize:kSecutiryKeyboardTitleFont]];
@@ -247,7 +260,7 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
             [characterButton setImage:[UIImage imageNamed:@"CharacterKeyBoard_Space_Normal"] forState:UIControlStateNormal];
             [characterButton setImage:[UIImage imageNamed:@"CharacterKeyBoard_Space_TouchDown"] forState:UIControlStateHighlighted];
             [characterButton addTarget:self action:@selector(clickBlankSpaceBlock) forControlEvents:UIControlEventTouchUpInside];
-            characterButton.myWidth = (fourthRowLayout.myWidth - 4 * kColumnGap) / 2.f;
+            characterButton.myWidth = (fourthRowLayout.myWidth - 4 * kColumnBetweenGap) / 2.f;
         }
         // 完成按钮
         if (i == 40) {
@@ -260,9 +273,8 @@ static CGFloat const kSubLayoutHeighth = kMainKeyboardHeight / 5.f;
         }
         
         [characterButton setBackgroundImage:[UIImage imageNamed:@"NumberKeyBoard_Number_TouchDown"] forState:UIControlStateHighlighted];
-        characterButton.myHeight = fourthRowLayout.myHeight - kRowGap * 2;
+//        characterButton.myHeight = fourthRowLayout.myHeight - kRowBetweenGap * 2;
         [fourthRowLayout addSubview:characterButton];
-        
     }
     
     [self addSubview:fourthRowLayout];

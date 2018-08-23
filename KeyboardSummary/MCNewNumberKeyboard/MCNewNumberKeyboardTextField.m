@@ -25,8 +25,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 @property (nonatomic, assign) BOOL isNumberKeyboardOrder;
 //显示值
 @property (nonatomic, copy) NSString *textContent;
-//有效值
-@property (nonatomic, copy) NSString *effectContent;
+
 
 @end
 
@@ -221,27 +220,19 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 #pragma mark -  监听删除的内容:textString为删除前的字符串
 - (void)monitorDeleteContent:(NSString *)textSring {
     
-    
+//  小数键盘
     if (NumberTextFieldStyleInputWithDot == _textFieldStyle) {
-        //  内容是否已经有小数点
-        NSString *lastString = [textSring substringFromIndex:textSring.length - 1];
-        
-        if ([textSring containsString:@"."] && [lastString isEqualToString:@"."]) {
-            [self.keyboardView activeButtonX];
+      
+        if (textSring.length <= 0) {
+            return;
             
-        }else if([textSring containsString:@"."] && ![lastString isEqualToString:@"."]){
-            [self.keyboardView nonActiveButtonX];
-            
-        }else {
-            [self.keyboardView activeButtonX];
-        };
-        
-        //    内容
-        if (textSring.length == 1) {
+        }else if (textSring.length == 1) {
+            //剩余1位
             [_keyboardView activeNumberButton];
             [self.keyboardView nonActiveButtonX];
             
         }else if (textSring.length == 2) {
+            //剩余2位
             NSString *firstNumber = [textSring substringToIndex:1];
             NSString *secondNumber = [textSring substringWithRange:NSMakeRange(1, 1)];
             if([firstNumber  isEqualToString:@"0"] && [secondNumber isEqualToString:@"."]){
@@ -250,8 +241,23 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
             }else {
                 [_keyboardView activeNumberButton];
             };
-        }
+            
+        }else {
+            //  内容是否已经有小数点
+            NSString *lastString = [textSring substringFromIndex:textSring.length - 1];
+            
+            if ([textSring containsString:@"."] && [lastString isEqualToString:@"."]) {
+                [self.keyboardView activeButtonX];
+                
+            }else if([textSring containsString:@"."] && ![lastString isEqualToString:@"."]){
+                [self.keyboardView nonActiveButtonX];
+                
+            }else {
+                [self.keyboardView activeButtonX];
+            };
+        };
         
+//  银行卡键盘
     }else if (NumberTextFieldStyleIdentityCard == _textFieldStyle){
         if (textSring.length == 21) {
             [self.keyboardView activeButtonX];
@@ -265,7 +271,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
         
     };
 
-    
+//统一处理带空格显示的输入框    
     if (textSring.length >=2) {
         NSString *lastString = [textSring substringWithRange:NSMakeRange(textSring.length - 2, 1)];
         BOOL isValid = ![lastString isEqualToString:@" "];
@@ -349,6 +355,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
     NSString *returnString = isValid?textString:[textString substringToIndex:textString.length - 1];
     self.text = returnString;
 }
+
 #pragma mark - 回调方法
 - (void)shouldChangeNumbers:(NumberTextFieldBlock)returnBlock {
     _returnBlock = returnBlock;

@@ -19,7 +19,6 @@ typedef NS_ENUM(NSInteger, HybrideKeyBoardType) {
 /**  键盘输入值变化block*/
 typedef void(^HbrideReturnBlock)(HybrideKeyBoardField *textField, NSString *string);
 
-
 /** 键盘显示block*/
 typedef void(^keyBoardWillShowBlock)(void);
 
@@ -27,7 +26,7 @@ typedef void(^keyBoardWillShowBlock)(void);
 typedef void(^keyBoardWillHideBlock)(void);
 
 
-@interface HybrideKeyBoardField : UIFloatLabelTextField
+@interface HybrideKeyBoardField : UITextField
 /*
  *  监听键盘输入值的变化
  */
@@ -36,22 +35,22 @@ typedef void(^keyBoardWillHideBlock)(void);
  *  键盘类型
  */
 @property (nonatomic, assign) HybrideKeyBoardType    safeKeyBoardType;
+
 /*
  *  禁止空格  默认 NO，即可使用空格
  */
 @property (nonatomic, assign) BOOL                      forbidSpace;
+
 /*
  *  禁止剪贴板  默认 NO，即可使用剪贴板
  */
 @property (nonatomic, assign) BOOL                      forbidClipboard;
-/*
- *  禁止数字键盘  默认 NO，即可使用数字键盘
- */
-@property (nonatomic, assign) BOOL                      forbidNumber;
+
 /*
  *  禁止字母键盘  默认 NO，即可使用字母键盘
  */
 @property (nonatomic, assign) BOOL                      forbidABC;
+
 /*
  *  禁止特殊字符键盘  默认 NO，即可使用特殊字符键盘
  */
@@ -62,8 +61,14 @@ typedef void(^keyBoardWillHideBlock)(void);
  */
 @property (nonatomic, assign) BOOL                      isHiddenAccessoryView;
 
+/*
+ *  即将隐藏回调
+ */
 @property (nonatomic, copy) keyBoardWillHideBlock   keyBordWillHideBlock;
 
+/*
+ *  即将显示回调
+ */
 @property (nonatomic, copy) keyBoardWillShowBlock   keyBordWillShowBlock;
 
 /** 键盘类型:若不设置,将初始化系统键盘*/

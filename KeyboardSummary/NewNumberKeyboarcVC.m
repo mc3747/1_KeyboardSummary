@@ -9,6 +9,7 @@
 #import "NewNumberKeyboarcVC.h"
 #import "MCNewNumberKeyboardTextField.h"
 #import "MCNewNumberKeyboardView.h"
+#import "HybrideKeyBoardField.h"
 
 @interface NewNumberKeyboarcVC ()
 
@@ -83,6 +84,14 @@
     }];
     [self.view addSubview:textField7];
     
+    HybrideKeyBoardField *textField8 = [[HybrideKeyBoardField alloc] initWithFrame:CGRectMake(20, 520, 300, 50)];
+    textField8.placeholder = @"8,混合";
+    textField8.forbidSpace = YES;
+    [textField8 setHybrideKeyBoardType:HybrideKeyBoardTypeCharacter];
+    [textField8 shouldChangeCharacters:^(HybrideKeyBoardField *textField, NSString *string) {
+        NSLog(@"%@",string);
+    }];
+    [self.view addSubview:textField8];
 }
 
 

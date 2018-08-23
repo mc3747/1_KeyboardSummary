@@ -31,9 +31,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (instancetype)initWithFrame:(CGRect)frame andStyle:(NumberTextFieldStyle )textFieldStyle {
     if (self = [super initWithFrame:frame]) {
         [self addTextFieldWithFrame:frame andStyle:textFieldStyle];
+        [self addTriangleViewWithFrame:frame andStyle:textFieldStyle];
         [self addWarningViewWithFrame:frame andStyle:textFieldStyle];
-         _warningView.hidden = YES;
-        self.clipsToBounds = YES;
+        [self bringSubviewToFront:_triangleView];
+        [self sendSubviewToBack:_warningView];
     }
     return self;
 }
@@ -42,19 +43,14 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)addTextFieldWithFrame:(CGRect)frame andStyle:(NumberTextFieldStyle )textFieldStyle {
     _textField = [[MCNewNumberKeyboardTextField alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) andStyle:textFieldStyle];
     _textField.placeholder = @"1,默认";
+    _textField.backgroundColor = [UIColor whiteColor];
     [self addSubview:_textField];
 }
-
-#pragma mark -  警告框
-- (void)addWarningViewWithFrame:(CGRect)frame andStyle:(NumberTextFieldStyle )textFieldStyle {
+#pragma mark -  小三角
+- (void)addTriangleViewWithFrame:(CGRect)frame andStyle:(NumberTextFieldStyle )textFieldStyle {
     
-    _warningView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height - 10, frame.size.width, 40)];
-    _warningView.backgroundColor = COMMON_WANRING_BG_COLOR;
-    [self addSubview:_warningView];
-    
-    _triangleView = [[UIView alloc] initWithFrame:CGRectMake(0, -10, MAIN_SCREEN_WIDTH, 10)];
+    _triangleView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height - 10, MAIN_SCREEN_WIDTH, 10)];
     _triangleView.backgroundColor = [UIColor whiteColor];
-    [_warningView addSubview:_triangleView];
     
     CAShapeLayer *outlineLayer = [[CAShapeLayer alloc] init];
     outlineLayer.strokeColor = COMMON_WANRING_BG_COLOR.CGColor;
@@ -74,7 +70,16 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     //三角形内填充颜色
     outlineLayer.path = path.CGPath;
     [_triangleView.layer addSublayer:outlineLayer];
-    [_warningView addSubview:_triangleView];
+    
+    _triangleView.hidden = YES;
+    [self addSubview:_triangleView];
+}
+#pragma mark -  警告框
+- (void)addWarningViewWithFrame:(CGRect)frame andStyle:(NumberTextFieldStyle )textFieldStyle {
+    
+    _warningView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+    _warningView.backgroundColor = COMMON_WANRING_BG_COLOR;
+    [self addSubview:_warningView];
     
     //文字显示
     _warningLabel = [[UILabel alloc] initWithFrame:CGRectMake(120 + 20, 0, MAIN_SCREEN_WIDTH - 20, 30)];
@@ -86,16 +91,27 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     [_warningView addSubview:_warningLabel];
     
-    [self addSubview:_warningView];
 }
+
 #pragma mark -  显示警告
 - (void)showWarningView:(NSString *)text {
-    _warningView.hidden = NO;
-    _warningLabel.text = text;
+    GJWeakSelf;
+    [UIView animateWithDuration:0.2 animations:^{
+        weakSelf.triangleView.hidden = NO;
+        weakSelf.warningView.frame = CGRectMake(weakSelf.warningView.frame.origin.x, 50, weakSelf.warningView.frame.size.width, weakSelf.warningView.frame.size.height);
+        weakSelf.warningLabel.text = text;
+    }];
     
 }
+
 #pragma mark -  隐藏警告
 - (void)hideWarningView {
-    _warningView.hidden = YES;
+    GJWeakSelf;
+    [UIView animateWithDuration:0.2f animations:^{
+        weakSelf.triangleView.hidden = YES;
+        weakSelf.warningView.frame = CGRectMake(weakSelf.warningView.frame.origin.x, 0, weakSelf.warningView.frame.size.width, weakSelf.warningView.frame.size.height);
+        
+    }];
+    
 }
 @end

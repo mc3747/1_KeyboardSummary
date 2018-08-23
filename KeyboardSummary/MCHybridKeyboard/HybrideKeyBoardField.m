@@ -241,7 +241,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
             [weakSelf retractKeyboard];
         }];
         
-        // 切换到特殊字符键盘
+        // 切换到特殊字符键盘(默认能切换)
         [_characterKeyboardLayout getChangerToSpecialBlock:^{
             if (!weakSelf.forbidSpecialCharacter) {
                 [weakSelf changeSafeKeyBoardType:HybrideKeyBoardTypeSpecial];
@@ -270,16 +270,14 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
         [_specialKeyboardLayout getFinishBlock:^{
             [weakSelf retractKeyboard];
         }];
-        // 切换到字母键盘
+        // 切换到字母键盘(默认能切换)
         [_specialKeyboardLayout getChangerToCharacterBlock:^{
-            if (!weakSelf.forbidSpecialCharacter) {
+            if (!weakSelf.forbidABC) {
                 [weakSelf changeSafeKeyBoardType:HybrideKeyBoardTypeCharacter];
             }
         }];
   
     }
-
-     
     return _specialKeyboardLayout;
 }
 @end

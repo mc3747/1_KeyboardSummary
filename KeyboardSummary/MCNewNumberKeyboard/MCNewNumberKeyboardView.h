@@ -15,7 +15,9 @@
 
 - (instancetype)initWithFrame:(CGRect)frame andStyle:(NumberTextFieldStyle )textFieldStyle;
 
+//显示警告
 - (void)showWarningView:(NSString *)text;
 
+//隐藏警告
 - (void)hideWarningView;
 @end

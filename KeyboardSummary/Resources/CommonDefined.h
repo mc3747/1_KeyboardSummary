@@ -20,9 +20,10 @@
 #define COMMON_BLACK_COLOR RGBColor(94, 98, 99)
 #define COMMON_GREY_COLOR RGBColor(163, 163, 163)
 #define COMMON_BLUE_GREEN_COLOR RGBColor(51, 167, 196)
+
 // 安全键盘字体大小
-static CGFloat const kSecutiryKeyboardTitleFont = 20.0f;
-static CGFloat const kCommonSecutiryKeyboardSubtitleFont = 15.0f;
+static CGFloat const kSecutiryKeyboardTitleFont = 22.0f;
+static CGFloat const kCommonSecutiryKeyboardSubtitleFont = 16.0f;
 static CGFloat const kCommonSecutiryKeyboardLargeLabelFont = 35.0f;
 
 //  屏幕大小
