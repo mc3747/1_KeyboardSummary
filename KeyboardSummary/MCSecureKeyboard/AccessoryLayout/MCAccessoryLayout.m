@@ -9,7 +9,8 @@
 #import "MCAccessoryLayout.h"
 
  /*背景颜色 */
-#define kAccessoryBackgroundColor RGBColor(34, 34, 34)
+#define kAccessoryBackgroundColor RGBColor(26, 26, 26)
+
 /*键盘顶部文字 */
 #define kAccessoryTextColor RGBColor(120, 120, 120)
 

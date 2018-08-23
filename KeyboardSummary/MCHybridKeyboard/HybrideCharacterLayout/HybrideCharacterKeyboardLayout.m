@@ -38,7 +38,7 @@ typedef NS_ENUM(NSInteger, ShiftClickState) {
 /** 键盘总高度 */
 static CGFloat const kMainKeyboardHeight = 270;
 /** 键盘行间距 */
-static CGFloat const kRowBetweenGap = 3.f;
+static CGFloat const kRowBetweenGap = 8.f;
 /** 键盘列间距 */
 static CGFloat const kColumnBetweenGap = 4.f;
 /** 键盘行上下边距 */
