@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, ShiftClickState) {
     ShiftClickStateDouble             //双击固定大写
 };
 /** 键盘总高度 */
-static CGFloat const kMainKeyboardHeight = 270;
+static CGFloat const kMainKeyboardHeight = 216;
 /** 键盘行间距 */
 static CGFloat const kRowBetweenGap = 8.f;
 /** 键盘列间距 */
@@ -55,13 +55,16 @@ static CGFloat const kColumnLeftOrRightGap = 3.f;
 @property (nonatomic, assign) ShiftClickState shiftClickState;
 /** shift按钮 */
 @property (nonatomic, weak)   UIButton *shiftButton;
-
+/** 删除按钮定时器 */
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 
 @implementation HybrideCharacterKeyboardLayout
 - (void)dealloc {
     DLog(@"字母键盘消失");
+    [_timer invalidate];
+    _timer = nil;
 }
 #pragma mark - 初始化
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -214,7 +217,11 @@ static CGFloat const kColumnLeftOrRightGap = 3.f;
     UIButton *deleteCharcterBtn = [[UIButton alloc] init];
     [deleteCharcterBtn setImage:[UIImage imageNamed:@"CharacterKeyBoard_Back_Normal"] forState:UIControlStateNormal];
     [deleteCharcterBtn setImage:[UIImage imageNamed:@"CharacterKeyBoard_Back_TouchDown"] forState:UIControlStateHighlighted];
-    [deleteCharcterBtn addTarget:self action:@selector(deleteCharacterBlock) forControlEvents:UIControlEventTouchUpInside];
+//    [deleteCharcterBtn addTarget:self action:@selector(deleteCharacterBlock) forControlEvents:UIControlEventTouchUpInside];
+
+    [deleteCharcterBtn addTarget:self action:@selector(offsetButtonTouchBegin:)forControlEvents:UIControlEventTouchDown];
+    [deleteCharcterBtn addTarget:self action:@selector(offsetButtonTouchEnd:)forControlEvents:UIControlEventTouchUpInside];
+    [deleteCharcterBtn addTarget:self action:@selector(offsetButtonTouchEnd:)forControlEvents:UIControlEventTouchUpOutside];
     deleteCharcterBtn.myLeading = kColumnBetweenGap;
     deleteCharcterBtn.myTop = kRowBetweenGap * 0.5f;
     deleteCharcterBtn.myWidth = (thirdRowLayout.myWidth - 10 * kColumnBetweenGap - 7 *CharacterWidth) / 2.f;
@@ -270,10 +277,8 @@ static CGFloat const kColumnLeftOrRightGap = 3.f;
             [characterButton.titleLabel setFont:[UIFont systemFontOfSize:kSecutiryKeyboardTitleFont]];
             [self setLayerFeatures:characterButton];
             [characterButton addTarget:self action:@selector(changeToNumberBlock) forControlEvents:UIControlEventTouchUpInside];
-        }
-        
+        };
         [characterButton setBackgroundImage:[UIImage imageNamed:@"NumberKeyBoard_Number_TouchDown"] forState:UIControlStateHighlighted];
-//        characterButton.myHeight = fourthRowLayout.myHeight - kRowBetweenGap * 2;
         [fourthRowLayout addSubview:characterButton];
     }
     
@@ -351,6 +356,32 @@ static CGFloat const kColumnLeftOrRightGap = 3.f;
     if (self.characterKeyboardDeleteCharacterBlock) {
         self.characterKeyboardDeleteCharacterBlock();
     }
+}
+//开始删除键
+-(void) offsetButtonTouchBegin:(id)sender{
+    
+    NSLog(@"开始计时");
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                             target: self
+                                           selector: @selector(handleTimer:)
+                                           userInfo: nil
+                                            repeats: YES];
+    [_timer fire];
+}
+//结束删除键
+-(void) offsetButtonTouchEnd:(id)sender{
+    NSLog(@"计时结束");
+    [_timer invalidate];
+    _timer = nil;
+    
+}
+//删除动作
+-(void) handleTimer:(id)sender{
+    NSLog(@"计时动作");
+    [SoundAndShakeTool play];
+    if (self.characterKeyboardDeleteCharacterBlock) {
+        self.characterKeyboardDeleteCharacterBlock();
+    };
 }
 
 - (void)getDeleteCharacterBlock:(CharacterKeyboardClikBlock)characterKeyboardDeleteCharacterBlock {

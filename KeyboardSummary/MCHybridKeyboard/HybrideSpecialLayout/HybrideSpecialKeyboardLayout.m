@@ -33,7 +33,7 @@
 #define CommonDeleteButtonWidth  (self.bounds.size.width - 8 * kColumnBetweenGap - 7*CommonSpecialCharaterWidth - 2 * kColumnLeftOrRightGap) / 2.f
 
 /** 键盘总高度 */
-static CGFloat const kMainKeyboardHeight = 270;
+static CGFloat const kMainKeyboardHeight = 216;
 /** 键盘行间距 */
 static CGFloat const kRowBetweenGap = 8.f;
 /** 键盘列间距 */
@@ -47,7 +47,8 @@ static CGFloat const kColumnLeftOrRightGap = 3.f;
 @interface HybrideSpecialKeyboardLayout()
 /** 特殊字符键盘内容 */
 @property (nonatomic, strong) NSMutableArray *specialCharacterTitle;
-
+/** 删除按钮定时器 */
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation HybrideSpecialKeyboardLayout
@@ -195,7 +196,10 @@ static CGFloat const kColumnLeftOrRightGap = 3.f;
     UIButton *deleteCharcterBtn = [[UIButton alloc] init];
     [deleteCharcterBtn setImage:[UIImage imageNamed:@"CharacterKeyBoard_Back_Normal"] forState:UIControlStateNormal];
     [deleteCharcterBtn setImage:[UIImage imageNamed:@"CharacterKeyBoard_Back_TouchDown"] forState:UIControlStateHighlighted];
-    [deleteCharcterBtn addTarget:self action:@selector(deleteCharacterBlock) forControlEvents:UIControlEventTouchUpInside];
+//    [deleteCharcterBtn addTarget:self action:@selector(deleteCharacterBlock) forControlEvents:UIControlEventTouchUpInside];
+    [deleteCharcterBtn addTarget:self action:@selector(offsetButtonTouchBegin:)forControlEvents:UIControlEventTouchDown];
+    [deleteCharcterBtn addTarget:self action:@selector(offsetButtonTouchEnd:)forControlEvents:UIControlEventTouchUpInside];
+    [deleteCharcterBtn addTarget:self action:@selector(offsetButtonTouchEnd:)forControlEvents:UIControlEventTouchUpOutside];
     deleteCharcterBtn.myLeading = kColumnBetweenGap;
     deleteCharcterBtn.myTop = kRowBetweenGap * 0.5f;
     deleteCharcterBtn.myWidth = CommonDeleteButtonWidth;
@@ -276,9 +280,34 @@ static CGFloat const kColumnLeftOrRightGap = 3.f;
     [SoundAndShakeTool play];
     if (self.specialKeyboardDeleteCharacterBlock) {
         self.specialKeyboardDeleteCharacterBlock();
-    }
+    };
 }
-
+//开始删除键
+-(void) offsetButtonTouchBegin:(id)sender{
+    
+    NSLog(@"开始计时");
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                              target: self
+                                            selector: @selector(handleTimer:)
+                                            userInfo: nil
+                                             repeats: YES];
+    [_timer fire];
+}
+//结束删除键
+-(void) offsetButtonTouchEnd:(id)sender{
+    NSLog(@"计时结束");
+    [_timer invalidate];
+    _timer = nil;
+    
+}
+//删除动作
+-(void) handleTimer:(id)sender{
+    NSLog(@"计时动作");
+    [SoundAndShakeTool play];
+    if (self.specialKeyboardDeleteCharacterBlock) {
+        self.specialKeyboardDeleteCharacterBlock();
+    };
+}
 - (void)getDeleteSpecialBlock:(SpecialKeyboardClikBlock)specialKeyboardDeleteCharacterBlock {
     _specialKeyboardDeleteCharacterBlock = specialKeyboardDeleteCharacterBlock;
 }

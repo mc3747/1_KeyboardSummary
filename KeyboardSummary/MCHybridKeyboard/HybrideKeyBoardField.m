@@ -14,7 +14,7 @@
 #import "UIView+Extension.h"
 
 /** 键盘主体高度 */
-static CGFloat const kMainKeyboardHeight = 270;
+static CGFloat const kMainKeyboardHeight = 216;
 /** 键盘顶部高度 */
 static CGFloat const kAccessoryKeyboardHeight = 39;
 

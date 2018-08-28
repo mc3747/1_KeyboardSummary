@@ -12,13 +12,15 @@
 
 /*数字键盘类型 */
 typedef NS_ENUM(NSInteger, NumberTextFieldStyle) {
-    NumberTextFieldStyleDefault                  = 10000,         //默认（数字）
+    NumberTextFieldStyleDefault                  = 10000,         //默认（数字顺序）
     NumberTextFieldStylePhone                    = 10001,         //手机号码（数字 + 全部删除）
     NumberTextFieldStyleBankCard                 = 10002,         //银行卡号（数字 + 全部删除）
     NumberTextFieldStyleIdentityCard             = 10003,         //身份证号（数字 + X）
     NumberTextFieldStyleInputWithoutDot          = 10004,         //输入整数金额（数字 + 全部删除）
     NumberTextFieldStyleInputWithDot             = 10005,         //输入小数金额（数字 + 小数点）
     NumberTextFieldStyleRandomInputWithoutDot    = 10006,         //输入交易密码，键盘数字打乱（数字 + 全部删除）
+    NumberTextFieldStyleMessageVerify            = 10007,         //输入短信验证码，键盘数字不打乱（数字 + 全部删除）
+    
 };
 
 /**  键盘输入值变化block：textField，输入值，显示值*/

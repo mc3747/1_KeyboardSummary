@@ -84,14 +84,22 @@
     }];
     [self.view addSubview:textField7];
     
-    HybrideKeyBoardField *textField8 = [[HybrideKeyBoardField alloc] initWithFrame:CGRectMake(20, 520, 300, 50)];
-    textField8.placeholder = @"8,混合";
-    textField8.forbidSpace = YES;
-    [textField8 setHybrideKeyBoardType:HybrideKeyBoardTypeCharacter];
-    [textField8 shouldChangeCharacters:^(HybrideKeyBoardField *textField, NSString *string) {
-        NSLog(@"%@",string);
+    MCNewNumberKeyboardTextField *textField8 = [[MCNewNumberKeyboardTextField alloc] initWithFrame:CGRectMake(20, 520, 300, 50) andStyle:NumberTextFieldStyleMessageVerify];
+    textField8.placeholder = @"8,短信验证码";
+    [textField8 shouldChangeNumbers:^(MCNewNumberKeyboardTextField *textField, NSString *inputString, NSString *displayString) {
+        NSLog(@"输入值：%@",inputString);
+        NSLog(@"显示值：%@",displayString);
     }];
     [self.view addSubview:textField8];
+    
+    HybrideKeyBoardField *textField9 = [[HybrideKeyBoardField alloc] initWithFrame:CGRectMake(20, 580, 300, 50)];
+    textField9.placeholder = @"9,混合";
+    textField9.forbidSpace = YES;
+    [textField9 setHybrideKeyBoardType:HybrideKeyBoardTypeCharacter];
+    [textField9 shouldChangeCharacters:^(HybrideKeyBoardField *textField, NSString *string) {
+        NSLog(@"%@",string);
+    }];
+    [self.view addSubview:textField9];
 }
 
 

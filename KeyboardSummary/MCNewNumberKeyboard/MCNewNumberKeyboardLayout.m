@@ -40,10 +40,15 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
 @property(nonatomic,strong)NSMutableArray *numberArray;
 @property (nonatomic, strong) UIButton *leftBottomButton;
 @property (nonatomic, assign) BOOL isNotActive;
+/** 删除按钮定时器 */
+@property (nonatomic, strong) NSTimer *timer;
 @end
+
 @implementation MCNewNumberKeyboardLayout
 - (void)dealloc {
     DLog(@"数字键盘消失");
+    [_timer invalidate];
+    _timer = nil;
 }
 #pragma mark - 初始化
 - (instancetype)initWithFrame:(CGRect)frame andStyle:(NumberKeyboardStyle)keyboardStyle andOrder:(BOOL)isNumberKeyboardOrder {
@@ -244,7 +249,10 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
 - (void)setUpDeleteButton:(UIButton *)subButton{
     [subButton setImage: [UIImage imageNamed:@"NumberKeyBoard_Back_Normal"] forState:UIControlStateNormal];
     [subButton setImage:[UIImage imageNamed:@"NumberKeyBoard_Back_TouchDown"] forState:UIControlStateHighlighted];
-    [subButton addTarget:self action:@selector(clickDeleteButton:) forControlEvents:UIControlEventTouchUpInside];
+//    [subButton addTarget:self action:@selector(clickDeleteButton:) forControlEvents:UIControlEventTouchUpInside];
+    [subButton addTarget:self action:@selector(offsetButtonTouchBegin:)forControlEvents:UIControlEventTouchDown];
+    [subButton addTarget:self action:@selector(offsetButtonTouchEnd:)forControlEvents:UIControlEventTouchUpInside];
+    [subButton addTarget:self action:@selector(offsetButtonTouchEnd:)forControlEvents:UIControlEventTouchUpOutside];
 }
 
 #pragma mark - 设置圆角以及边框特性
@@ -422,6 +430,32 @@ static CGFloat const kSubLayoutHeighth = 216 / 4.f;
 }
 #pragma mark -  删除按钮点击
 - (void)clickDeleteButton:(UIButton *)deleteButton {
+    [SoundAndShakeTool play];
+    if (self.clickDeleteBlock) {
+        self.clickDeleteBlock();
+    }
+}
+//开始删除键
+-(void) offsetButtonTouchBegin:(id)sender{
+    
+    NSLog(@"开始计时");
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                              target: self
+                                            selector: @selector(handleTimer:)
+                                            userInfo: nil
+                                             repeats: YES];
+    [_timer fire];
+}
+//结束删除键
+-(void) offsetButtonTouchEnd:(id)sender{
+    NSLog(@"计时结束");
+    [_timer invalidate];
+    _timer = nil;
+    
+}
+//删除动作
+-(void) handleTimer:(id)sender{
+    NSLog(@"计时动作");
     [SoundAndShakeTool play];
     if (self.clickDeleteBlock) {
         self.clickDeleteBlock();

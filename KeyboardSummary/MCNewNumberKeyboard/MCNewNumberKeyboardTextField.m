@@ -18,14 +18,11 @@ static CGFloat const kMainKeyboardHeight = 216;
 /** 键盘顶部高度 */
 static CGFloat const kAccessoryKeyboardHeight = 39;
 
-@interface MCNewNumberKeyboardTextField()<UITextFieldDelegate>
+@interface MCNewNumberKeyboardTextField()
 @property (nonatomic, strong) MCAccessoryLayout         *accessoryLayout;
 @property (nonatomic, strong) MCNewNumberKeyboardLayout *keyboardView;
 @property (nonatomic, assign) NumberKeyboardStyle       keyboardStyle;
-@property (nonatomic, assign) BOOL isNumberKeyboardOrder;
-//显示值
-@property (nonatomic, copy) NSString *textContent;
-
+@property (nonatomic, assign) BOOL                      isNumberKeyboardOrder;
 
 @end
 
@@ -34,14 +31,26 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 - (instancetype)initWithFrame:(CGRect)frame andStyle:(NumberTextFieldStyle )textFieldStyle {
     self = [super initWithFrame:frame];
     if (self) {
-        self.delegate = self;
         _textFieldStyle = textFieldStyle;
         [self getViewCharacter:textFieldStyle];
         [self configTextField];
         [self configNumberKeyboard];
+//        UIButton *rightButton = [self valueForKey:@"_clearButton"];
+//        [rightButton setImage:[UIImage imageNamed:@"Custom_KeyBoard_Logo_Icon"] forState:UIControlStateNormal];
+        self.clearButtonMode = UITextFieldViewModeWhileEditing;
+//        [rightButton addTarget:self action:@selector(targetAction) forControlEvents:UIControlEventTouchUpInside];
+
+//        [self addKVO];
+        [self addTarget:self action:@selector(targetAction)  forControlEvents:UIControlEventEditingChanged];
+        
     };
     return self;
 }
+
+- (void)targetAction {
+    [self monitorDeleteContent:self.text];
+    [self monitorTextField];
+};
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -91,6 +100,11 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
         _keyboardStyle = NumberKeyboardStyleDelete;
         _isNumberKeyboardOrder = NO;
         
+//短信验证码
+    }else if(NumberTextFieldStyleMessageVerify == textFieldStyle) {
+        _keyboardStyle = NumberKeyboardStyleDelete;
+        _isNumberKeyboardOrder = YES;
+        
 //默认
     }else{
         _keyboardStyle = NumberKeyboardStyleDefault;
@@ -119,7 +133,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 - (void)configNumberKeyboard{
     __weak typeof(self) weakSelf = self;
 // 置空内容
-    self.textContent = @"";
+    self.text = @"";
     
 // textField的初始化
     self.keyboardView = [self getSelfDefineKeyBoardViewWithStyle:_keyboardStyle];
@@ -127,52 +141,50 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 // textField的点击数字回调
     //数字
     [self.keyboardView getClickNumberBlock:^(NSString *numberStr) {
-        weakSelf.textContent = [weakSelf.textContent stringByAppendingString:numberStr];
-        [weakSelf monitorTextFieldInput:weakSelf.textContent numberString:numberStr];
+        weakSelf.text = [weakSelf.text stringByAppendingString:numberStr];
+        [weakSelf monitorTextFieldInput:weakSelf.text numberString:numberStr];
         [weakSelf monitorTextField];
     }];
     //小数点
     [self.keyboardView getClickDotBlock:^(NSString *numberStr) {
-        weakSelf.textContent = [weakSelf.textContent stringByAppendingString:numberStr];
-        [weakSelf monitorTextFieldInput:weakSelf.textContent numberString:numberStr];
+        weakSelf.text = [weakSelf.text stringByAppendingString:numberStr];
+        [weakSelf monitorTextFieldInput:weakSelf.text numberString:numberStr];
         [weakSelf monitorTextField];
     }];
     //字符X
     [self.keyboardView getClickXBlock:^(NSString *numberStr) {
-        weakSelf.textContent = [weakSelf.textContent stringByAppendingString:numberStr];
-        [weakSelf monitorTextFieldInput:weakSelf.textContent numberString:numberStr];
+        weakSelf.text = [weakSelf.text stringByAppendingString:numberStr];
+        [weakSelf monitorTextFieldInput:weakSelf.text numberString:numberStr];
         [weakSelf monitorTextField];
     }];
     //删除1位
     [self.keyboardView getClickDeleteBlock:^{
-        [weakSelf monitorDeleteContent:weakSelf.textContent];
-        if (weakSelf.textContent.length > 0) {
-            weakSelf.textContent = [weakSelf.textContent substringToIndex:weakSelf.text.length - 1];
+        [weakSelf monitorDeleteContent:weakSelf.text];
+        if (weakSelf.text.length > 0) {
+            weakSelf.text = [weakSelf.text substringToIndex:weakSelf.text.length - 1];
         }
-        weakSelf.text = weakSelf.textContent;
         [weakSelf monitorTextField];
     }];
     //删除全部
     [self.keyboardView getClickTotalDeleteBlock:^{
-        [weakSelf monitorDeleteContent:weakSelf.textContent];
-        weakSelf.textContent = @"";
-        weakSelf.text = weakSelf.textContent;
+        [weakSelf monitorDeleteContent:weakSelf.text];
+        weakSelf.text = @"";
         [weakSelf monitorTextField];
     }];
 }
 
 #pragma mark -  回调输出
 - (void)monitorTextField {
-    NSString *inputString =[self returnEffectString:self.textContent];
+    NSString *inputString =[self returnEffectString:self.text];
     
     if (self.returnBlock) {
-        self.returnBlock(self, inputString, self.textContent);
+        self.returnBlock(self, inputString, self.text);
     };
 }
 #pragma mark -  不含空格的字符串
-- (NSString *)returnEffectString:(NSString *)textContent {
-    if (textContent.length > 0) {
-        return [textContent stringByReplacingOccurrencesOfString:@" " withString:@""];
+- (NSString *)returnEffectString:(NSString *)text {
+    if (text.length > 0) {
+        return [text stringByReplacingOccurrencesOfString:@" " withString:@""];
 
     }else {
         return @"";
@@ -183,7 +195,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
 - (void)monitorTextFieldInput:(NSString *)textString numberString:(NSString *)numberString{
     
     self.text = textString;
-    [self monitorTextContent:textString and:numberString];
+    [self monitorText:textString and:numberString];
     
     if (NumberTextFieldStylePhone == _textFieldStyle) {
         // 手机号码
@@ -209,12 +221,15 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
         // 输入交易密码
         [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:6];
         
-    } else {
+    }else if (NumberTextFieldStyleMessageVerify == _textFieldStyle ) {
+        // 输入短信验证码
+        [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:6];
+        
+    }else {
         // 默认
         [MCNumberKeyboardMethod formatToInputAmount:self andString:textString andMaxLength:23];
     };
     
-    self.textContent = self.text;
 }
 
 #pragma mark -  监听删除的内容:textString为删除前的字符串
@@ -294,7 +309,7 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
  *  5，小数金额输入框，第一位是0，第二位只能输入小数点
  */
 //textString为输入前的字符串
-- (void)monitorTextContent:(NSString *)textString and:(NSString *)numberString {
+- (void)monitorText:(NSString *)textString and:(NSString *)numberString {
     BOOL isValid = YES;
     NSRange range = NSMakeRange(textString.length, 0);
     NSString *effectString = [self returnEffectString:textString];
@@ -347,7 +362,12 @@ static CGFloat const kAccessoryKeyboardHeight = 39;
         }else if (NumberTextFieldStyleRandomInputWithoutDot == _textFieldStyle){
             
             [self limitNumberButton:effectString textLength:6];
-        };
+            
+//短信验证码键盘
+        }else if (NumberTextFieldStyleMessageVerify == _textFieldStyle){
+            
+            [self limitNumberButton:effectString textLength:6];
+        } ;
         
         isValid = [self moneyInputJudge:textString range:range] && isValid;
     };
