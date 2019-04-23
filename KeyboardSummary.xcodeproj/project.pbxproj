@@ -141,6 +141,13 @@
 		42778B6820F7357700B7582F /* HybrideSpecialKeyboardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B6520F7357700B7582F /* HybrideSpecialKeyboardLayout.m */; };
 		42778B6920F7357700B7582F /* HybrideKeyBoardField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42778B6620F7357700B7582F /* HybrideKeyBoardField.m */; };
 		42876DFC2123C20C006EB94C /* NewNumberKeyboarcVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42876DFB2123C20C006EB94C /* NewNumberKeyboarcVC.m */; };
+		42916098226F151D005B7902 /* BSYBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4291608C226F151D005B7902 /* BSYBoardToolBar.m */; };
+		42916099226F151D005B7902 /* BSYPayBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4291608D226F151D005B7902 /* BSYPayBoard.m */; };
+		4291609A226F151D005B7902 /* BSYTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 4291608E226F151D005B7902 /* BSYTextFiled.m */; };
+		4291609B226F151D005B7902 /* BSYPassWordBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 42916090226F151D005B7902 /* BSYPassWordBoard.m */; };
+		4291609C226F151D005B7902 /* BSYPhoneNumberBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 42916095226F151D005B7902 /* BSYPhoneNumberBoard.m */; };
+		4291609D226F151D005B7902 /* BSYIDCardBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 42916097226F151D005B7902 /* BSYIDCardBoard.m */; };
+		429160A0226F1524005B7902 /* GoodKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4291609F226F1524005B7902 /* GoodKeyboardVC.m */; };
 		429649D720FC341C0036F166 /* PasswordKeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 429649D620FC341C0036F166 /* PasswordKeyboardVC.m */; };
 		42BAFEFC21087D37003CFD9A /* UIFloatLabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BAFEFA21087D36003CFD9A /* UIFloatLabelTextField.m */; };
 		42C6582F20FD729400CCB957 /* MCNumberKeyboardTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C6582320FD729300CCB957 /* MCNumberKeyboardTextFieldView.m */; };
@@ -375,6 +382,20 @@
 		42778B6620F7357700B7582F /* HybrideKeyBoardField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybrideKeyBoardField.m; sourceTree = "<group>"; };
 		42876DFA2123C20C006EB94C /* NewNumberKeyboarcVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewNumberKeyboarcVC.h; sourceTree = "<group>"; };
 		42876DFB2123C20C006EB94C /* NewNumberKeyboarcVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewNumberKeyboarcVC.m; sourceTree = "<group>"; };
+		4291608C226F151D005B7902 /* BSYBoardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSYBoardToolBar.m; sourceTree = "<group>"; };
+		4291608D226F151D005B7902 /* BSYPayBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSYPayBoard.m; sourceTree = "<group>"; };
+		4291608E226F151D005B7902 /* BSYTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSYTextFiled.m; sourceTree = "<group>"; };
+		4291608F226F151D005B7902 /* BSYPhoneNumberBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSYPhoneNumberBoard.h; sourceTree = "<group>"; };
+		42916090226F151D005B7902 /* BSYPassWordBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSYPassWordBoard.m; sourceTree = "<group>"; };
+		42916091226F151D005B7902 /* BSYIDCardBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSYIDCardBoard.h; sourceTree = "<group>"; };
+		42916092226F151D005B7902 /* BSYTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSYTextFiled.h; sourceTree = "<group>"; };
+		42916093226F151D005B7902 /* BSYPayBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSYPayBoard.h; sourceTree = "<group>"; };
+		42916094226F151D005B7902 /* BSYBoardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSYBoardToolBar.h; sourceTree = "<group>"; };
+		42916095226F151D005B7902 /* BSYPhoneNumberBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSYPhoneNumberBoard.m; sourceTree = "<group>"; };
+		42916096226F151D005B7902 /* BSYPassWordBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSYPassWordBoard.h; sourceTree = "<group>"; };
+		42916097226F151D005B7902 /* BSYIDCardBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSYIDCardBoard.m; sourceTree = "<group>"; };
+		4291609E226F1523005B7902 /* GoodKeyboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodKeyboardVC.h; sourceTree = "<group>"; };
+		4291609F226F1524005B7902 /* GoodKeyboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodKeyboardVC.m; sourceTree = "<group>"; };
 		429649D520FC341C0036F166 /* PasswordKeyboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordKeyboardVC.h; sourceTree = "<group>"; };
 		429649D620FC341C0036F166 /* PasswordKeyboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordKeyboardVC.m; sourceTree = "<group>"; };
 		42BAFEFA21087D36003CFD9A /* UIFloatLabelTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFloatLabelTextField.m; sourceTree = "<group>"; };
@@ -452,6 +473,13 @@
 		421A3A0B20EF043000BCDAF1 /* KeyboardSummary */ = {
 			isa = PBXGroup;
 			children = (
+				4291608A226F1507005B7902 /* 7，键盘框架参照 */,
+				42916084226F1364005B7902 /* 1，系统键盘 */,
+				42916085226F13B2005B7902 /* 2，可定制系统键盘 */,
+				42916086226F13B9005B7902 /* 3，自定义数字键盘1 */,
+				42916087226F13BE005B7902 /* 4，自定义数字键盘2 */,
+				42916088226F13D3005B7902 /* 5，自定义安全键盘（切换+混合） */,
+				42916089226F13E3005B7902 /* 6，自定义密码键盘 */,
 				421A3AB020EF139600BCDAF1 /* Resources */,
 				421A3A3E20EF050400BCDAF1 /* MCChineseKeyboard */,
 				421A3A4120EF050500BCDAF1 /* MCNumberKeyboard */,
@@ -463,18 +491,6 @@
 				421A3A0D20EF043000BCDAF1 /* AppDelegate.m */,
 				421A3A0F20EF043000BCDAF1 /* ViewController.h */,
 				421A3A1020EF043000BCDAF1 /* ViewController.m */,
-				421A3AB720EF1AF600BCDAF1 /* SystemKeyboardVC.h */,
-				421A3AB820EF1AF600BCDAF1 /* SystemKeyboardVC.m */,
-				421A3AB420EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.h */,
-				421A3AB520EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.m */,
-				42778B5A20F7339900B7582F /* HybrideKeyboardVC.h */,
-				42778B5B20F7339900B7582F /* HybrideKeyboardVC.m */,
-				429649D520FC341C0036F166 /* PasswordKeyboardVC.h */,
-				429649D620FC341C0036F166 /* PasswordKeyboardVC.m */,
-				42C6583B20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.h */,
-				42C6583C20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m */,
-				42876DFA2123C20C006EB94C /* NewNumberKeyboarcVC.h */,
-				42876DFB2123C20C006EB94C /* NewNumberKeyboarcVC.m */,
 				421A3A1220EF043000BCDAF1 /* Main.storyboard */,
 				421A3A1520EF043200BCDAF1 /* Assets.xcassets */,
 				421A3A1720EF043200BCDAF1 /* LaunchScreen.storyboard */,
@@ -1047,8 +1063,8 @@
 			isa = PBXGroup;
 			children = (
 				422ED2BD20FF45F000C77C64 /* PasswordKeyboardTextField.h */,
-				422ED2BE20FF45F000C77C64 /* PasswordKeyboardView.h */,
 				422ED2BF20FF45F000C77C64 /* PasswordKeyboardTextField.m */,
+				422ED2BE20FF45F000C77C64 /* PasswordKeyboardView.h */,
 				422ED2C020FF45F000C77C64 /* PasswordKeyboardView.m */,
 			);
 			path = PasswordKeyboard1;
@@ -1157,6 +1173,89 @@
 				42778B6520F7357700B7582F /* HybrideSpecialKeyboardLayout.m */,
 			);
 			path = HybrideSpecialLayout;
+			sourceTree = "<group>";
+		};
+		42916084226F1364005B7902 /* 1，系统键盘 */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AB720EF1AF600BCDAF1 /* SystemKeyboardVC.h */,
+				421A3AB820EF1AF600BCDAF1 /* SystemKeyboardVC.m */,
+			);
+			path = "1，系统键盘";
+			sourceTree = "<group>";
+		};
+		42916085226F13B2005B7902 /* 2，可定制系统键盘 */ = {
+			isa = PBXGroup;
+			children = (
+				42C6583B20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.h */,
+				42C6583C20FD75A300CCB957 /* SelfDefinedSystemKeyboardVC.m */,
+			);
+			path = "2，可定制系统键盘";
+			sourceTree = "<group>";
+		};
+		42916086226F13B9005B7902 /* 3，自定义数字键盘1 */ = {
+			isa = PBXGroup;
+			children = (
+				421A3AB420EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.h */,
+				421A3AB520EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.m */,
+			);
+			path = "3，自定义数字键盘1";
+			sourceTree = "<group>";
+		};
+		42916087226F13BE005B7902 /* 4，自定义数字键盘2 */ = {
+			isa = PBXGroup;
+			children = (
+				42876DFA2123C20C006EB94C /* NewNumberKeyboarcVC.h */,
+				42876DFB2123C20C006EB94C /* NewNumberKeyboarcVC.m */,
+			);
+			path = "4，自定义数字键盘2";
+			sourceTree = "<group>";
+		};
+		42916088226F13D3005B7902 /* 5，自定义安全键盘（切换+混合） */ = {
+			isa = PBXGroup;
+			children = (
+				42778B5A20F7339900B7582F /* HybrideKeyboardVC.h */,
+				42778B5B20F7339900B7582F /* HybrideKeyboardVC.m */,
+			);
+			path = "5，自定义安全键盘（切换+混合）";
+			sourceTree = "<group>";
+		};
+		42916089226F13E3005B7902 /* 6，自定义密码键盘 */ = {
+			isa = PBXGroup;
+			children = (
+				429649D520FC341C0036F166 /* PasswordKeyboardVC.h */,
+				429649D620FC341C0036F166 /* PasswordKeyboardVC.m */,
+			);
+			path = "6，自定义密码键盘";
+			sourceTree = "<group>";
+		};
+		4291608A226F1507005B7902 /* 7，键盘框架参照 */ = {
+			isa = PBXGroup;
+			children = (
+				4291609E226F1523005B7902 /* GoodKeyboardVC.h */,
+				4291609F226F1524005B7902 /* GoodKeyboardVC.m */,
+				4291608B226F151D005B7902 /* BSYKeyboard */,
+			);
+			path = "7，键盘框架参照";
+			sourceTree = "<group>";
+		};
+		4291608B226F151D005B7902 /* BSYKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4291608C226F151D005B7902 /* BSYBoardToolBar.m */,
+				4291608D226F151D005B7902 /* BSYPayBoard.m */,
+				4291608E226F151D005B7902 /* BSYTextFiled.m */,
+				4291608F226F151D005B7902 /* BSYPhoneNumberBoard.h */,
+				42916090226F151D005B7902 /* BSYPassWordBoard.m */,
+				42916091226F151D005B7902 /* BSYIDCardBoard.h */,
+				42916092226F151D005B7902 /* BSYTextFiled.h */,
+				42916093226F151D005B7902 /* BSYPayBoard.h */,
+				42916094226F151D005B7902 /* BSYBoardToolBar.h */,
+				42916095226F151D005B7902 /* BSYPhoneNumberBoard.m */,
+				42916096226F151D005B7902 /* BSYPassWordBoard.h */,
+				42916097226F151D005B7902 /* BSYIDCardBoard.m */,
+			);
+			path = BSYKeyboard;
 			sourceTree = "<group>";
 		};
 		429649CE20FC23210036F166 /* MCPasswordKeyboard */ = {
@@ -1381,6 +1480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42778B4E20F6F6E400B7582F /* IQBarButtonItem.m in Sources */,
+				4291609C226F151D005B7902 /* BSYPhoneNumberBoard.m in Sources */,
 				421A3A1120EF043000BCDAF1 /* ViewController.m in Sources */,
 				421A3A6920EF050500BCDAF1 /* MCNumberKeyboardLayout.m in Sources */,
 				42778B5520F6F6E400B7582F /* IQUIScrollView+Additions.m in Sources */,
@@ -1397,6 +1497,8 @@
 				42778B6820F7357700B7582F /* HybrideSpecialKeyboardLayout.m in Sources */,
 				421A3AAB20EF058500BCDAF1 /* MyLayoutPos.m in Sources */,
 				421A3AA720EF058500BCDAF1 /* MyLayoutDelegate.m in Sources */,
+				429160A0226F1524005B7902 /* GoodKeyboardVC.m in Sources */,
+				4291609D226F151D005B7902 /* BSYIDCardBoard.m in Sources */,
 				421A3AA220EF058500BCDAF1 /* MyLayoutMath.m in Sources */,
 				422ED2C420FF45F000C77C64 /* PasswordKeyboardView.m in Sources */,
 				421A3A6B20EF050500BCDAF1 /* SoundAndShakeTool.m in Sources */,
@@ -1429,6 +1531,7 @@
 				421A3A6320EF050500BCDAF1 /* ChineseKeyboardTextField.m in Sources */,
 				4238B93A212561A500AF272E /* UITextField+Judge.m in Sources */,
 				421A3AA020EF058500BCDAF1 /* MyGridLayout.m in Sources */,
+				42916098226F151D005B7902 /* BSYBoardToolBar.m in Sources */,
 				42778B6920F7357700B7582F /* HybrideKeyBoardField.m in Sources */,
 				42778B4F20F6F6E400B7582F /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				421A3AAC20EF058500BCDAF1 /* MyBorderline.m in Sources */,
@@ -1443,6 +1546,9 @@
 				42C6583220FD729400CCB957 /* MCNumberKeyboardTextField.m in Sources */,
 				42778B4C20F6F6E400B7582F /* IQToolbar.m in Sources */,
 				42778B4B20F6F6E400B7582F /* IQTextView.m in Sources */,
+				4291609A226F151D005B7902 /* BSYTextFiled.m in Sources */,
+				42916099226F151D005B7902 /* BSYPayBoard.m in Sources */,
+				4291609B226F151D005B7902 /* BSYPassWordBoard.m in Sources */,
 				421A3A9E20EF058500BCDAF1 /* MyRelativeLayout.m in Sources */,
 				421A3AB620EF1AD700BCDAF1 /* SelfDefinedKeyboardVC.m in Sources */,
 			);

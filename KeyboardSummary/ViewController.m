@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "GoodKeyboardVC.h"
 
 @interface ViewController ()
 
@@ -20,6 +21,10 @@
     self.view.backgroundColor = [UIColor blueColor];
 }
 
+- (IBAction)GoodKeyboradAction:(id)sender {
+    GoodKeyboardVC *vc= [[GoodKeyboardVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 
